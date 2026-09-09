@@ -1,0 +1,30 @@
+---
+import { offerings } from '../data/offerings';
+import { site } from '../data/site';
+const services = offerings.filter((o) => o.type === 'service');
+---
+<section id="services">
+  <div class="container">
+    <h2>Services</h2>
+    <p class="section-sub">How I can help you.</p>
+    <div class="grid">
+      {services.map((s) => (
+        <div class="card">
+          <div class="icon">{s.icon}</div>
+          <h3>{s.name}</h3>
+          <p>{s.blurb}</p>
+          <a class="book-link" href={site.calUrl} target="_blank">Book →</a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+  .icon { font-size: 2rem; margin-bottom: 12px; }
+  h3 { font-size: 1.25rem; margin-bottom: 8px; }
+  .card p { color: var(--text-dim); font-size: 0.95rem; }
+  .book-link { display: inline-block; margin-top: 16px; color: var(--orange); font-weight: 600; text-decoration: none; }
+  .book-link:hover { text-decoration: underline; }
+</style>
