@@ -1,0 +1,34 @@
+---
+import { offerings } from '../data/offerings';
+const badge: Record<string, string> = { live: '🟢 live', beta: '🟡 beta', planned: '⚪ planned' };
+---
+<section id="showcase">
+  <div class="container">
+    <h2>What's available</h2>
+    <p class="section-sub">Services and products you can use or hire me for.</p>
+    <div class="grid">
+      {offerings.map((o) => (
+        <div class="card">
+          <div class="row">
+            <div class="icon">{o.icon}</div>
+            <span class="badge">{badge[o.status]}</span>
+          </div>
+          <h3>{o.name}</h3>
+          <p>{o.blurb}</p>
+          {o.href && <a class="link" href={o.href}>Learn more →</a>}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+  .row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+  .icon { font-size: 2rem; }
+  .badge { font-size: 0.75rem; color: var(--text-dim); }
+  h3 { margin-bottom: 8px; }
+  .card p { color: var(--text-dim); font-size: 0.95rem; }
+  .link { display: inline-block; margin-top: 14px; color: var(--purple); font-weight: 600; text-decoration: none; }
+  .link:hover { text-decoration: underline; }
+</style>
