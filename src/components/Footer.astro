@@ -1,0 +1,26 @@
+---
+import { site } from '../data/site';
+import Wordmark from './Wordmark.astro';
+const year = new Date().getFullYear();
+---
+<footer>
+  <div class="container foot">
+    <Wordmark size="sm" />
+    <p class="mono">self-hosted with ♥ · {year}</p>
+    <div class="socials">
+      <a href={site.contact.discord} target="_blank">Discord</a>
+      <a href={`mailto:${site.contact.email}`}>Email</a>
+      <a href={site.contact.linkedin} target="_blank">LinkedIn</a>
+      <a href={site.contact.github} target="_blank">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer { border-top: 1px solid #23232e; padding: 32px 0; }
+  .foot { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .foot p { color: var(--text-dim); font-size: 0.85rem; }
+  .socials { display: flex; gap: 18px; }
+  .socials a { color: var(--text-dim); text-decoration: none; font-size: 0.9rem; }
+  .socials a:hover { color: var(--orange); }
+</style>
