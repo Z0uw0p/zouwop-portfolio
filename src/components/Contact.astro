@@ -5,7 +5,11 @@ import { site } from '../data/site';
   <div class="container center">
     <h2>Let's talk</h2>
     <p class="section-sub">Pick a time and we'll figure out the rest.</p>
-    <a class="btn btn-primary" href={site.calUrl} target="_blank">Book a call</a>
+    <div
+      data-cal-link={site.calUrl}
+      data-cal-config='{"theme":"dark"}'
+      data-cal-namespace="intro"
+    ></div>
     <p class="mono direct">
       or reach me — <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
     </p>
