@@ -1,0 +1,18 @@
+---
+interface Props { size?: 'sm' | 'lg'; }
+const { size = 'lg' } = Astro.props;
+---
+<span class="wordmark {size === 'lg' ? 'wordmark-lg' : 'wordmark-sm'}">zouwop</span>
+
+<style>
+  .wordmark {
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    background: linear-gradient(90deg, var(--orange), var(--purple));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .wordmark-lg { font-size: clamp(2.5rem, 8vw, 4.5rem); }
+  .wordmark-sm { font-size: 1.4rem; }
+</style>
