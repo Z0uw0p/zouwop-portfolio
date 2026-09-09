@@ -1,0 +1,19 @@
+---
+import { site } from '../data/site';
+---
+<section id="contact">
+  <div class="container center">
+    <h2>Let's talk</h2>
+    <p class="section-sub">Pick a time and we'll figure out the rest.</p>
+    <a class="btn btn-primary" href={site.calUrl} target="_blank">Book a call</a>
+    <p class="mono direct">
+      or reach me — <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
+    </p>
+  </div>
+</section>
+
+<style>
+  .center { text-align: center; }
+  .direct { margin-top: 20px; color: var(--text-dim); font-size: 0.9rem; }
+  .direct a { color: var(--orange); text-decoration: none; }
+</style>
