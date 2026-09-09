@@ -2,7 +2,7 @@
 interface Props { size?: 'sm' | 'lg'; }
 const { size = 'lg' } = Astro.props;
 ---
-<span class="wordmark {size === 'lg' ? 'wordmark-lg' : 'wordmark-sm'}">zouwop</span>
+<span class:list={['wordmark', size === 'lg' ? 'wordmark-lg' : 'wordmark-sm']}>zouwop</span>
 
 <style>
   .wordmark {
