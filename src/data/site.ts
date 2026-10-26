@@ -1,6 +1,6 @@
 export const site = {
-  name: 'zouwop',
-  tagline: "I run my own self-hosted stack — and I'll set up yours. 30-minute tech calls, $20.",
+  name: 'Zouwop',
+  tagline: "Own your books, photos and files — self-hosted on a server you control. Book a call, or email a tech question.",
   contact: {
     email: 'support@zouwop.com',   // general + tech questions
     booking: 'booking@zouwop.com', // calls

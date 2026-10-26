@@ -11,18 +11,6 @@ export interface Service {
 
 export const services: Service[] = [
   {
-    id: 'tech-call',
-    name: 'Tech call',
-    price: '30 min · $20',
-    points: [
-      "Any tech question: a service that won't start, whether to self-host something, backups, what hardware to buy, whether AI agents are worth it in your case.",
-      "If I don't know it offhand, I say so on the call and research it afterwards — you get what I find, or a pointer to someone who does know.",
-    ],
-    ctaLabel: 'Email to book',
-    ctaSubject: 'Tech call (30 min, $20)',
-    ctaEmail: 'booking@zouwop.com',
-  },
-  {
     id: 'setup',
     name: 'Setup, done for you',
     price: 'Scoped per job',
@@ -33,6 +21,18 @@ export const services: Service[] = [
     excluded: 'Not included: hardware, domains, licences, or ongoing maintenance — unless we agree on it separately.',
     ctaLabel: 'Email what you need',
     ctaSubject: 'Setup job',
+    ctaEmail: 'booking@zouwop.com',
+  },
+  {
+    id: 'tech-call',
+    name: 'Tech call',
+    price: '30 min · $20',
+    points: [
+      "Any tech question: a service that won't start, whether to self-host something, backups, what hardware to buy, whether AI agents are worth it in your case.",
+      "If I don't know it offhand, I say so on the call and research it afterwards — you get what I find, or a pointer to someone who does know.",
+    ],
+    ctaLabel: 'Email to book',
+    ctaSubject: 'Tech call (30 min, $20)',
     ctaEmail: 'booking@zouwop.com',
   },
   {

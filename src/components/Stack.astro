@@ -1,23 +1,18 @@
 ---
 const stack = [
-  'Nextcloud',
-  'Immich',
-  'Jellyfin',
-  'Sonarr / Radarr / Prowlarr',
-  'Kavita',
-  'Audiobookshelf',
-  'AdGuard',
-  'Vaultwarden',
-  'Vikunja',
-  'n8n',
-  'Sure Finance',
-  'Super Productivity',
-  'Headscale',
-  'Tailscale Serve',
-  'Dockge',
-  'Glances',
-  'LUKS-encrypted disks',
-  'Docker backups',
+  { label: 'Jellyfin', url: 'https://github.com/jellyfin/jellyfin' },
+  { label: 'Immich', url: 'https://github.com/immich-app/immich' },
+  { label: 'Nextcloud', url: 'https://github.com/nextcloud/server' },
+  { label: 'Sure Finance', url: 'https://github.com/we-promise/sure' },
+  { label: 'Vikunja', url: 'https://github.com/go-vikunja/vikunja' },
+  { label: 'n8n', url: 'https://github.com/n8n-io/n8n' },
+  { label: 'Super Productivity', url: 'https://github.com/super-productivity/super-productivity' },
+  { label: 'Kavita', url: 'https://github.com/Kareadita/Kavita' },
+  { label: 'Audiobookshelf', url: 'https://github.com/advplyr/audiobookshelf' },
+  { label: 'Vaultwarden', url: 'https://github.com/dani-garcia/vaultwarden' },
+  { label: 'Dockge', url: 'https://github.com/louislam/dockge' },
+  { label: 'Headscale', url: 'https://github.com/juanfont/headscale' },
+  { label: 'Tailscale', url: 'https://github.com/tailscale/tailscale' },
 ];
 ---
 <section id="stack">
@@ -25,21 +20,27 @@ const stack = [
     <h2>What I run myself</h2>
     <p class="section-sub">59 Docker containers across 16 compose stacks on one Ubuntu host. Counted from the machine, not a wishlist.</p>
     <ul class="chips">
-      {stack.map((item) => <li class="chip mono">{item}</li>)}
+      {stack.map((item) => <li><a class="chip mono" href={item.url} target="_blank" rel="noopener noreferrer">{item.label}</a></li>)}
     </ul>
-    <p class="footnote">This site is a static Astro build on Cloudflare Pages — source at github.com/Z0uw0p/zouwop-portfolio.</p>
+    <p class="footnote">Each chip links to that project's source. This site is a static Astro build on Cloudflare Pages — source at github.com/Z0uw0p/zouwop-portfolio.</p>
   </div>
 </section>
 
 <style>
   .chips { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; }
   .chip {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
     background: var(--bg-soft);
     border: 1px solid #23232e;
     border-radius: 8px;
     padding: 6px 12px;
     font-size: 0.8rem;
     color: var(--text-dim);
+    text-decoration: none;
   }
+  .chip:hover, .chip:focus-visible { border-color: var(--orange); color: var(--orange); }
+  .chip:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
   .footnote { color: var(--text-dim); font-size: 0.75rem; margin-top: 28px; }
 </style>
