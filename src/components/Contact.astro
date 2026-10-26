@@ -3,12 +3,16 @@ import { site } from '../data/site';
 ---
 <section id="contact">
   <div class="container center">
-    <h2>Let's talk</h2>
-    <p class="section-sub">Pick a time and we'll figure out the rest.</p>
-    <a class="btn btn-primary" href={site.calUrl} target="_blank">Book a call</a>
+    <h2>Get in touch</h2>
+    <p class="body">Tell me what you're running, what broke, or what you want to set up. If something is broken, include what you already tried.</p>
+    <a class="btn btn-primary" href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
+    <p class="note">Email is the only channel right now — no booking calendar yet.</p>
   </div>
 </section>
 
 <style>
   .center { text-align: center; }
+  .body { color: var(--text-dim); max-width: 560px; margin: 0 auto 32px; }
+  .note { color: var(--text-dim); font-size: 0.85rem; margin-top: 16px; }
+  a:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
 </style>

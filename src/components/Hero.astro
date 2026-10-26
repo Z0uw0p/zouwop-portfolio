@@ -4,17 +4,21 @@ import Wordmark from './Wordmark.astro';
 ---
 <section class="hero">
   <div class="container">
+    <p class="mono eyebrow">self-hosted infra · tech support</p>
     <Wordmark />
     <p class="tagline">{site.tagline}</p>
     <div class="cta-row">
-      <a class="btn btn-primary" href={site.calUrl} target="_blank">Book a call</a>
-      <a class="btn btn-secondary" href="#services">See what I offer</a>
+      <a class="btn btn-primary" href={`mailto:${site.contact.email}`}>Email me</a>
+      <a class="btn btn-secondary" href="#stack">What I run ↓</a>
     </div>
   </div>
 </section>
 
 <style>
-  .hero { min-height: 88vh; display: flex; align-items: center; }
+  .hero { min-height: 76vh; display: flex; align-items: center; }
+  .hero .container { width: 100%; }
+  .eyebrow { color: var(--text-dim); margin-bottom: 16px; font-size: 0.85rem; }
   .tagline { font-size: clamp(1.1rem, 2.5vw, 1.4rem); color: var(--text-dim); max-width: 560px; margin: 20px 0 32px; }
   .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+  a:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
 </style>

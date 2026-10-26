@@ -9,9 +9,8 @@ const year = new Date().getFullYear();
     <p class="mono">self-hosted with ♥ · {year}</p>
     <div class="socials">
       <a href="/links">Links</a>
-      <a href={site.contact.discord} target="_blank">Discord</a>
-      <a href={site.contact.linkedin} target="_blank">LinkedIn</a>
-      <a href={site.contact.github} target="_blank">GitHub</a>
+      <a href={site.contact.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href={site.contact.github} target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
   </div>
 </footer>
@@ -20,7 +19,11 @@ const year = new Date().getFullYear();
   footer { border-top: 1px solid #23232e; padding: 32px 0; }
   .foot { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
   .foot p { color: var(--text-dim); font-size: 0.85rem; }
-  .socials { display: flex; gap: 18px; }
-  .socials a { color: var(--text-dim); text-decoration: none; font-size: 0.9rem; }
+  .socials { display: flex; gap: 28px; flex-wrap: wrap; }
+  @media (max-width: 640px) {
+    .socials { gap: 32px; margin-top: 8px; }
+  }
+  .socials a { color: var(--text-dim); text-decoration: none; font-size: 0.9rem; display: inline-flex; align-items: center; min-height: 44px; }
   .socials a:hover { color: var(--orange); }
+  a:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
 </style>

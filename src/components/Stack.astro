@@ -1,0 +1,45 @@
+---
+const stack = [
+  'Nextcloud',
+  'Immich',
+  'Jellyfin',
+  'Sonarr / Radarr / Prowlarr',
+  'Kavita',
+  'Audiobookshelf',
+  'AdGuard',
+  'Vaultwarden',
+  'Vikunja',
+  'n8n',
+  'Sure Finance',
+  'Super Productivity',
+  'Headscale',
+  'Tailscale Serve',
+  'Dockge',
+  'Glances',
+  'LUKS-encrypted disks',
+  'Docker backups',
+];
+---
+<section id="stack">
+  <div class="container">
+    <h2>What I run myself</h2>
+    <p class="section-sub">59 Docker containers across 16 compose stacks on one Ubuntu host. Counted from the machine, not a wishlist.</p>
+    <ul class="chips">
+      {stack.map((item) => <li class="chip mono">{item}</li>)}
+    </ul>
+    <p class="footnote">This site is a static Astro build on Cloudflare Pages — source at github.com/Z0uw0p/zouwop-portfolio.</p>
+  </div>
+</section>
+
+<style>
+  .chips { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip {
+    background: var(--bg-soft);
+    border: 1px solid #23232e;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+  }
+  .footnote { color: var(--text-dim); font-size: 0.75rem; margin-top: 28px; }
+</style>

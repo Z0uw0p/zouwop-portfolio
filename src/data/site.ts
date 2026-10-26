@@ -1,9 +1,8 @@
 export const site = {
   name: 'zouwop',
-  tagline: 'I build websites, run self-hosted infrastructure, and set up AI agents for businesses.',
-  calUrl: 'https://cal.zouwop.com/zouwop/intro', // exact path set during Cal.com setup
+  tagline: "I run my own self-hosted stack — and I'll set up yours. 30-minute tech calls, $20.",
   contact: {
-    discord: 'https://discord.gg/CgA6VKxmk6',
+    email: 'support@zouwop.com',
     linkedin: 'https://www.linkedin.com/in/mathis-tremblay-tchepannou-47558322b/',
     github: 'https://github.com/Z0uw0p',
   },

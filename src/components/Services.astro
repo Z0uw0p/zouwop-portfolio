@@ -1,19 +1,21 @@
 ---
-import { offerings } from '../data/offerings';
+import { services } from '../data/services';
 import { site } from '../data/site';
-const services = offerings.filter((o) => o.type === 'service');
 ---
 <section id="services">
   <div class="container">
-    <h2>Services</h2>
-    <p class="section-sub">How I can help you.</p>
+    <h2>What I do</h2>
+    <p class="section-sub">Three ways to work with me. All of them start with an email.</p>
     <div class="grid">
       {services.map((s) => (
         <div class="card">
-          <div class="icon">{s.icon}</div>
           <h3>{s.name}</h3>
-          <p>{s.blurb}</p>
-          <a class="book-link" href={site.calUrl} target="_blank">Book →</a>
+          <span class="mono price">{s.price}</span>
+          <ul class="points">
+            {s.points.map((p) => <li>{p}</li>)}
+          </ul>
+          {s.excluded && <p class="excluded">{s.excluded}</p>}
+          <a class="cta" href={`mailto:${site.contact.email}?subject=${encodeURIComponent(s.ctaSubject)}`}>{s.ctaLabel}</a>
         </div>
       ))}
     </div>
@@ -22,9 +24,19 @@ const services = offerings.filter((o) => o.type === 'service');
 
 <style>
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
-  .icon { font-size: 2rem; margin-bottom: 12px; }
-  h3 { font-size: 1.25rem; margin-bottom: 8px; }
-  .card p { color: var(--text-dim); font-size: 0.95rem; }
-  .book-link { display: inline-block; margin-top: 16px; color: var(--orange); font-weight: 600; text-decoration: none; }
-  .book-link:hover { text-decoration: underline; }
+  .card { display: flex; flex-direction: column; align-items: flex-start; }
+  h3 { font-size: 1.25rem; margin-bottom: 12px; }
+  .price {
+    border: 1px solid var(--text-dim);
+    color: var(--orange);
+    border-radius: 999px;
+    padding: 4px 12px;
+    margin-bottom: 16px;
+  }
+  .points { list-style: disc; padding-left: 18px; margin-bottom: 16px; display: flex; flex-direction: column; gap: 10px; }
+  .points li { color: var(--text-dim); font-size: 0.95rem; }
+  .excluded { color: var(--text-dim); font-size: 0.85rem; opacity: 0.75; margin-bottom: 16px; }
+  .cta { color: var(--orange); font-weight: 600; text-decoration: none; margin-top: auto; display: inline-flex; align-items: center; min-height: 44px; }
+  .cta:hover { text-decoration: underline; }
+  a:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
 </style>

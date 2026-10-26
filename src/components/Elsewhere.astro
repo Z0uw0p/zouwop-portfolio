@@ -1,0 +1,42 @@
+---
+const items = [
+  { name: 'Web development', line: 'Static sites and small web apps. This site is one: Astro, Cloudflare Pages.' },
+  { name: 'AI agents', line: 'I run coding and admin agents against my own server daily. Ask whether that maps onto your workflow.' },
+];
+const links = [
+  { label: 'GitHub', href: 'https://github.com/Z0uw0p', external: true },
+  { label: 'Portfolio repo', href: 'https://github.com/Z0uw0p/zouwop-portfolio', external: true },
+  { label: 'Links', href: '/links', external: false },
+];
+---
+<section id="elsewhere">
+  <div class="container">
+    <h2>Also available</h2>
+    <p class="section-sub">Not packaged yet — ask about these on a call.</p>
+    <div class="items">
+      {items.map((i) => (
+        <div class="item">
+          <h3>{i.name}</h3>
+          <p>{i.line}</p>
+        </div>
+      ))}
+    </div>
+    <div class="links mono">
+      {links.map((l) => (
+        l.external
+          ? <a href={l.href} target="_blank" rel="noopener noreferrer">{l.label}</a>
+          : <a href={l.href}>{l.label}</a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .items { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 40px; }
+  .item h3 { font-size: 1.25rem; margin-bottom: 8px; }
+  .item p { color: var(--text-dim); font-size: 0.95rem; }
+  .links { display: flex; gap: 18px; flex-wrap: wrap; }
+  .links a { color: var(--orange); text-decoration: none; font-size: 0.9rem; display: inline-flex; align-items: center; min-height: 44px; }
+  .links a:hover { text-decoration: underline; }
+  a:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+</style>
