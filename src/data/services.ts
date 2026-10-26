@@ -6,6 +6,7 @@ export interface Service {
   excluded?: string;  // one honest "not included" line
   ctaLabel: string;
   ctaSubject: string; // pre-filled mailto subject
+  ctaEmail: string;   // full address the CTA points at
 }
 
 export const services: Service[] = [
@@ -19,6 +20,7 @@ export const services: Service[] = [
     ],
     ctaLabel: 'Email to book',
     ctaSubject: 'Tech call (30 min, $20)',
+    ctaEmail: 'booking@zouwop.com',
   },
   {
     id: 'setup',
@@ -31,6 +33,7 @@ export const services: Service[] = [
     excluded: 'Not included: hardware, domains, licences, or ongoing maintenance — unless we agree on it separately.',
     ctaLabel: 'Email what you need',
     ctaSubject: 'Setup job',
+    ctaEmail: 'booking@zouwop.com',
   },
   {
     id: 'hosted',
@@ -43,5 +46,6 @@ export const services: Service[] = [
     ],
     ctaLabel: 'Email for availability',
     ctaSubject: 'Hosted services',
+    ctaEmail: 'billing@zouwop.com',
   },
 ];

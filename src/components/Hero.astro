@@ -8,7 +8,7 @@ import Wordmark from './Wordmark.astro';
     <Wordmark />
     <p class="tagline">{site.tagline}</p>
     <div class="cta-row">
-      <a class="btn btn-primary" href={`mailto:${site.contact.email}`}>Email me</a>
+      <a class="btn btn-primary" href={`mailto:${site.contact.booking}?subject=${encodeURIComponent('Tech call (30 min, $20)')}`}>Book a call — $20</a>
       <a class="btn btn-secondary" href="#stack">What I run ↓</a>
     </div>
   </div>

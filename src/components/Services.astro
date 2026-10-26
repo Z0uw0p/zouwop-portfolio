@@ -1,6 +1,5 @@
 ---
 import { services } from '../data/services';
-import { site } from '../data/site';
 ---
 <section id="services">
   <div class="container">
@@ -15,7 +14,7 @@ import { site } from '../data/site';
             {s.points.map((p) => <li>{p}</li>)}
           </ul>
           {s.excluded && <p class="excluded">{s.excluded}</p>}
-          <a class="cta" href={`mailto:${site.contact.email}?subject=${encodeURIComponent(s.ctaSubject)}`}>{s.ctaLabel}</a>
+          <a class="cta" href={`mailto:${s.ctaEmail}?subject=${encodeURIComponent(s.ctaSubject)}`}>{s.ctaLabel}</a>
         </div>
       ))}
     </div>
