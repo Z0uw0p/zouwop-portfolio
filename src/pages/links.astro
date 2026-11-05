@@ -4,8 +4,11 @@ import Footer from '../components/Footer.astro';
 import { referrals } from '../data/links';
 ---
 
-<Layout title="Links — Zouwop">
-  <main class="page">
+<Layout
+  title="Links — Zouwop"
+  description="Referral offers I actually use — sign up through these and we both get a bonus."
+>
+  <main id="main" tabindex="-1" class="page">
     <div class="container narrow">
       <a class="back" href="/">← zouwop.com</a>
       <h1>Links</h1>
@@ -122,7 +125,7 @@ import { referrals } from '../data/links';
   .pill {
     font-family: var(--mono);
     background: var(--bg);
-    border: 1px solid #23232e;
+    border: 1px solid var(--border);
     color: var(--purple);
     padding: 10px 14px;
     border-radius: 8px;
@@ -133,7 +136,7 @@ import { referrals } from '../data/links';
     padding: 0 16px;
     border-radius: 8px;
     background: transparent;
-    border: 1px solid #2a2a38;
+    border: 1px solid var(--border-strong);
     color: var(--text);
     font-family: var(--mono);
     font-size: 0.85rem;

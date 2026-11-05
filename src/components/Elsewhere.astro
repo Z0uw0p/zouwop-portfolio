@@ -1,6 +1,5 @@
 ---
 const items = [
-  { name: 'Web development', line: 'Static sites and small web apps. This site is one: Astro, Cloudflare Pages.' },
   { name: 'AI agents', line: 'I run coding and admin agents against my own server daily. Ask whether that maps onto your workflow.' },
 ];
 const links = [
@@ -12,7 +11,7 @@ const links = [
 <section id="elsewhere">
   <div class="container">
     <h2>Also available</h2>
-    <p class="section-sub">Not packaged yet — ask about these on a call.</p>
+    <p class="section-sub">Not packaged yet — ask about it on a call.</p>
     <div class="items">
       {items.map((i) => (
         <div class="item">
@@ -34,9 +33,9 @@ const links = [
 <style>
   .items { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 40px; }
   .item h3 { font-size: 1.25rem; margin-bottom: 8px; }
-  .item p { color: var(--text-dim); font-size: 0.95rem; }
+  .item p { color: var(--text-dim); font-size: 0.95rem; max-width: 60ch; }
   .links { display: flex; gap: 18px; flex-wrap: wrap; }
   .links a { color: var(--orange); text-decoration: none; font-size: 0.9rem; display: inline-flex; align-items: center; min-height: 44px; }
   .links a:hover { text-decoration: underline; }
-  a:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+  a:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 </style>

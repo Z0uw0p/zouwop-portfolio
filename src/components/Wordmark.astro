@@ -1,8 +1,8 @@
 ---
-interface Props { size?: 'sm' | 'lg'; }
-const { size = 'lg' } = Astro.props;
+interface Props { size?: 'sm' | 'lg'; as?: 'span' | 'h1'; }
+const { size = 'lg', as: Tag = 'span' } = Astro.props;
 ---
-<span class:list={['wordmark', size === 'lg' ? 'wordmark-lg' : 'wordmark-sm']}>Zouwop</span>
+<Tag class:list={['wordmark', size === 'lg' ? 'wordmark-lg' : 'wordmark-sm']}>Zouwop</Tag>
 
 <style>
   .wordmark {
