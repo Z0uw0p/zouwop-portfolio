@@ -1,20 +1,77 @@
-export interface Referral {
+export type OfferKind = 'referral' | 'affiliate';
+export type OfferStatus = 'live' | 'pending';
+
+export interface Offer {
   id: string;
+  kind: OfferKind;
+  status?: OfferStatus;
   name: string;
-  url: string;
+  url?: string;
   code?: string;
   headline: string;
   pitch: string;
-  reward: string;
-  steps: string[];
-  ctaLabel: string;
+  reward?: string;
+  steps?: string[];
+  ctaLabel?: string;
   secondary?: { label: string; href: string };
   terms?: string;
+  badge?: { src: string; alt: string };
 }
 
-export const referrals: Referral[] = [
+export const offers: Offer[] = [
+  {
+    id: 'shopify',
+    kind: 'affiliate',
+    name: 'Shopify',
+    url: 'https://shopify.pxf.io/en05Yg',
+    headline: 'Want help building your online shop?',
+    pitch: 'Start on Shopify, then I can build the storefront, products, and payments for you — or you can do it yourself with the free trial.',
+    reward: 'Try Shopify free for 3 days, then $1/month. I earn a commission when you become a paying merchant.',
+    steps: [
+      'Open my Shopify link and start a store.',
+      'Use the trial to claim your store name and pick a theme.',
+      'Want me to build it? Book a call and we will scope the work; when you are ready, choose a Basic, Grow, or Advanced plan.',
+    ],
+    ctaLabel: 'Start on Shopify →',
+    secondary: { label: 'Get help building it →', href: 'mailto:booking@zouwop.com?subject=Shopify%20build' },
+    terms: 'The commission is paid to me by Shopify and does not change what you pay. Commission is only earned on full-price Basic, Grow, or Advanced plans; Plus, Enterprise, and Retail are excluded.',
+  },
+  {
+    id: 'digitalocean',
+    kind: 'affiliate',
+    name: 'DigitalOcean',
+    url: 'https://m.do.co/c/f247ce82b5fe',
+    headline: '$25 in DigitalOcean credit',
+    pitch: 'Developer-friendly cloud for VPS, Docker, and self-hosted apps — a small server without the big-provider learning curve.',
+    reward: 'I get $25 in DigitalOcean credit once you sign up and pay your first $25 of usage — no extra cost to you.',
+    steps: [
+      'Open my referral link and create a DigitalOcean account.',
+      'Add a payment method and use the platform normally.',
+      'Once you have spent and paid your first $25, I receive $25 in credit.',
+    ],
+    ctaLabel: 'Start on DigitalOcean →',
+    terms: 'Referral credit is paid to me by DigitalOcean and does not change what you pay. DigitalOcean sets the exact credit rules per account.',
+    badge: { src: 'https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg', alt: '' },
+  },
+  {
+    id: 'hostinger',
+    kind: 'affiliate',
+    status: 'pending',
+    name: 'Hostinger',
+    headline: 'Self-hosting-friendly VPS hosting',
+    pitch: 'Affordable VPS plans that suit a small self-hosted stack — application pending.',
+  },
+  {
+    id: 'proton',
+    kind: 'affiliate',
+    status: 'pending',
+    name: 'Proton',
+    headline: 'Private email, VPN, and drive',
+    pitch: 'Privacy-first tools for moving your mail and files off Big Tech — application pending.',
+  },
   {
     id: 'wealthsimple',
+    kind: 'referral',
     name: 'Wealthsimple',
     url: 'https://wealthsimple.com/invite/U3IQYG',
     code: 'U3IQYG',
@@ -31,6 +88,7 @@ export const referrals: Referral[] = [
   },
   {
     id: 'wise',
+    kind: 'referral',
     name: 'Wise',
     url: 'https://wise.com/invite/dic/mathisclaudet',
     headline: 'Transfer money abroad for less',
@@ -46,6 +104,7 @@ export const referrals: Referral[] = [
   },
   {
     id: 'tangerine',
+    kind: 'referral',
     name: 'Tangerine',
     url: 'https://www.tangerine.ca/en/offers/referral',
     code: '64537010S1',
@@ -60,21 +119,5 @@ export const referrals: Referral[] = [
     ],
     ctaLabel: 'Open Tangerine →',
     terms: "New clients only (never had an ING Direct or Tangerine account). Credit cards do not count as the eligible first account; mortgages and loans have no minimum deposit. Cannot be combined with other enrollment bonuses.",
-  },
-  {
-    id: 'shopify',
-    name: 'Shopify',
-    url: 'https://shopify.pxf.io/en05Yg',
-    headline: 'Want help building your online shop?',
-    pitch: 'Start on Shopify, then I can build the storefront, products, and payments for you — or you can do it yourself with the free trial.',
-    reward: 'Try Shopify free for 3 days, then CA$1/month. I earn a commission when you become a paying merchant.',
-    steps: [
-      'Open my Shopify link and start a store.',
-      'Use the trial to claim your store name and pick a theme.',
-      'Want me to build it? Book a call and we will scope the work; when you are ready, choose a Basic, Grow, or Advanced plan.',
-    ],
-    ctaLabel: 'Start on Shopify →',
-    secondary: { label: 'Get help building it →', href: 'mailto:booking@zouwop.com?subject=Shopify%20build' },
-    terms: 'The commission is paid to me by Shopify and does not change what you pay. Commission is only earned on full-price Basic, Grow, or Advanced plans; Plus, Enterprise, and Retail are excluded.',
   },
 ];
