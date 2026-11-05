@@ -1,0 +1,211 @@
+---
+import Wordmark from './Wordmark.astro';
+
+const path = Astro.url.pathname.replace(/\/+$/, '') || '/';
+const links = [
+  { label: 'Services', href: '/services' },
+  { label: 'Portfolio', href: '/portfolio' },
+  { label: 'Links', href: '/links' },
+  { label: 'Contact', href: '/#contact' },
+];
+const isActive = (href: string) => href === path;
+---
+<header class="site-header" data-header>
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Zouwop home">
+      <Wordmark size="sm" />
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-menu"
+      data-menu-toggle
+    >
+      <span class="sr-only">Menu</span>
+      <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+
+    <nav id="site-menu" class="site-nav" aria-label="Primary" data-menu>
+      {links.map((link) => (
+        <a href={link.href} aria-current={isActive(link.href) ? 'page' : undefined}>
+          {link.label}
+        </a>
+      ))}
+      <a class="btn btn-primary header-cta" href="/#contact">Book a call</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector('[data-header]');
+  const toggle = document.querySelector('[data-menu-toggle]');
+  const menu = document.querySelector('[data-menu]');
+
+  if (header && toggle && menu) {
+    let lastY = window.scrollY;
+    let ticking = false;
+    let menuOpen = false;
+
+    const setMenu = (open) => {
+      menuOpen = open;
+      toggle.setAttribute('aria-expanded', String(open));
+      menu.classList.toggle('is-open', open);
+      header.classList.toggle('menu-open', open);
+      if (open) {
+        header.classList.remove('header--hidden');
+        const first = menu.querySelector('a');
+        if (first) first.focus({ preventScroll: true });
+      }
+    };
+
+    toggle.addEventListener('click', () => setMenu(!menuOpen));
+
+    menu.addEventListener('click', (event) => {
+      if (event.target.closest('a')) setMenu(false);
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && menuOpen) {
+        setMenu(false);
+        toggle.focus();
+      }
+    });
+
+    document.addEventListener('click', (event) => {
+      if (menuOpen && !header.contains(event.target)) setMenu(false);
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 720 && menuOpen) setMenu(false);
+    });
+
+    header.addEventListener('focusin', () => header.classList.remove('header--hidden'));
+
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (!menuOpen) {
+        if (y > lastY && y > 80) header.classList.add('header--hidden');
+        else header.classList.remove('header--hidden');
+      }
+      lastY = y;
+      ticking = false;
+    };
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(onScroll);
+      }
+    }, { passive: true });
+  }
+</script>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    background: rgba(13, 13, 18, 0.86);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    transition: transform 0.2s ease;
+  }
+  .site-header.header--hidden { transform: translateY(-100%); }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-height: 64px;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    text-decoration: none;
+  }
+  .menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-left: auto;
+    padding: 0;
+    border: 1px solid var(--border-strong);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+  }
+  .menu-icon {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .menu-icon span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+  }
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-left: auto;
+  }
+  .site-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+  .site-nav a:hover { color: var(--text); }
+  .site-nav a[aria-current='page'] { color: var(--orange); }
+  .header-cta {
+    padding: 10px 18px;
+    font-size: 0.9rem;
+  }
+  .site-nav a.header-cta {
+    color: #0d0d12;
+  }
+  .site-nav a.header-cta:hover {
+    color: #0d0d12;
+  }
+  .site-nav a:focus-visible,
+  .menu-toggle:focus-visible,
+  .brand:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+  @media (max-width: 719px) {
+    .header-inner { flex-wrap: wrap; }
+    :global(html.js) .site-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 4px;
+      margin: 0;
+      padding: 8px 24px 20px;
+      background: rgba(13, 13, 18, 0.98);
+      border-bottom: 1px solid var(--border);
+    }
+    :global(html.js) .site-nav.is-open { display: flex; }
+    :global(html.js) .menu-toggle { display: inline-flex; }
+    :global(html.js) .site-nav a { min-height: 48px; }
+    .header-cta {
+      justify-content: center;
+      margin-top: 8px;
+    }
+  }
+</style>
