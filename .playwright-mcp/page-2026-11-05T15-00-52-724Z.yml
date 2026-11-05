@@ -1,0 +1,34 @@
+- generic [active] [ref=f10e1]:
+  - main [ref=f10e2]:
+    - generic [ref=f10e3]:
+      - link "← zouwop.com" [ref=f10e4] [cursor=pointer]:
+        - /url: /
+      - heading "Links" [level=1] [ref=f10e5]
+      - paragraph [ref=f10e6]: Referral offers I actually use. Sign up through these and we both get a bonus.
+      - article [ref=f10e8]:
+        - heading "Wealthsimple" [level=2] [ref=f10e9]
+        - paragraph [ref=f10e10]: Give $25, get $25
+        - paragraph [ref=f10e11]: We both get $25 when you deposit $100 or more.
+        - list [ref=f10e12]:
+          - listitem [ref=f10e13]: Open my invite link — or enter code U3IQYG when you sign up.
+          - listitem [ref=f10e14]: Create your Wealthsimple account and deposit $100 or more into your first account.
+          - listitem [ref=f10e15]: Do it within 30 days of signing up, and we both get $25.
+        - generic [ref=f10e16]:
+          - code [ref=f10e17]: U3IQYG
+          - button "Copy code" [ref=f10e18] [cursor=pointer]
+        - link "Claim $25 →" [ref=f10e20] [cursor=pointer]:
+          - /url: https://wealthsimple.com/invite/U3IQYG
+        - paragraph [ref=f10e21]: New Wealthsimple clients only. 30-day deposit window; full terms on Wealthsimple's site.
+  - contentinfo [ref=f10e22]:
+    - generic [ref=f10e23]:
+      - generic [ref=f10e24]: Zouwop
+      - paragraph [ref=f10e25]: self-hosted with ♥ · 2026
+      - generic [ref=f10e26]:
+        - link "Links" [ref=f10e27] [cursor=pointer]:
+          - /url: /links
+        - link "Portfolio" [ref=f10e28] [cursor=pointer]:
+          - /url: /portfolio
+        - link "LinkedIn" [ref=f10e29] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/mathis-tremblay-tchepannou-47558322b/
+        - link "GitHub" [ref=f10e30] [cursor=pointer]:
+          - /url: https://github.com/Z0uw0p

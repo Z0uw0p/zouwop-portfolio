@@ -1,0 +1,120 @@
+- generic [active] [ref=f6e1]:
+  - generic [ref=f6e3]:
+    - paragraph [ref=f6e4]: self-hosted infra · tech support
+    - text: Zouwop
+    - paragraph [ref=f6e5]: Own your books, photos and files — self-hosted on a server you control. Book a call, or email a tech question.
+    - generic [ref=f6e6]:
+      - link "Book a call — $20" [ref=f6e7] [cursor=pointer]:
+        - /url: mailto:booking@zouwop.com?subject=Tech%20call%20(30%20min%2C%20%2420)
+      - link "What I run ↓" [ref=f6e8] [cursor=pointer]:
+        - /url: "#stack"
+  - generic [ref=f6e10]:
+    - heading "What I do" [level=2] [ref=f6e11]
+    - paragraph [ref=f6e12]: Three ways to work with me. All of them start with an email.
+    - generic [ref=f6e13]:
+      - generic [ref=f6e14]:
+        - heading "Setup, done for you" [level=3] [ref=f6e15]
+        - generic [ref=f6e16]: Scoped per job
+        - list [ref=f6e17]:
+          - listitem [ref=f6e18]: "Automations, server and network setup, installs and configuration: Nextcloud, Immich, Jellyfin, the *arr stack, Kavita, Tailscale, backups, monitoring."
+          - listitem [ref=f6e19]: Scope and price agreed in writing before I start.
+        - paragraph [ref=f6e20]: "Not included: hardware, domains, licences, or ongoing maintenance — unless we agree on it separately."
+        - link "Email what you need" [ref=f6e21] [cursor=pointer]:
+          - /url: mailto:booking@zouwop.com?subject=Setup%20job
+      - generic [ref=f6e22]:
+        - heading "Tech call" [level=3] [ref=f6e23]
+        - generic [ref=f6e24]: 30 min · $20
+        - list [ref=f6e25]:
+          - listitem [ref=f6e26]: "Any tech question: a service that won't start, whether to self-host something, backups, what hardware to buy, whether AI agents are worth it in your case."
+          - listitem [ref=f6e27]: If I don't know it offhand, I say so on the call and research it afterwards — you get what I find, or a pointer to someone who does know.
+        - link "Email to book" [ref=f6e28] [cursor=pointer]:
+          - /url: mailto:booking@zouwop.com?subject=Tech%20call%20(30%20min%2C%20%2420)
+      - generic [ref=f6e29]:
+        - heading "Hosted services" [level=3] [ref=f6e30]
+        - generic [ref=f6e31]: Monthly
+        - list [ref=f6e32]:
+          - listitem [ref=f6e33]: An account on infrastructure I run and maintain — nothing for you to install or babysit.
+          - listitem [ref=f6e34]: "Live today: book library, budget tracking. In progress: file conversion."
+          - listitem [ref=f6e35]: Small number of accounts. Email for availability and price.
+        - link "Email for availability" [ref=f6e36] [cursor=pointer]:
+          - /url: mailto:billing@zouwop.com?subject=Hosted%20services
+  - generic [ref=f6e38]:
+    - heading "What I run myself" [level=2] [ref=f6e39]
+    - paragraph [ref=f6e40]: 59 Docker containers across 16 compose stacks on one Ubuntu host. Counted from the machine, not a wishlist.
+    - list [ref=f6e41]:
+      - listitem [ref=f6e42]:
+        - link "Jellyfin" [ref=f6e43] [cursor=pointer]:
+          - /url: https://github.com/jellyfin/jellyfin
+      - listitem [ref=f6e44]:
+        - link "Immich" [ref=f6e45] [cursor=pointer]:
+          - /url: https://github.com/immich-app/immich
+      - listitem [ref=f6e46]:
+        - link "Nextcloud" [ref=f6e47] [cursor=pointer]:
+          - /url: https://github.com/nextcloud/server
+      - listitem [ref=f6e48]:
+        - link "Sure Finance" [ref=f6e49] [cursor=pointer]:
+          - /url: https://github.com/we-promise/sure
+      - listitem [ref=f6e50]:
+        - link "Vikunja" [ref=f6e51] [cursor=pointer]:
+          - /url: https://github.com/go-vikunja/vikunja
+      - listitem [ref=f6e52]:
+        - link "n8n" [ref=f6e53] [cursor=pointer]:
+          - /url: https://github.com/n8n-io/n8n
+      - listitem [ref=f6e54]:
+        - link "Super Productivity" [ref=f6e55] [cursor=pointer]:
+          - /url: https://github.com/super-productivity/super-productivity
+      - listitem [ref=f6e56]:
+        - link "Kavita" [ref=f6e57] [cursor=pointer]:
+          - /url: https://github.com/Kareadita/Kavita
+      - listitem [ref=f6e58]:
+        - link "Audiobookshelf" [ref=f6e59] [cursor=pointer]:
+          - /url: https://github.com/advplyr/audiobookshelf
+      - listitem [ref=f6e60]:
+        - link "Vaultwarden" [ref=f6e61] [cursor=pointer]:
+          - /url: https://github.com/dani-garcia/vaultwarden
+      - listitem [ref=f6e62]:
+        - link "Dockge" [ref=f6e63] [cursor=pointer]:
+          - /url: https://github.com/louislam/dockge
+      - listitem [ref=f6e64]:
+        - link "Headscale" [ref=f6e65] [cursor=pointer]:
+          - /url: https://github.com/juanfont/headscale
+      - listitem [ref=f6e66]:
+        - link "Tailscale" [ref=f6e67] [cursor=pointer]:
+          - /url: https://github.com/tailscale/tailscale
+    - paragraph [ref=f6e68]: Each chip links to that project's source. This site is a static Astro build on Cloudflare Pages — source at github.com/Z0uw0p/zouwop-portfolio.
+  - generic [ref=f6e70]:
+    - heading "Also available" [level=2] [ref=f6e71]
+    - paragraph [ref=f6e72]: Not packaged yet — ask about these on a call.
+    - generic [ref=f6e73]:
+      - generic [ref=f6e74]:
+        - heading "Web development" [level=3] [ref=f6e75]
+        - paragraph [ref=f6e76]: "Static sites and small web apps. This site is one: Astro, Cloudflare Pages."
+      - generic [ref=f6e77]:
+        - heading "AI agents" [level=3] [ref=f6e78]
+        - paragraph [ref=f6e79]: I run coding and admin agents against my own server daily. Ask whether that maps onto your workflow.
+    - generic [ref=f6e80]:
+      - link "GitHub" [ref=f6e81] [cursor=pointer]:
+        - /url: https://github.com/Z0uw0p
+      - link "Portfolio repo" [ref=f6e82] [cursor=pointer]:
+        - /url: https://github.com/Z0uw0p/zouwop-portfolio
+      - link "Links" [ref=f6e83] [cursor=pointer]:
+        - /url: /links
+  - generic [ref=f6e85]:
+    - heading "Get in touch" [level=2] [ref=f6e86]
+    - paragraph [ref=f6e87]: Tell me what you're running, what broke, or what you want to set up. If something is broken, include what you already tried.
+    - link "support@zouwop.com" [ref=f6e88] [cursor=pointer]:
+      - /url: mailto:support@zouwop.com
+    - paragraph [ref=f6e89]: Email is the only channel right now — no booking calendar yet.
+  - contentinfo [ref=f6e90]:
+    - generic [ref=f6e91]:
+      - generic [ref=f6e92]: Zouwop
+      - paragraph [ref=f6e93]: self-hosted with ♥ · 2026
+      - generic [ref=f6e94]:
+        - link "Links" [ref=f6e95] [cursor=pointer]:
+          - /url: /links
+        - link "Portfolio" [ref=f6e96] [cursor=pointer]:
+          - /url: /portfolio
+        - link "LinkedIn" [ref=f6e97] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/mathis-tremblay-tchepannou-47558322b/
+        - link "GitHub" [ref=f6e98] [cursor=pointer]:
+          - /url: https://github.com/Z0uw0p
