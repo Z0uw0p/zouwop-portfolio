@@ -5,10 +5,10 @@ import Wordmark from './Wordmark.astro';
 <section class="hero">
   <div class="container">
     <p class="mono eyebrow">self-hosted infra · tech support</p>
-    <Wordmark />
+    <Wordmark as="h1" />
     <p class="tagline">{site.tagline}</p>
     <div class="cta-row">
-      <a class="btn btn-primary" href={`mailto:${site.contact.booking}?subject=${encodeURIComponent('Tech call (30 min, $20)')}`}>Book a call — $20</a>
+      <a class="btn btn-primary" href="#contact">Book a call</a>
       <a class="btn btn-secondary" href="#stack">What I run ↓</a>
     </div>
   </div>
@@ -20,5 +20,5 @@ import Wordmark from './Wordmark.astro';
   .eyebrow { color: var(--text-dim); margin-bottom: 16px; font-size: 0.85rem; }
   .tagline { font-size: clamp(1.1rem, 2.5vw, 1.4rem); color: var(--text-dim); max-width: 560px; margin: 20px 0 32px; }
   .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
-  a:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+  a:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 </style>
