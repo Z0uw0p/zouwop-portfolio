@@ -1,0 +1,96 @@
+- generic [active] [ref=f12e1]:
+  - main [ref=f12e2]:
+    - generic [ref=f12e3]:
+      - link "← zouwop.com" [ref=f12e4] [cursor=pointer]:
+        - /url: /
+      - heading "Portfolio" [level=1] [ref=f12e5]
+      - paragraph [ref=f12e6]: Sites I've built, offered as templates. The live site runs below; the template is the same pages with placeholder photos.
+      - article [ref=f12e7]:
+        - generic [ref=f12e8]:
+          - paragraph [ref=f12e9]: Live site
+          - heading "Béatrice Daudelin — Photographer" [level=2] [ref=f12e10]
+          - paragraph [ref=f12e11]: A photographer portfolio — masonry gallery, project and exposition pages, agency inquiry flow.
+          - link "View the live site" [ref=f12e12] [cursor=pointer]:
+            - /url: https://beatricedaudelin.com/
+            - text: View the live site
+            - generic [aria-hidden] [ref=f12e13]: →
+        - figure "Loaded live from beatricedaudelin.com Open in a new tab" [ref=f12e14]:
+          - iframe [ref=f12e15]:
+            - generic [ref=f13e1]:
+              - banner
+              - main [ref=f13e2]
+              - contentinfo [ref=f13e5]
+          - generic [ref=f12e16]:
+            - generic [ref=f12e17]: Loaded live from beatricedaudelin.com
+            - link "Open in a new tab" [ref=f12e18] [cursor=pointer]:
+              - /url: https://beatricedaudelin.com/
+              - text: Open in a new tab
+              - generic [aria-hidden] [ref=f12e19]: ↗
+        - region [ref=f12e20]:
+          - heading "The template" [level=3] [ref=f12e21]
+          - paragraph [ref=f12e22]: The same pages with placeholder photos and placeholder text — that is what you get, ready for your own images.
+          - generic [ref=f12e23]:
+            - link [ref=f12e24]:
+              - /url: /portfolio/beatrice/home-desktop.png
+              - 'img "Home page on desktop: full-screen hero photo over the photographer’s name, then a masonry gallery." [ref=f12e25]'
+            - link [ref=f12e26]:
+              - /url: /portfolio/beatrice/agency-desktop.png
+              - 'img "Agency page on desktop: a grid of portrait covers with captions." [ref=f12e27]'
+            - link [ref=f12e28]:
+              - /url: /portfolio/beatrice/projects-desktop.png
+              - 'img "Projects page on desktop: masonry grid of project covers." [ref=f12e29]'
+            - link [ref=f12e30]:
+              - /url: /portfolio/beatrice/expositions-desktop.png
+              - 'img "Expositions page on desktop: a horizontal carousel of publication covers with arrows and dots." [ref=f12e31]'
+            - link [ref=f12e32]:
+              - /url: /portfolio/beatrice/about-desktop.png
+              - 'img "About page on desktop: portrait beside the biography and contact links." [ref=f12e33]'
+            - link [ref=f12e34]:
+              - /url: /portfolio/beatrice/project-desktop.png
+              - 'img "A project page on desktop: title, then a masonry photo grid." [ref=f12e35]'
+          - generic [ref=f12e36]:
+            - link [ref=f12e37]:
+              - /url: /portfolio/beatrice/home-mobile.png
+              - 'img "Home page on a phone: full-width hero, then a single-column gallery." [ref=f12e38]'
+            - link [ref=f12e39]:
+              - /url: /portfolio/beatrice/agency-mobile.png
+              - 'img "Agency page on a phone: two-column cover grid." [ref=f12e40]'
+            - link [ref=f12e41]:
+              - /url: /portfolio/beatrice/projects-mobile.png
+              - 'img "Projects page on a phone: two-column cover grid." [ref=f12e42]'
+            - link [ref=f12e43]:
+              - /url: /portfolio/beatrice/expositions-mobile.png
+              - 'img "Expositions page on a phone: carousel of covers with a dot navigation bar." [ref=f12e44]'
+            - link [ref=f12e45]:
+              - /url: /portfolio/beatrice/about-mobile.png
+              - 'img "About page on a phone: stacked portrait, biography and contact links." [ref=f12e46]'
+            - link [ref=f12e47]:
+              - /url: /portfolio/beatrice/project-mobile.png
+              - 'img "A project page on a phone: title and single-column photo grid." [ref=f12e48]'
+          - generic [ref=f12e49]:
+            - generic [ref=f12e50]:
+              - paragraph [ref=f12e51]: Buy the template
+              - paragraph [ref=f12e52]: $1,000
+              - 'link "Buy the template, $1,000: email billing@zouwop.com" [ref=f12e53] [cursor=pointer]':
+                - /url: mailto:billing@zouwop.com?subject=Template%20purchase%20%E2%80%94%20Photographer%20portfolio
+                - text: Email to buy
+            - generic [ref=f12e54]:
+              - paragraph [ref=f12e55]: Hosted + maintained
+              - paragraph [ref=f12e56]: $50/month
+              - 'link "Hosted + maintained, $50/month: email billing@zouwop.com" [ref=f12e57] [cursor=pointer]':
+                - /url: mailto:billing@zouwop.com?subject=Hosting%20%2B%20maintenance%20%E2%80%94%20Photographer%20portfolio
+                - text: Email about hosting
+          - paragraph [ref=f12e58]: Email billing@zouwop.com — the subject line is prefilled. Payment and handover by reply.
+  - contentinfo [ref=f12e59]:
+    - generic [ref=f12e60]:
+      - generic [ref=f12e61]: Zouwop
+      - paragraph [ref=f12e62]: self-hosted with ♥ · 2026
+      - generic [ref=f12e63]:
+        - link "Links" [ref=f12e64] [cursor=pointer]:
+          - /url: /links
+        - link "Portfolio" [ref=f12e65] [cursor=pointer]:
+          - /url: /portfolio
+        - link "LinkedIn" [ref=f12e66] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/mathis-tremblay-tchepannou-47558322b/
+        - link "GitHub" [ref=f12e67] [cursor=pointer]:
+          - /url: https://github.com/Z0uw0p
