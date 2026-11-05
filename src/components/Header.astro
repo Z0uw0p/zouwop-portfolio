@@ -39,9 +39,9 @@ const isActive = (href: string) => href === path;
 </header>
 
 <script>
-  const header = document.querySelector('[data-header]');
-  const toggle = document.querySelector('[data-menu-toggle]');
-  const menu = document.querySelector('[data-menu]');
+  const header = document.querySelector<HTMLElement>('[data-header]');
+  const toggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+  const menu = document.querySelector<HTMLElement>('[data-menu]');
 
   if (header && toggle && menu) {
     let lastY = window.scrollY;
@@ -49,7 +49,7 @@ const isActive = (href: string) => href === path;
     let menuOpen = false;
     let revealUntil = 0;
 
-    const setMenu = (open) => {
+    const setMenu = (open: boolean) => {
       menuOpen = open;
       toggle.setAttribute('aria-expanded', String(open));
       menu.classList.toggle('is-open', open);
@@ -64,7 +64,8 @@ const isActive = (href: string) => href === path;
     toggle.addEventListener('click', () => setMenu(!menuOpen));
 
     menu.addEventListener('click', (event) => {
-      if (event.target.closest('a')) setMenu(false);
+      const target = event.target;
+      if (target instanceof Element && target.closest('a')) setMenu(false);
     });
 
     document.addEventListener('keydown', (event) => {
@@ -75,7 +76,8 @@ const isActive = (href: string) => href === path;
     });
 
     document.addEventListener('click', (event) => {
-      if (menuOpen && !header.contains(event.target)) setMenu(false);
+      const target = event.target;
+      if (menuOpen && target instanceof Node && !header.contains(target)) setMenu(false);
     });
 
     window.addEventListener('resize', () => {
