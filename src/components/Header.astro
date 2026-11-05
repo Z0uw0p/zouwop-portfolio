@@ -47,6 +47,7 @@ const isActive = (href: string) => href === path;
     let lastY = window.scrollY;
     let ticking = false;
     let menuOpen = false;
+    let revealUntil = 0;
 
     const setMenu = (open) => {
       menuOpen = open;
@@ -85,7 +86,7 @@ const isActive = (href: string) => href === path;
 
     const onScroll = () => {
       const y = window.scrollY;
-      if (!menuOpen) {
+      if (!menuOpen && Date.now() > revealUntil) {
         if (y > lastY && y > 80) header.classList.add('header--hidden');
         else header.classList.remove('header--hidden');
       }
@@ -104,6 +105,7 @@ const isActive = (href: string) => href === path;
       if (!window.location.hash) return;
       header.classList.remove('header--hidden');
       lastY = window.scrollY;
+      revealUntil = Date.now() + 1200;
     };
 
     window.addEventListener('hashchange', revealForHash);
