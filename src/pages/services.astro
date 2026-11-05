@@ -1,0 +1,110 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import { services } from '../data/services';
+---
+<Layout
+  title="Services — Zouwop"
+  description="Self-hosted setup, 30-minute tech calls, managed hosting, and web development. Scope and pricing for each."
+>
+  <main id="main" tabindex="-1" class="page">
+    <div class="container narrow">
+      <h1>Services</h1>
+      <p class="intro">Four ways to work with me, with prices. Everything starts with an email.</p>
+
+      <div class="service-list">
+        {services.map((s) => (
+          <section class="service" id={s.id}>
+            <h2>{s.name}</h2>
+            <span class="mono price">{s.price}</span>
+            <ul class="points">
+              {s.points.map((p) => <li>{p}</li>)}
+            </ul>
+            {s.excluded && <p class="excluded">{s.excluded}</p>}
+            <a class="cta" href={`mailto:${s.ctaEmail}?subject=${encodeURIComponent(s.ctaSubject)}`}>
+              {s.ctaLabel}
+            </a>
+          </section>
+        ))}
+      </div>
+
+      <p class="outro">Not sure which fits? <a href="/#contact">Get in touch</a>.</p>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .page { padding: 48px 0 64px; }
+  .narrow { max-width: 760px; margin: 0 auto; }
+  h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .intro {
+    color: var(--text-dim);
+    margin-bottom: 40px;
+    font-size: 1.05rem;
+  }
+  .service-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .service {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+  }
+  .service h2 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+  }
+  .price {
+    border: 1px solid var(--text-dim);
+    color: var(--orange);
+    border-radius: 999px;
+    padding: 4px 12px;
+    margin-bottom: 20px;
+  }
+  .points {
+    list-style: disc;
+    padding-left: 18px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--text-dim);
+    font-size: 0.95rem;
+  }
+  .excluded {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin-bottom: 16px;
+  }
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin-top: auto;
+    color: var(--orange);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .cta:hover { text-decoration: underline; }
+  .outro {
+    color: var(--text-dim);
+    margin-top: 32px;
+  }
+  .outro a { color: var(--orange); }
+  a:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+</style>
