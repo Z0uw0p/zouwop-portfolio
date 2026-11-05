@@ -12,25 +12,31 @@ import { referrals } from '../data/links';
     <div class="container narrow">
       <a class="back" href="/">← zouwop.com</a>
       <h1>Links</h1>
-      <p class="intro">Referral offers I actually use. Sign up through these and we both get a bonus.</p>
+      <p class="intro">Referral offers I actually use. You get the bonus, I get a small thank-you — no extra cost to you.</p>
 
       <div class="cards">
         {referrals.map((r) => (
           <article class="card">
             <h2 class="name">{r.name}</h2>
             <p class="headline">{r.headline}</p>
+            <p class="pitch">{r.pitch}</p>
             <p class="reward">{r.reward}</p>
             <ol class="steps">
               {r.steps.map((s) => <li>{s}</li>)}
             </ol>
-            <div class="code-row">
-              <code class="pill">{r.code}</code>
-              <button type="button" class="copy" data-code={r.code} aria-describedby={`status-${r.id}`}>
-                Copy code
-              </button>
-            </div>
+            {r.code && (
+              <div class="code-row">
+                <code class="pill">{r.code}</code>
+                <button type="button" class="copy" data-code={r.code} aria-describedby={`status-${r.id}`}>
+                  Copy code
+                </button>
+              </div>
+            )}
             <span id={`status-${r.id}`} class="sr-only" aria-live="polite"></span>
-            <a class="btn btn-primary cta" href={r.url} target="_blank" rel="noopener noreferrer">Claim $25 →</a>
+            <a class="btn btn-primary cta" href={r.url} target="_blank" rel="noopener noreferrer">{r.ctaLabel}</a>
+            {r.secondary && (
+              <a class="btn btn-secondary cta secondary" href={r.secondary.href}>{r.secondary.label}</a>
+            )}
             {r.terms && <p class="terms">{r.terms}</p>}
           </article>
         ))}
@@ -94,6 +100,7 @@ import { referrals } from '../data/links';
     font-size: 0.95rem;
     margin-bottom: 12px;
   }
+  .pitch { color: var(--text-dim); margin-bottom: 16px; }
   .reward { color: var(--text); margin-bottom: 20px; }
   .steps {
     list-style: none;
@@ -152,6 +159,7 @@ import { referrals } from '../data/links';
     min-height: 48px;
     font-size: 1rem;
   }
+  .secondary { margin-top: 12px; font-size: 0.9rem; }
   .terms { color: var(--text-dim); font-size: 0.75rem; margin-top: 16px; }
   .sr-only {
     position: absolute;
