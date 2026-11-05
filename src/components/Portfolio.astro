@@ -60,7 +60,13 @@ const host = (url: string) => {
 
         <div class="shots-desktop">
           {shots(entry, 'desktop').map((shot) => (
-            <a class="shot" href={shot.src} target="_blank" rel="noopener noreferrer">
+            <a
+              class="shot"
+              href={shot.src}
+              data-label={shot.label}
+              data-alt={shot.alt}
+              aria-haspopup="dialog"
+            >
               <img
                 src={shot.src}
                 alt={shot.alt}
@@ -75,7 +81,13 @@ const host = (url: string) => {
 
         <div class="shots-mobile">
           {shots(entry, 'mobile').map((shot) => (
-            <a class="shot phone" href={shot.src} target="_blank" rel="noopener noreferrer">
+            <a
+              class="shot phone"
+              href={shot.src}
+              data-label={shot.label}
+              data-alt={shot.alt}
+              aria-haspopup="dialog"
+            >
               <img
                 src={shot.src}
                 alt={shot.alt}
@@ -111,6 +123,105 @@ const host = (url: string) => {
     </article>
   ))
 }
+
+<dialog class="shot-lightbox" id="portfolio-lightbox" aria-label="Template screenshots">
+  <div class="lb-head">
+    <span class="lb-counter mono" data-counter></span>
+    <button class="lb-close" type="button" data-close aria-label="Close screenshots">✕</button>
+  </div>
+  <div class="lb-stage">
+    <button class="lb-arrow prev" type="button" data-prev aria-label="Previous screenshot">‹</button>
+    <img data-img alt="" />
+    <button class="lb-arrow next" type="button" data-next aria-label="Next screenshot">›</button>
+  </div>
+  <p class="lb-caption" data-caption></p>
+</dialog>
+
+<script>
+  const dialog = document.getElementById('portfolio-lightbox') as HTMLDialogElement | null;
+
+  if (dialog) {
+    const stageImg = dialog.querySelector<HTMLImageElement>('[data-img]')!;
+    const caption = dialog.querySelector<HTMLElement>('[data-caption]')!;
+    const counter = dialog.querySelector<HTMLElement>('[data-counter]')!;
+    const prev = dialog.querySelector<HTMLButtonElement>('[data-prev]')!;
+    const next = dialog.querySelector<HTMLButtonElement>('[data-next]')!;
+    const closeBtn = dialog.querySelector<HTMLButtonElement>('[data-close]')!;
+
+    type Shot = { src: string; label: string; alt: string };
+    let items: Shot[] = [];
+    let index = 0;
+    let opener: HTMLElement | null = null;
+
+    const render = () => {
+      const item = items[index];
+      if (!item) return;
+      stageImg.src = item.src;
+      stageImg.alt = item.alt;
+      caption.textContent = item.label;
+      counter.textContent = `${index + 1} / ${items.length}`;
+      const single = items.length < 2;
+      prev.disabled = single;
+      next.disabled = single;
+    };
+
+    const step = (delta: number) => {
+      if (items.length < 2) return;
+      index = (index + delta + items.length) % items.length;
+      render();
+    };
+
+    const open = (list: Shot[], start: number, from: HTMLElement) => {
+      items = list;
+      index = start;
+      opener = from;
+      render();
+      dialog.showModal();
+      document.documentElement.classList.add('lb-open');
+    };
+
+    document.querySelectorAll<HTMLAnchorElement>('.shot').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        const entry = link.closest('.entry');
+        if (!entry) return;
+        const links = Array.from(entry.querySelectorAll<HTMLAnchorElement>('.template .shot'));
+        const list: Shot[] = links.map((el) => ({
+          src: el.getAttribute('href') || '',
+          label: el.dataset.label || '',
+          alt: el.dataset.alt || '',
+        }));
+        event.preventDefault();
+        open(list, Math.max(0, links.indexOf(link)), link);
+      });
+    });
+
+    prev.addEventListener('click', () => step(-1));
+    next.addEventListener('click', () => step(1));
+    closeBtn.addEventListener('click', () => dialog.close());
+
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+
+    dialog.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        step(-1);
+      }
+      if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        step(1);
+      }
+    });
+
+    dialog.addEventListener('close', () => {
+      document.documentElement.classList.remove('lb-open');
+      items = [];
+      opener?.focus();
+      opener = null;
+    });
+  }
+</script>
 
 <style>
   .entry {
@@ -162,7 +273,7 @@ const host = (url: string) => {
   .embed iframe {
     display: block;
     width: 100%;
-    height: clamp(340px, 52vh, 480px);
+    height: clamp(400px, 62vh, 620px);
     border: 0;
   }
   .embed figcaption {
@@ -219,11 +330,16 @@ const host = (url: string) => {
     border-radius: 10px;
     overflow: hidden;
     background: var(--bg-soft);
+    cursor: zoom-in;
+  }
+  .shot:hover img {
+    opacity: 0.9;
   }
   .shot img {
     display: block;
     width: 100%;
     height: auto;
+    transition: opacity 0.15s ease;
   }
   .phone img {
     aspect-ratio: 390 / 844;
@@ -266,6 +382,113 @@ const host = (url: string) => {
     font-size: 0.8rem;
     margin-top: 16px;
   }
+
+  /* screenshot carousel */
+  html.lb-open {
+    overflow: hidden;
+  }
+  .shot-lightbox {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: min(1100px, 94vw);
+    height: fit-content;
+    max-height: 92vh;
+    padding: 0;
+    border: 1px solid #2a2a38;
+    border-radius: var(--radius);
+    background: var(--bg-soft);
+    color: var(--text);
+    overflow: hidden;
+  }
+  .shot-lightbox::backdrop {
+    background: rgba(5, 5, 8, 0.84);
+  }
+  .lb-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 4px 8px 4px 16px;
+    border-bottom: 1px solid #23232e;
+  }
+  .lb-counter {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+  }
+  .lb-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    background: transparent;
+    border: 0;
+    color: var(--text);
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  .lb-close:hover {
+    color: var(--orange);
+  }
+  .lb-stage {
+    position: relative;
+    background: #08080c;
+    padding: 12px;
+    min-height: 45vh;
+  }
+  .lb-stage img {
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: calc(92vh - 156px);
+    object-fit: contain;
+  }
+  .lb-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid #2a2a38;
+    background: rgba(13, 13, 18, 0.78);
+    color: var(--text);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .lb-arrow:hover:not(:disabled) {
+    border-color: var(--orange);
+    color: var(--orange);
+  }
+  .lb-arrow:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+  .lb-arrow.prev {
+    left: 10px;
+  }
+  .lb-arrow.next {
+    right: 10px;
+  }
+  .lb-caption {
+    padding: 12px 16px;
+    border-top: 1px solid #23232e;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+  }
+  .lb-close:focus-visible,
+  .lb-arrow:focus-visible {
+    outline: 2px solid var(--orange);
+    outline-offset: 2px;
+  }
+
   @media (min-width: 640px) {
     .entry {
       padding: 28px;
