@@ -690,16 +690,19 @@ Run:
 node -e "
 const fs = require('fs');
 const html = fs.readFileSync('dist/index.html', 'utf8');
+const services = html.split('<section id=\"services\"')[1]?.split('</section>')[0] ?? '';
 for (const id of ['setup','tech-call','hosted','web']) {
-  if (!html.includes('/services#' + id)) throw new Error('missing card link for ' + id);
+  if (!services.includes('/services#' + id)) throw new Error('missing card link for ' + id);
 }
-if ((html.match(/class=\"card service-card\"/g) || []).length !== 4) throw new Error('expected 4 service cards');
-if (html.includes('\$20')) throw new Error('homepage still renders a price');
+if ((services.match(/class=\"card service-card\"/g) || []).length !== 4) throw new Error('expected 4 service cards');
+if (services.includes('\$20') || services.includes('Scoped per job') || services.includes('Monthly')) throw new Error('services section still renders a price');
 console.log('service card checks passed');
 "
 ```
 
 Expected: `service card checks passed`.
+
+The homepage-wide “no `$20`” check belongs to Task 5, which removes the hero price; this task only owns the services section.
 
 - [ ] **Step 4: Commit**
 
