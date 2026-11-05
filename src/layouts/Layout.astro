@@ -15,6 +15,11 @@ const {
 
 const site = Astro.site ?? new URL('https://zouwop.com');
 const canonical = new URL(path ?? Astro.url.pathname, site);
+
+const impactVerification = {
+  name: 'impact-site-verification',
+  value: '807e1fca-8ed7-4abd-9ba6-12cb7d111d6f',
+} as Record<string, string>;
 ---
 <!doctype html>
 <html lang="en">
@@ -31,6 +36,7 @@ const canonical = new URL(path ?? Astro.url.pathname, site);
     <meta property="og:url" content={canonical.href} />
     <meta name="twitter:card" content="summary" />
     <meta name="theme-color" content="#0d0d12" />
+    <meta {...impactVerification} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
