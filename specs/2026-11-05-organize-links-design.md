@@ -32,7 +32,8 @@ until approval.
 
 ## Decisions
 
-- One page, two stacked sections: **Affiliates** then **Referrals**.
+- One page with **Affiliates** and **Referrals** in two columns on wide screens,
+  stacking vertically below 900px.
 - Affiliates show live offers first, then pending placeholders.
 - Pending cards render a non-interactive "Coming soon" pill instead of a CTA and
   have no outbound link.
@@ -75,20 +76,25 @@ interface Offer {
 
 ```
 h1 Links
-intro paragraph
+intro paragraph (max-width 65ch)
 
-h2 Affiliates
-p  "I earn a commission or credit when you sign up. You pay the same price."
-article (live): Shopify, DigitalOcean
-article (pending): Hostinger, Proton with "Coming soon" pill
+two-column grid at ≥900px, one column below
 
-h2 Referrals
-p  "We both get a bonus when you sign up."
-article: Wealthsimple, Wise, Tangerine
+left column
+  h2 Affiliates
+  p  "I earn a commission or credit when you sign up. You pay the same price."
+  article (live): Shopify, DigitalOcean
+  article (pending): Hostinger, Proton with "Coming soon" pill
+
+right column
+  h2 Referrals
+  p  "We both get a bonus when you sign up."
+  article: Wealthsimple, Wise, Tangerine
 ```
 
 - Card names become `h3` under the section `h2`.
 - Section headings use the existing typographic scale.
+- The page container widens from 640px to 1000px to fit two columns.
 - No shared card markup is extracted; the current card is small enough to
   duplicate per section.
 
