@@ -1,0 +1,195 @@
+---
+import type { PortfolioEntry } from '../data/portfolio';
+
+interface Props {
+  entries: PortfolioEntry[];
+}
+
+const { entries } = Astro.props;
+
+const mailto = (email: string, subject: string) =>
+  `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+
+const shots = (entry: PortfolioEntry, kind: 'desktop' | 'mobile') =>
+  entry.screenshots.filter((shot) => shot.kind === kind);
+---
+
+{
+  entries.map((entry) => (
+    <article class="card entry" id={entry.id}>
+      <header class="entry-head">
+        <h2>{entry.name}</h2>
+        <p class="desc">{entry.description}</p>
+        <a class="live" href={entry.liveUrl} target="_blank" rel="noopener noreferrer">
+          View the live site <span aria-hidden="true">→</span>
+        </a>
+      </header>
+
+      <div class="shots-desktop">
+        {shots(entry, 'desktop').map((shot) => (
+          <a class="shot" href={shot.src} target="_blank" rel="noopener noreferrer">
+            <img
+              src={shot.src}
+              alt={shot.alt}
+              width="1440"
+              height="900"
+              loading="lazy"
+              decoding="async"
+            />
+          </a>
+        ))}
+      </div>
+
+      <div class="shots-mobile">
+        {shots(entry, 'mobile').map((shot) => (
+          <a class="shot phone" href={shot.src} target="_blank" rel="noopener noreferrer">
+            <img
+              src={shot.src}
+              alt={shot.alt}
+              width="390"
+              height="844"
+              loading="lazy"
+              decoding="async"
+            />
+          </a>
+        ))}
+      </div>
+
+      <div class="pricing">
+        {entry.pricing.map((option) => (
+          <div class="price">
+            <p class="price-label mono">{option.label}</p>
+            <p class="price-value">{option.price}</p>
+            <a
+              class="btn btn-primary cta"
+              href={mailto(entry.buyEmail, option.subject)}
+              aria-label={`${option.label}, ${option.price}: email ${entry.buyEmail}`}
+            >
+              {option.cta}
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <p class="fineprint">
+        Email {entry.buyEmail} — the subject line is prefilled. Payment and handover by reply.
+      </p>
+    </article>
+  ))
+}
+
+<style>
+  .entry {
+    padding: 20px;
+  }
+  .entry:hover {
+    border-color: #23232e;
+    transform: none;
+  }
+  .entry-head h2 {
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .desc {
+    color: var(--text-dim);
+    margin-top: 8px;
+    max-width: 60ch;
+  }
+  .live {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin-top: 4px;
+    color: var(--orange);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .live:hover {
+    text-decoration: underline;
+  }
+  .shots-desktop {
+    display: grid;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .shots-mobile {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 12px;
+  }
+  .shot {
+    display: block;
+    border: 1px solid #23232e;
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--bg);
+  }
+  .shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .phone img {
+    aspect-ratio: 390 / 844;
+    object-fit: cover;
+    object-position: top;
+  }
+  .pricing {
+    display: grid;
+    gap: 12px;
+    margin-top: 28px;
+  }
+  .price {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border: 1px solid #23232e;
+    border-radius: var(--radius);
+    padding: 20px;
+  }
+  .price-label {
+    color: var(--purple);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .price-value {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    margin-top: 8px;
+    font-size: 1rem;
+  }
+  .fineprint {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    margin-top: 16px;
+  }
+  @media (min-width: 640px) {
+    .entry {
+      padding: 28px;
+    }
+    .pricing {
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+  }
+  @media (min-width: 720px) {
+    .shots-desktop {
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .shots-mobile {
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+    }
+  }
+</style>
