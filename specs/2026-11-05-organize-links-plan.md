@@ -182,6 +182,7 @@ const referrals = offers.filter((offer) => offer.kind === 'referral');
       <h1>Links</h1>
       <p class="intro">A few tools I use and recommend. Some links pay me a commission or credit; others give us both a bonus — either way it costs you nothing extra.</p>
 
+      <div class="groups">
       <section class="group" aria-labelledby="affiliates-heading">
         <h2 id="affiliates-heading">Affiliates</h2>
         <p class="group-note">I earn a commission or credit when you sign up. You pay the same price.</p>
@@ -262,6 +263,7 @@ const referrals = offers.filter((offer) => offer.kind === 'referral');
           ))}
         </div>
       </section>
+      </div>
     </div>
   </main>
   <Footer />
@@ -295,7 +297,7 @@ const referrals = offers.filter((offer) => offer.kind === 'referral');
 
 <style>
   .page { padding: 48px 0 64px; }
-  .narrow { max-width: 640px; margin: 0 auto; }
+  .narrow { max-width: 1000px; margin: 0 auto; }
   .back {
     display: inline-flex;
     align-items: center;
@@ -312,10 +314,13 @@ const referrals = offers.filter((offer) => offer.kind === 'referral');
     letter-spacing: -0.02em;
     margin-bottom: 8px;
   }
-  .intro { color: var(--text-dim); margin-bottom: 40px; font-size: 1.05rem; }
-  .group + .group { margin-top: 48px; }
+  .intro { color: var(--text-dim); margin-bottom: 40px; font-size: 1.05rem; max-width: 65ch; }
+  .groups { display: grid; gap: 32px; align-items: start; }
   .group h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; }
   .group-note { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 20px; }
+  @media (min-width: 900px) {
+    .groups { grid-template-columns: 1fr 1fr; }
+  }
   .cards { display: flex; flex-direction: column; gap: 24px; }
   .name { font-size: 1.4rem; font-weight: 800; margin-bottom: 4px; }
   .headline {
