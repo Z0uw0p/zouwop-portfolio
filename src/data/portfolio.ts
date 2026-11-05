@@ -15,6 +15,8 @@ export interface PortfolioEntry {
   id: string;
   name: string;
   liveUrl: string;
+  /** Live site shown in a small iframe above the template screenshots. */
+  embedUrl?: string;
   description: string;
   buyEmail: string;
   pricing: PortfolioPricing[];
@@ -31,6 +33,7 @@ export const portfolio: PortfolioEntry[] = [
     id: 'photographer',
     name: 'Béatrice Daudelin — Photographer',
     liveUrl: 'https://beatricedaudelin.com/',
+    embedUrl: 'https://beatricedaudelin.com/',
     description:
       'A photographer portfolio — masonry gallery, project and exposition pages, agency inquiry flow.',
     buyEmail: 'billing@zouwop.com',

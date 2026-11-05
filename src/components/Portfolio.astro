@@ -12,12 +12,21 @@ const mailto = (email: string, subject: string) =>
 
 const shots = (entry: PortfolioEntry, kind: 'desktop' | 'mobile') =>
   entry.screenshots.filter((shot) => shot.kind === kind);
+
+const host = (url: string) => {
+  try {
+    return new URL(url).host;
+  } catch {
+    return url;
+  }
+};
 ---
 
 {
   entries.map((entry) => (
     <article class="card entry" id={entry.id}>
       <header class="entry-head">
+        <p class="kicker mono">Live site</p>
         <h2>{entry.name}</h2>
         <p class="desc">{entry.description}</p>
         <a class="live" href={entry.liveUrl} target="_blank" rel="noopener noreferrer">
@@ -25,55 +34,80 @@ const shots = (entry: PortfolioEntry, kind: 'desktop' | 'mobile') =>
         </a>
       </header>
 
-      <div class="shots-desktop">
-        {shots(entry, 'desktop').map((shot) => (
-          <a class="shot" href={shot.src} target="_blank" rel="noopener noreferrer">
-            <img
-              src={shot.src}
-              alt={shot.alt}
-              width="1440"
-              height="900"
-              loading="lazy"
-              decoding="async"
-            />
-          </a>
-        ))}
-      </div>
-
-      <div class="shots-mobile">
-        {shots(entry, 'mobile').map((shot) => (
-          <a class="shot phone" href={shot.src} target="_blank" rel="noopener noreferrer">
-            <img
-              src={shot.src}
-              alt={shot.alt}
-              width="390"
-              height="844"
-              loading="lazy"
-              decoding="async"
-            />
-          </a>
-        ))}
-      </div>
-
-      <div class="pricing">
-        {entry.pricing.map((option) => (
-          <div class="price">
-            <p class="price-label mono">{option.label}</p>
-            <p class="price-value">{option.price}</p>
-            <a
-              class="btn btn-primary cta"
-              href={mailto(entry.buyEmail, option.subject)}
-              aria-label={`${option.label}, ${option.price}: email ${entry.buyEmail}`}
-            >
-              {option.cta}
+      {entry.embedUrl && (
+        <figure class="embed">
+          <iframe
+            src={entry.embedUrl}
+            title={`${entry.name} — live site`}
+            loading="lazy"
+            referrerpolicy="no-referrer"
+          />
+          <figcaption>
+            <span>Loaded live from <span class="mono">{host(entry.liveUrl)}</span></span>
+            <a href={entry.liveUrl} target="_blank" rel="noopener noreferrer">
+              Open in a new tab <span aria-hidden="true">↗</span>
             </a>
-          </div>
-        ))}
-      </div>
+          </figcaption>
+        </figure>
+      )}
 
-      <p class="fineprint">
-        Email {entry.buyEmail} — the subject line is prefilled. Payment and handover by reply.
-      </p>
+      <section class="template" aria-labelledby={`template-${entry.id}`}>
+        <h3 id={`template-${entry.id}`}>The template</h3>
+        <p class="template-note">
+          The same pages with placeholder photos and placeholder text — that is what
+          you get, ready for your own images.
+        </p>
+
+        <div class="shots-desktop">
+          {shots(entry, 'desktop').map((shot) => (
+            <a class="shot" href={shot.src} target="_blank" rel="noopener noreferrer">
+              <img
+                src={shot.src}
+                alt={shot.alt}
+                width="1440"
+                height="900"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+          ))}
+        </div>
+
+        <div class="shots-mobile">
+          {shots(entry, 'mobile').map((shot) => (
+            <a class="shot phone" href={shot.src} target="_blank" rel="noopener noreferrer">
+              <img
+                src={shot.src}
+                alt={shot.alt}
+                width="390"
+                height="844"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+          ))}
+        </div>
+
+        <div class="pricing">
+          {entry.pricing.map((option) => (
+            <div class="price">
+              <p class="price-label mono">{option.label}</p>
+              <p class="price-value">{option.price}</p>
+              <a
+                class="btn btn-primary cta"
+                href={mailto(entry.buyEmail, option.subject)}
+                aria-label={`${option.label}, ${option.price}: email ${entry.buyEmail}`}
+              >
+                {option.cta}
+              </a>
+            </div>
+          ))}
+        </div>
+
+        <p class="fineprint">
+          Email {entry.buyEmail} — the subject line is prefilled. Payment and handover by reply.
+        </p>
+      </section>
     </article>
   ))
 }
@@ -85,6 +119,13 @@ const shots = (entry: PortfolioEntry, kind: 'desktop' | 'mobile') =>
   .entry:hover {
     border-color: #23232e;
     transform: none;
+  }
+  .kicker {
+    color: var(--purple);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    margin-bottom: 6px;
   }
   .entry-head h2 {
     font-size: clamp(1.4rem, 4vw, 1.8rem);
@@ -105,8 +146,61 @@ const shots = (entry: PortfolioEntry, kind: 'desktop' | 'mobile') =>
     font-weight: 600;
     text-decoration: none;
   }
+  .live span {
+    margin-left: 4px;
+  }
   .live:hover {
     text-decoration: underline;
+  }
+  .embed {
+    margin-top: 12px;
+    border: 1px solid #23232e;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--bg);
+  }
+  .embed iframe {
+    display: block;
+    width: 100%;
+    height: clamp(340px, 52vh, 480px);
+    border: 0;
+  }
+  .embed figcaption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px 16px;
+    flex-wrap: wrap;
+    padding: 0 14px;
+    border-top: 1px solid #23232e;
+    color: var(--text-dim);
+    font-size: 0.8rem;
+  }
+  .embed figcaption a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--orange);
+    text-decoration: none;
+  }
+  .embed figcaption a:hover {
+    text-decoration: underline;
+  }
+  .template {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid #23232e;
+  }
+  .template h3 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+  .template-note {
+    color: var(--text-dim);
+    margin-top: 6px;
+    max-width: 62ch;
+    font-size: 0.95rem;
   }
   .shots-desktop {
     display: grid;
@@ -124,7 +218,7 @@ const shots = (entry: PortfolioEntry, kind: 'desktop' | 'mobile') =>
     border: 1px solid #23232e;
     border-radius: 10px;
     overflow: hidden;
-    background: var(--bg);
+    background: var(--bg-soft);
   }
   .shot img {
     display: block;
