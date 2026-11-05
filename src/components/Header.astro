@@ -99,6 +99,16 @@ const isActive = (href: string) => href === path;
         requestAnimationFrame(onScroll);
       }
     }, { passive: true });
+
+    const revealForHash = () => {
+      if (!window.location.hash) return;
+      header.classList.remove('header--hidden');
+      lastY = window.scrollY;
+    };
+
+    window.addEventListener('hashchange', revealForHash);
+    window.addEventListener('load', revealForHash);
+    revealForHash();
   }
 </script>
 
