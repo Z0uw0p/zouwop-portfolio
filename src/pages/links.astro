@@ -44,9 +44,11 @@ import { referrals } from '../data/links';
   document.querySelectorAll('.copy').forEach((btn) => {
     btn.addEventListener('click', async () => {
       const code = btn.getAttribute('data-code');
-      const status = document.getElementById(btn.getAttribute('aria-describedby'));
+      const describedBy = btn.getAttribute('aria-describedby');
+      const status = describedBy ? document.getElementById(describedBy) : null;
       const label = btn.textContent;
       let ok = false;
+      if (!code) return;
       try {
         await navigator.clipboard.writeText(code);
         ok = true;
