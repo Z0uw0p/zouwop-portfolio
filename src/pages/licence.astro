@@ -1,92 +1,60 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
-import {
-  BILLING_EMAIL,
-  DELIVERY_SLA,
-  LICENCE_RULE,
-  UPDATES_MONTHS,
-  SUPPORT_DAYS,
-} from '../data/fulfilment';
+import { licence, LICENCE_RULE, licenceSections } from '../data/licence';
 
-const updated = '2026-11-08';
+const date = new Intl.DateTimeFormat('en-CA', {
+  dateStyle: 'long',
+  timeZone: 'UTC',
+}).format(new Date(`${licence.updated}T00:00:00Z`));
 ---
 <Layout
-  title="Licence — Zouwop templates"
-  description="What one template purchase covers: one end product, edits, updates for 12 months, and 30 days of bug support."
-  path="/licence"
+  title="Licence — Zouwop"
+  description="What you can and cannot do with a Zouwop template: one purchase covers one end product."
 >
-  <main id="main" tabindex="-1" class="page">
+  <main id="main" tabindex="-1" class="legal">
     <div class="container narrow">
       <h1>Licence</h1>
-      <p class="meta mono">Updated <time datetime={updated}>{updated}</time></p>
+      <p class="updated">Last updated <time datetime={licence.updated}>{date}</time>.</p>
 
       <div class="card summary">
         <p class="rule">{LICENCE_RULE}</p>
-        <ul class="list">
-          <li>Use, modify, and publish the template as one website for yourself or one client.</li>
-          <li>Unlimited edits. Staging and duplicate copies for testing are fine.</li>
-          <li>Remove the footer credit if you want.</li>
+        <ul class="bullets">
+          {licence.summary.map((item) => (
+            <li><strong>{item.title}.</strong> {item.body}</li>
+          ))}
         </ul>
       </div>
 
-      <section aria-labelledby="grant">
-        <h2 id="grant">You may</h2>
-        <p>
-          Use the template, modify it, and publish the result as one end product for yourself or
-          one client. There is no limit on edits. Copies kept for testing or staging are fine.
-        </p>
+      <nav class="toc" aria-label="On this page">
+        <h2>On this page</h2>
+        <ol>
+          {licenceSections.map((section) => (
+            <li><a href={`#${section.id}`}>{section.title}</a></li>
+          ))}
+          <li><a href="#resume">Résumé en français</a></li>
+        </ol>
+      </nav>
+
+      {licenceSections.map((section) => (
+        <section id={section.id} class="legal-section">
+          <h2>{section.title}</h2>
+          {section.items.map((item) => (
+            <Fragment>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </Fragment>
+          ))}
+        </section>
+      ))}
+
+      <section id="resume" lang="fr" class="legal-section fr">
+        <h2>Résumé en français</h2>
+        <p>{licence.frSummary}</p>
       </section>
 
-      <section aria-labelledby="limits">
-        <h2 id="limits">You may not</h2>
-        <ul class="list">
-          <li>Resell or redistribute the template or its source as a template.</li>
-          <li>Use it in a competing template marketplace.</li>
-          <li>Share the ZIP or a modified copy as a download.</li>
-          <li>Claim you wrote the template.</li>
-        </ul>
-      </section>
-
-      <section aria-labelledby="included">
-        <h2 id="included">What is included</h2>
-        <p>
-          The files in the ZIP, the fonts and placeholder art that ship with it, and the build
-          scripts. Not included: third-party stock photos or fonts you add, a domain, hosting,
-          email, or third-party service fees. Those are yours to licence and pay for.
-        </p>
-      </section>
-
-      <section aria-labelledby="updates">
-        <h2 id="updates">Updates and support</h2>
-        <p>
-          Bug fixes and template updates are emailed free for {UPDATES_MONTHS} months from
-          purchase. Email support covers bugs in the template as shipped for {SUPPORT_DAYS} days;
-          I reply {DELIVERY_SLA}. Content changes, new features, hosting, and third-party services
-          are not covered.
-        </p>
-      </section>
-
-      <section aria-labelledby="refunds">
-        <h2 id="refunds">Refunds</h2>
-        <p>
-          Sales are final once the ZIP is emailed, because files cannot be returned. If the ZIP is
-          broken or does not match the product page, I will fix it or refund it. Redistribution
-          ends the licence with no refund.
-        </p>
-      </section>
-
-      <section aria-labelledby="transfer">
-        <h2 id="transfer">Transfer</h2>
-        <p>
-          You may hand the licence to a buyer of the end product once, keep no copy, and tell me
-          in writing.
-        </p>
-      </section>
-
-      <p class="contact">
-        Questions about the licence? Email
-        <a href={`mailto:${BILLING_EMAIL}`}>{BILLING_EMAIL}</a>.
+      <p class="updated">
+        Questions? Email <a href="mailto:billing@zouwop.com">billing@zouwop.com</a>.
       </p>
     </div>
   </main>
@@ -94,7 +62,7 @@ const updated = '2026-11-08';
 </Layout>
 
 <style>
-  .page { padding: 48px 0 64px; }
+  .legal { padding: 48px 0 64px; }
   .narrow { max-width: 760px; margin: 0 auto; }
   h1 {
     font-size: clamp(2rem, 6vw, 3rem);
@@ -102,24 +70,27 @@ const updated = '2026-11-08';
     letter-spacing: -0.02em;
     margin-bottom: 8px;
   }
-  .meta { color: var(--text-dim); margin-bottom: 32px; }
-  .summary { margin-bottom: 32px; }
-  .rule { font-size: 1.15rem; font-weight: 600; margin-bottom: 12px; }
-  section { margin-bottom: 28px; }
-  section h2 { font-size: 1.25rem; margin-bottom: 8px; }
-  section p,
-  .list {
-    color: var(--text-dim);
-    font-size: 0.95rem;
+  .updated { color: var(--text-dim); font-size: 0.9rem; }
+  .summary { margin: 32px 0; }
+  .rule { font-weight: 700; font-size: 1.15rem; margin-bottom: 12px; color: var(--orange); }
+  .bullets { list-style: disc; padding-left: 20px; display: grid; gap: 8px; color: var(--text-dim); }
+  .bullets strong { color: var(--text); }
+  .toc {
+    margin: 40px 0;
+    padding: 20px 24px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg-soft);
   }
-  .list {
-    list-style: disc;
-    padding-left: 18px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .contact { color: var(--text-dim); margin-top: 32px; }
+  .toc h2 { font-size: 1rem; margin-bottom: 12px; }
+  .toc ol { padding-left: 20px; display: grid; gap: 6px; }
+  .toc a { color: var(--text-dim); }
+  .toc a:hover { color: var(--orange); }
+  .legal-section { padding: 32px 0; border-top: 1px solid var(--border); }
+  .legal-section h2 { font-size: 1.5rem; margin-bottom: 20px; }
+  .legal-section h3 { font-size: 1.05rem; margin: 20px 0 4px; }
+  .legal-section p { color: var(--text-dim); }
+  .fr { border-top: 2px solid var(--border-strong); }
   a { color: var(--orange); }
-  a:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  a:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
 </style>
