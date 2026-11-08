@@ -60,42 +60,35 @@ set. No monthly number is printed while hosting is unpriced.
 
 ## Data model
 
-`src/data/templates.ts` is the single source of truth and contains no markup:
+The catalog merges two files, matching the catalog sync from issue #13 (merged
+before this work landed):
+
+- `src/data/templates.generated.ts` — machine-owned facts from the templates
+  repo (`slug`, `name`, `niche`, `audience`, `stack`, `version`, `blurb`,
+  `tags`, `priceCents`, `previews`, `release`). Never edited by hand.
+- `src/data/templates.overrides.ts` — store-owned copy and commerce for each
+  slug: `niche` label, `description`, `features`, `includes`, `priceCents`,
+  `currency`, `buyUrl`, `hostedMonthlyCents`, `status`.
+- `src/data/templates.ts` — the merge. Generated data first, overrides second;
+  an override for a slug that is not in the generated catalog fails the build.
+
+The merged `TemplateEntry` is the shape the pages consume:
 
 ```ts
-export type TemplateStatus = 'available' | 'coming-soon';
-
-export interface TemplatePreview {
-  src: string;
-  alt: string;
-  kind: 'desktop' | 'mobile';
-  width: number;
-  height: number;
-}
-
-export interface TemplateEntry {
-  slug: string;
-  name: string;
-  niche: string;
-  audience: 'business' | 'creative';
-  stack: string[];
-  blurb: string;
+export interface TemplateEntry extends GeneratedTemplate {
   description: string;
   features: string[];
   includes: string[];
-  tags: string[];
   demoUrl?: string;
   buyUrl?: string;
-  priceCents: number;
   currency: 'CAD';
   hostedMonthlyCents?: number;
   status: TemplateStatus;
-  previews: TemplatePreview[];
 }
 ```
 
-Adding a tenth object is the only edit needed to emit a tenth card and a tenth
-product page.
+Adding a template to the generated catalog produces a card and a product page
+with no markup edits; adding an override only changes copy and commerce.
 
 - `priceCents` is `50000` for every entry.
 - `buyUrl` is absent until the Stripe issue lands; the buy CTA falls back to a
@@ -115,13 +108,24 @@ product page.
 
 ## Migration
 
-Preview images are copied from the templates repo (`origin/review`) into
-`public/templates/<slug>/desktop.webp` and `mobile.webp`. The nine entries:
-`forge-trades`, `fade-barbershop`, `rivage-coiffeur`, `taverna-restaurant`,
-`atelier-studio`, `wavelength-musician`, `meridian-clinic`, `photo-portfolio`,
-`website`. Intrinsic dimensions are read from the files, so each `img` has
-explicit `width`/`height` and no layout shift. The photo-portfolio phone capture
-is `195×9416`; the rest are `390` wide.
+Previews and generated metadata come from the templates repo through the
+issue #13 sync:
+
+```bash
+npm run sync:templates -- --from ../templates
+```
+
+The nine entries: `forge-trades`, `fade-barbershop`, `rivage-coiffeur`,
+`taverna-restaurant`, `atelier-studio`, `wavelength-musician`,
+`meridian-clinic`, `photo-portfolio`, `website`. The sync reads each preview's
+intrinsic WebP dimensions, so every `img` has explicit `width`/`height` and no
+layout shift. The photo-portfolio phone capture is `195×9416`; the rest are
+`390` wide. `scripts/fixtures/catalog.sample.json` is refreshed so
+`sync:templates -- --check` (and the `prebuild` hook) stays green in CI.
+
+The nine overrides live in `src/data/templates.overrides.ts`, all
+`status: 'available'`, `priceCents: 50000`, with `features`/`includes` and the
+human niche labels.
 
 `src/data/portfolio.ts` keeps its screenshots and gains `templateSlug`; pricing
 and `buyEmail` are removed. `public/portfolio/beatrice/*` is untouched.
@@ -136,6 +140,12 @@ and `buyEmail` are removed. `public/portfolio/beatrice/*` is untouched.
 - **Conditional links.** If the sibling `/licence` and `/pricing` issues are
   closed without adding their pages, the links simply stay absent — no broken
   links, but also no entry point. Add the pages and they appear.
-- **Parallel catalog sync.** Issue #13 automates reading the templates repo.
-  Until then the catalog is hand-seeded and can drift; the data model matches
-  `template.json` so the sync script can replace it without markup changes.
+- **Fixture ahead of releases.** Only `photo-portfolio` and `website` have
+  packaged ZIPs in the templates repo today. The fixture carries all nine so
+  the shop shows nine products; the sync's carry-over safety keeps the seven
+  `available` overrides when a real sync sees a shorter catalog. Re-run the
+  sync (and commit the refreshed fixture) once the other seven are packaged.
+- **Generated preview dimensions.** The sync reads dimensions from the actual
+  WebP, so the previous placeholder `1440×900`/`390×844` values are gone. If a
+  preview is replaced upstream, re-run the sync rather than editing the
+  generated file.
