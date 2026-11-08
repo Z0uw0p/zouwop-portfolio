@@ -1,0 +1,136 @@
+LICENCE — Zouwop
+Last updated: 2026-11-08
+
+One purchase covers one end product.
+
+WHAT YOU CAN DO
+
+Use it as one end product
+You can use this template to build and publish one website — for yourself or for one client.
+
+Edit it freely
+Change the copy, layout, styles, and code as much as you like.
+
+Keep a staging copy
+You can run a private staging or test copy while you build. It must not be published as a separate site.
+
+Remove the credit
+You may remove the footer credit. You do not have to link back to me.
+
+Keep what you make
+Your content, your edits, and the site you publish are yours.
+
+WHAT YOU CAN'T DO
+
+No reselling the template
+You may not sell, sublicense, give away, or redistribute the template files, the ZIP, or the source as a template.
+
+No template marketplaces
+You may not use this template, or a modified version of it, in a competing template marketplace or template shop.
+
+No sharing the files
+You may not share the ZIP or a downloadable copy with anyone else. Each buyer needs their own licence.
+
+No claiming authorship
+You may not claim you wrote the template or present it as your own original work for sale as a template.
+
+One end product per purchase
+A second website, for a second client or yourself, needs a second licence.
+
+WHAT'S INCLUDED
+
+The template files
+The HTML, CSS, JavaScript, or Astro source listed on the product page, in the structure described there.
+
+Build scripts
+Any build or development scripts that ship inside the ZIP.
+
+Bundled fonts and placeholder art
+Fonts and placeholder images that come with the template, for use as part of it.
+
+The licence
+A copy of this licence as LICENSE.txt inside the ZIP.
+
+WHAT'S NOT INCLUDED
+
+A domain name
+You register and pay for your own domain.
+
+Hosting
+You choose and pay for your own host. Any static host works.
+
+Email and third-party services
+Forms, analytics, booking, payment, and similar services are yours to set up and pay for.
+
+Stock assets you add
+Photos, fonts, or icons you bring in are not covered by this licence.
+
+THIRD-PARTY ASSETS
+
+Placeholders are for layout
+Placeholder images and sample text are there to show the layout. Check each asset's own licence before you publish it.
+
+Bundled fonts
+Fonts that ship with the template are included as part of the template. Fonts you add are not.
+
+Assets you add are yours to licence
+This licence does not cover third-party code, photos, or fonts that you add.
+
+UPDATES
+
+12 months of updates
+Bug fixes and template updates are emailed free for 12 months from your purchase date.
+
+No lifetime updates
+I do not promise lifetime updates. After 12 months, email me if you need a fix and I will quote it.
+
+How updates arrive
+I email a new ZIP to the address on your Stripe receipt. Keep that address current or tell me if it changes.
+
+SUPPORT
+
+30 days of email support
+Email support for bugs in the template as shipped, for 30 days from purchase.
+
+Response window
+I reply within one business day, Monday to Friday.
+
+What is not covered
+Content changes, new features, hosting, domains, email, and third-party services are not part of support.
+
+Custom work
+Changes beyond a bug fix are quoted separately at my hourly rate. See the Services page.
+
+REFUNDS
+
+Sales are final after delivery
+Once the ZIP is emailed, the sale is final, because digital files cannot be returned.
+
+If something is wrong
+If the ZIP is broken or does not match the product page, email me and I will fix it or refund it.
+
+Redistribution ends the licence
+If you redistribute the template, the licence ends and there is no refund.
+
+TRANSFERRING THE LICENCE
+
+You can transfer it once
+If you sell the end product, you may hand this licence to the buyer once.
+
+Keep no copy
+After transferring, you must keep no copy of the template or the end product.
+
+Tell me in writing
+Email billing@zouwop.com so my records match the new owner. The new owner is bound by this licence.
+
+WHEN THE LICENCE ENDS
+
+When it ends
+The licence ends if you break these terms or transfer it without following the steps above.
+
+What to do
+Stop using the template and remove it from any live site.
+
+What survives
+The liability limit and the rules about resale and redistribution survive the end of the licence.
+

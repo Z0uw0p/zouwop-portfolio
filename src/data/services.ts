@@ -67,4 +67,18 @@ export const services: Service[] = [
     ctaSubject: 'Web development',
     ctaEmail: 'booking@zouwop.com',
   },
+  {
+    id: 'build-on-template',
+    name: 'Build on a template',
+    summary: 'Buy a template and have me adapt it to your brand and content.',
+    price: '$75/hour CAD',
+    points: [
+      'Adapting a template you bought: copy, colours, sections, and small features.',
+      'Quoted before I start. One-hour minimum, then billed in 15-minute increments.',
+      'Buying the template itself is separate from the custom work.',
+    ],
+    ctaLabel: 'Email about a build',
+    ctaSubject: 'Build on a template',
+    ctaEmail: 'booking@zouwop.com',
+  },
 ];

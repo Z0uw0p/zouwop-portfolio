@@ -1,0 +1,231 @@
+{
+  "updated": "2026-11-08",
+  "rule": "One purchase covers one end product.",
+  "summary": [
+    {
+      "title": "One purchase covers one end product",
+      "body": "Buy once, publish one website — for yourself or for one client. A second website needs a second licence."
+    },
+    {
+      "title": "Edit it however you like",
+      "body": "Change the copy, layout, styles, and code. Remove the footer credit if you want."
+    },
+    {
+      "title": "Don't resell the template itself",
+      "body": "You can sell the website you build with it. You can't sell, share, or redistribute the template files."
+    }
+  ],
+  "order": [
+    "grant",
+    "limits",
+    "included",
+    "not-included",
+    "third-party",
+    "updates",
+    "support",
+    "refunds",
+    "transfer",
+    "end"
+  ],
+  "sections": {
+    "grant": {
+      "title": "What you can do",
+      "items": [
+        {
+          "title": "Use it as one end product",
+          "body": "You can use this template to build and publish one website — for yourself or for one client."
+        },
+        {
+          "title": "Edit it freely",
+          "body": "Change the copy, layout, styles, and code as much as you like."
+        },
+        {
+          "title": "Keep a staging copy",
+          "body": "You can run a private staging or test copy while you build. It must not be published as a separate site."
+        },
+        {
+          "title": "Remove the credit",
+          "body": "You may remove the footer credit. You do not have to link back to me."
+        },
+        {
+          "title": "Keep what you make",
+          "body": "Your content, your edits, and the site you publish are yours."
+        }
+      ]
+    },
+    "limits": {
+      "title": "What you can't do",
+      "items": [
+        {
+          "title": "No reselling the template",
+          "body": "You may not sell, sublicense, give away, or redistribute the template files, the ZIP, or the source as a template."
+        },
+        {
+          "title": "No template marketplaces",
+          "body": "You may not use this template, or a modified version of it, in a competing template marketplace or template shop."
+        },
+        {
+          "title": "No sharing the files",
+          "body": "You may not share the ZIP or a downloadable copy with anyone else. Each buyer needs their own licence."
+        },
+        {
+          "title": "No claiming authorship",
+          "body": "You may not claim you wrote the template or present it as your own original work for sale as a template."
+        },
+        {
+          "title": "One end product per purchase",
+          "body": "A second website, for a second client or yourself, needs a second licence."
+        }
+      ]
+    },
+    "included": {
+      "title": "What's included",
+      "items": [
+        {
+          "title": "The template files",
+          "body": "The HTML, CSS, JavaScript, or Astro source listed on the product page, in the structure described there."
+        },
+        {
+          "title": "Build scripts",
+          "body": "Any build or development scripts that ship inside the ZIP."
+        },
+        {
+          "title": "Bundled fonts and placeholder art",
+          "body": "Fonts and placeholder images that come with the template, for use as part of it."
+        },
+        {
+          "title": "The licence",
+          "body": "A copy of this licence as LICENSE.txt inside the ZIP."
+        }
+      ]
+    },
+    "not-included": {
+      "title": "What's not included",
+      "items": [
+        {
+          "title": "A domain name",
+          "body": "You register and pay for your own domain."
+        },
+        {
+          "title": "Hosting",
+          "body": "You choose and pay for your own host. Any static host works."
+        },
+        {
+          "title": "Email and third-party services",
+          "body": "Forms, analytics, booking, payment, and similar services are yours to set up and pay for."
+        },
+        {
+          "title": "Stock assets you add",
+          "body": "Photos, fonts, or icons you bring in are not covered by this licence."
+        }
+      ]
+    },
+    "third-party": {
+      "title": "Third-party assets",
+      "items": [
+        {
+          "title": "Placeholders are for layout",
+          "body": "Placeholder images and sample text are there to show the layout. Check each asset's own licence before you publish it."
+        },
+        {
+          "title": "Bundled fonts",
+          "body": "Fonts that ship with the template are included as part of the template. Fonts you add are not."
+        },
+        {
+          "title": "Assets you add are yours to licence",
+          "body": "This licence does not cover third-party code, photos, or fonts that you add."
+        }
+      ]
+    },
+    "updates": {
+      "title": "Updates",
+      "items": [
+        {
+          "title": "12 months of updates",
+          "body": "Bug fixes and template updates are emailed free for 12 months from your purchase date."
+        },
+        {
+          "title": "No lifetime updates",
+          "body": "I do not promise lifetime updates. After 12 months, email me if you need a fix and I will quote it."
+        },
+        {
+          "title": "How updates arrive",
+          "body": "I email a new ZIP to the address on your Stripe receipt. Keep that address current or tell me if it changes."
+        }
+      ]
+    },
+    "support": {
+      "title": "Support",
+      "items": [
+        {
+          "title": "30 days of email support",
+          "body": "Email support for bugs in the template as shipped, for 30 days from purchase."
+        },
+        {
+          "title": "Response window",
+          "body": "I reply within one business day, Monday to Friday."
+        },
+        {
+          "title": "What is not covered",
+          "body": "Content changes, new features, hosting, domains, email, and third-party services are not part of support."
+        },
+        {
+          "title": "Custom work",
+          "body": "Changes beyond a bug fix are quoted separately at my hourly rate. See the Services page."
+        }
+      ]
+    },
+    "refunds": {
+      "title": "Refunds",
+      "items": [
+        {
+          "title": "Sales are final after delivery",
+          "body": "Once the ZIP is emailed, the sale is final, because digital files cannot be returned."
+        },
+        {
+          "title": "If something is wrong",
+          "body": "If the ZIP is broken or does not match the product page, email me and I will fix it or refund it."
+        },
+        {
+          "title": "Redistribution ends the licence",
+          "body": "If you redistribute the template, the licence ends and there is no refund."
+        }
+      ]
+    },
+    "transfer": {
+      "title": "Transferring the licence",
+      "items": [
+        {
+          "title": "You can transfer it once",
+          "body": "If you sell the end product, you may hand this licence to the buyer once."
+        },
+        {
+          "title": "Keep no copy",
+          "body": "After transferring, you must keep no copy of the template or the end product."
+        },
+        {
+          "title": "Tell me in writing",
+          "body": "Email billing@zouwop.com so my records match the new owner. The new owner is bound by this licence."
+        }
+      ]
+    },
+    "end": {
+      "title": "When the licence ends",
+      "items": [
+        {
+          "title": "When it ends",
+          "body": "The licence ends if you break these terms or transfer it without following the steps above."
+        },
+        {
+          "title": "What to do",
+          "body": "Stop using the template and remove it from any live site."
+        },
+        {
+          "title": "What survives",
+          "body": "The liability limit and the rules about resale and redistribution survive the end of the licence."
+        }
+      ]
+    }
+  },
+  "frSummary": "« Une licence, un site. » Un achat vous permet de publier le modèle comme un seul site web — pour vous ou pour un seul client — et de le modifier comme vous voulez. Vous pouvez transférer la licence une fois, avec ce site. Vous ne pouvez pas revendre, redistribuer ni partager le modèle lui-même, ni l'utiliser dans une place de marché de modèles. Les corrections de bogues sont envoyées par courriel pendant 12 mois. Les ventes sont finales une fois le fichier ZIP envoyé."
+}

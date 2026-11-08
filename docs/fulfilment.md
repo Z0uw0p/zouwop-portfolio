@@ -117,5 +117,22 @@ Target: steps 1–7 complete **within one business day** of the payment.
 | Free bug-fix/update emails for 12 months | `/thank-you`, `/licence` |
 | 30 days of bug support | `/licence` |
 | Sales final once emailed; broken/mismatched ZIP fixed or refunded | `/licence`, this file |
+| `LICENSE.txt` matches `src/data/licence.json` (`npm run check:licence`) | `scripts/check-licence.mjs`, CI, this file |
 
 If you change one of these, change every row in the same commit.
+
+## 6. Licence rules on every sale
+
+- **One purchase covers one end product.** Email this sentence unchanged if a buyer asks
+  what they bought.
+- Attach `licence/LICENSE.txt` from this repo to every delivery. It is generated from
+  `src/data/licence.json`; do not hand-edit it. `npm run check:licence` fails the build if
+  the file drifts from the data.
+- Support is 30 days for bugs in the template as shipped, with a reply within one business
+  day, Monday to Friday.
+- Updates are free by email for 12 months from purchase. There is no lifetime-update
+  promise.
+- Sales are final once the ZIP is emailed. If the ZIP is broken or does not match the
+  product page, fix it or refund it.
+
+The full text is on https://zouwop.com/licence. Do not restate it here; link to it.

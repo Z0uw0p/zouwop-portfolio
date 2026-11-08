@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import { terms } from '../data/terms';
+import { site } from '../data/site';
+
+const date = new Intl.DateTimeFormat('en-CA', {
+  dateStyle: 'long',
+  timeZone: 'UTC',
+}).format(new Date(`${terms.updated}T00:00:00Z`));
+---
+<Layout
+  title="Terms — Zouwop"
+  description="How buying a Zouwop template works: ordering, CAD prices and taxes, delivery, refunds, chargebacks, liability, and Québec law."
+>
+  <main id="main" tabindex="-1" class="legal">
+    <div class="container narrow">
+      <h1>Terms</h1>
+      <p class="updated">Last updated <time datetime={terms.updated}>{date}</time>.</p>
+      <p class="intro">{terms.intro}</p>
+
+      {terms.sections.map((section) => (
+        <section id={section.id} class="legal-section">
+          <h2>{section.title}</h2>
+          {section.items.map((item) => (
+            <Fragment>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </Fragment>
+          ))}
+        </section>
+      ))}
+
+      <p class="updated">
+        You can also reach me on
+        <a href={site.contact.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>.
+      </p>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .legal { padding: 48px 0 64px; }
+  .narrow { max-width: 760px; margin: 0 auto; }
+  h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .updated { color: var(--text-dim); font-size: 0.9rem; }
+  .intro { color: var(--text-dim); margin: 20px 0 8px; }
+  .legal-section { padding: 32px 0; border-top: 1px solid var(--border); }
+  .legal-section h2 { font-size: 1.5rem; margin-bottom: 20px; }
+  .legal-section h3 { font-size: 1.05rem; margin: 20px 0 4px; }
+  .legal-section p { color: var(--text-dim); }
+  a { color: var(--orange); }
+  a:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+</style>

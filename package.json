@@ -9,7 +9,9 @@
     "preview": "astro preview",
     "check": "astro check",
     "check:links": "node scripts/check-links.mjs",
-    "sync:templates": "node scripts/sync-templates.mjs"
+    "sync:templates": "node scripts/sync-templates.mjs",
+    "check:licence": "node scripts/check-licence.mjs",
+    "licence:render": "node scripts/check-licence.mjs --write"
   },
   "dependencies": {
     "astro": "^5.0.0"
