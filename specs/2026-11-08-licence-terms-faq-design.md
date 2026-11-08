@@ -122,7 +122,8 @@ tokens. No new palette, no new dependencies.
 
 ## Parity mechanism
 
-`src/data/licence.ts` is the only source of the licence text.
+`src/data/licence.json` is the only source of the licence text; `src/data/licence.ts` is
+its typed wrapper and `src/data/terms.ts` imports section items from it.
 
 1. `scripts/render-licence.mjs` renders the licence items to plain text (`LICENSE.txt`
    content) and prints a SHA-256 of that text.
