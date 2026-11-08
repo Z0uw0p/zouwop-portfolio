@@ -26,6 +26,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Verify template catalog is in sync
+        run: npm run sync:templates -- --check
+
       - name: Type check
         run: npm run check
 
