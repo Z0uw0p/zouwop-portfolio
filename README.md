@@ -17,3 +17,8 @@ npm run dev
 ```bash
 npm run build   # outputs to dist/
 ```
+
+## Store fulfilment
+Template sales use Stripe Payment Links and are delivered by email by hand.
+The setup, per-sale checklist, refund path, and delivery SLA are in
+[`docs/fulfilment.md`](docs/fulfilment.md).

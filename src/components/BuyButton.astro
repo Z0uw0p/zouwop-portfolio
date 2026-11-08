@@ -1,0 +1,102 @@
+---
+import type { TemplateEntry } from '../data/templates';
+import { formatCad } from '../lib/money';
+import { LICENCE_RULE, enquiryMailto, purchaseMailto } from '../data/fulfilment';
+
+interface Props {
+  entry: TemplateEntry;
+  compact?: boolean;
+}
+
+const { entry, compact = false } = Astro.props;
+const buyUrl = entry.buyUrl?.trim();
+const canBuy = entry.status === 'available' && Boolean(buyUrl);
+const href = canBuy ? (buyUrl as string) : '';
+const price = formatCad(entry.priceCents);
+---
+<div class:list={['buy', { 'buy--compact': compact, 'buy--soon': !canBuy }]}>
+  {!compact && entry.priceCents > 0 && <p class="price mono">{price}</p>}
+
+  {
+    canBuy ? (
+      <a class="btn btn-primary buy-cta" href={href} rel="noopener">
+        {compact ? 'Buy' : 'Buy the template'}
+      </a>
+    ) : (
+      <p class="soon">
+        Available soon — <a href={enquiryMailto(entry.name)}>email me</a>
+      </p>
+    )
+  }
+
+  {
+    !compact && canBuy && (
+      <p class="licence">
+        {LICENCE_RULE} <a href="/licence">Read the licence</a>.
+      </p>
+    )
+  }
+
+  {
+    !compact && canBuy && (
+      <p class="alt">
+        Need an invoice or can't pay by card?{' '}
+        <a href={purchaseMailto(entry.name)}>Email me</a>.
+      </p>
+    )
+  }
+</div>
+
+<style>
+  .buy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .buy--compact {
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+  }
+  .price {
+    color: var(--orange);
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  .buy-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+  }
+  .buy--compact .buy-cta {
+    padding: 10px 18px;
+    font-size: 0.9rem;
+  }
+  .licence,
+  .alt {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+  }
+  .licence a,
+  .alt a,
+  .soon a {
+    color: var(--orange);
+  }
+  .soon {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 44px;
+    padding: 8px 16px;
+    border: 1px dashed var(--border-strong);
+    border-radius: 999px;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+  }
+  a:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+</style>

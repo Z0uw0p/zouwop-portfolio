@@ -6,11 +6,13 @@ interface Props {
   title: string;
   description?: string;
   path?: string;
+  noindex?: boolean;
 }
 const {
   title,
   description = 'Self-hosted infrastructure setup, tech support calls, web development, and managed hosting on a server you control.',
   path,
+  noindex = false,
 } = Astro.props;
 
 const site = Astro.site ?? new URL('https://zouwop.com');
@@ -28,6 +30,7 @@ const impactVerification = {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
     <link rel="canonical" href={canonical.href} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Zouwop" />
