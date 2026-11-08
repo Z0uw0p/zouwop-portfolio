@@ -1,0 +1,102 @@
+---
+import type { TemplateEntry } from '../data/templates';
+import TemplateFigure from './TemplateFigure.astro';
+import PriceTag from './PriceTag.astro';
+
+interface Props {
+  entry: TemplateEntry;
+}
+
+const { entry } = Astro.props;
+const href = `/templates/${entry.slug}/`;
+---
+
+<article class="card tpl-card" id={`template-${entry.slug}`}>
+  <header class="tpl-card-head">
+    <h2><a href={href}>{entry.name}</a></h2>
+    <p class="meta mono">
+      {entry.niche} · licence <PriceTag amountCents={entry.priceCents} currency={entry.currency} />
+      {
+        entry.hostedMonthlyCents != null && (
+          <> · hosting <PriceTag amountCents={entry.hostedMonthlyCents} currency={entry.currency} suffix="/mo" /></>
+        )
+      }
+    </p>
+    <p class="blurb">{entry.blurb}</p>
+  </header>
+
+  <TemplateFigure previews={entry.previews} name={entry.name} />
+
+  <footer class="tpl-card-foot">
+    <a class="detail-link" href={href}>
+      What&rsquo;s included <span aria-hidden="true">→</span>
+    </a>
+    <p class="stack mono">{entry.stack.join(' · ')}</p>
+  </footer>
+</article>
+
+<style>
+  .tpl-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px;
+  }
+  .tpl-card:hover {
+    border-color: var(--border-hover);
+    transform: none;
+  }
+  h2 {
+    font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+  h2 a {
+    color: var(--text);
+    text-decoration: none;
+  }
+  h2 a:hover {
+    color: var(--orange);
+  }
+  .meta {
+    margin-top: 6px;
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 12px;
+  }
+  .blurb {
+    margin-top: 10px;
+    color: var(--text-dim);
+    max-width: 62ch;
+  }
+  .tpl-card-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+  }
+  .detail-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--orange);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .detail-link:hover {
+    text-decoration: underline;
+  }
+  .stack {
+    color: var(--text-dim);
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
+  }
+  h2 a:focus-visible,
+  .detail-link:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+</style>

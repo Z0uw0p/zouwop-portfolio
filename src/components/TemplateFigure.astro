@@ -1,0 +1,97 @@
+---
+import type { TemplatePreview } from '../data/templates';
+
+interface Props {
+  previews: TemplatePreview[];
+  name: string;
+  /** 'product' gives the figure a larger phone capture on desktop. */
+  size?: 'card' | 'product';
+}
+
+const { previews, name, size = 'card' } = Astro.props;
+
+const desktop = previews.find((preview) => preview.kind === 'desktop');
+const mobile = previews.find((preview) => preview.kind === 'mobile');
+---
+
+<figure class:list={['tpl-figure', `size-${size}`]}>
+  {
+    desktop && (
+      <a
+        class="shot desktop"
+        href={desktop.src}
+        aria-label={`${name} — open the full desktop preview`}
+      >
+        <img
+          src={desktop.src}
+          alt={desktop.alt}
+          width={desktop.width}
+          height={desktop.height}
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
+    )
+  }
+  {
+    mobile && (
+      <a
+        class="shot mobile"
+        href={mobile.src}
+        aria-label={`${name} — open the full phone preview`}
+      >
+        <img
+          src={mobile.src}
+          alt={mobile.alt}
+          width={mobile.width}
+          height={mobile.height}
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
+    )
+  }
+</figure>
+
+<style>
+  .tpl-figure {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: 16px;
+    margin: 0;
+  }
+  .shot {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--bg);
+    line-height: 0;
+  }
+  .shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .shot.mobile {
+    width: 150px;
+    max-width: 150px;
+  }
+  .shot:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+  @media (min-width: 640px) {
+    .tpl-figure {
+      grid-template-columns: minmax(0, 1fr) 150px;
+    }
+    .shot.mobile {
+      width: 100%;
+      max-width: none;
+    }
+    .size-product {
+      grid-template-columns: minmax(0, 1fr) 200px;
+    }
+  }
+</style>

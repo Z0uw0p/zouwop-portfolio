@@ -4,11 +4,13 @@ import Wordmark from './Wordmark.astro';
 const path = Astro.url.pathname.replace(/\/+$/, '') || '/';
 const links = [
   { label: 'Services', href: '/services' },
+  { label: 'Templates', href: '/templates' },
   { label: 'Portfolio', href: '/portfolio' },
   { label: 'Links', href: '/links' },
   { label: 'Contact', href: '/#contact' },
 ];
-const isActive = (href: string) => href === path;
+const isActive = (href: string) =>
+  href === path || (href !== '/' && path.startsWith(`${href}/`));
 ---
 <header class="site-header" data-header>
   <div class="container header-inner">

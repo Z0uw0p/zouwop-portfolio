@@ -1,0 +1,29 @@
+---
+interface Props {
+  amountCents: number;
+  currency?: 'CAD';
+  /** Optional trailing unit, e.g. '/mo'. */
+  suffix?: string;
+}
+
+const { amountCents, currency = 'CAD', suffix } = Astro.props;
+
+const symbol = currency === 'CAD' ? '$' : currency;
+const amount = (amountCents / 100).toLocaleString('en-CA', {
+  maximumFractionDigits: 0,
+});
+---
+
+<span class="price-tag">
+  {symbol}{amount}{suffix && <span class="suffix">{suffix}</span>}
+</span>
+
+<style>
+  .price-tag {
+    font-family: var(--mono);
+    white-space: nowrap;
+  }
+  .suffix {
+    margin-left: 1px;
+  }
+</style>
