@@ -3,15 +3,18 @@ import Layout from '../../layouts/Layout.astro';
 import Footer from '../../components/Footer.astro';
 import TemplateCard from '../../components/TemplateCard.astro';
 import { templates } from '../../data/templates';
+import { formatCadShort } from '../../lib/format-price';
+import { fullBuild, licenceFrom, licenceMinCents } from '../../data/pricing';
 import { pageExists } from '../../lib/pages';
 
 const hasLicence = pageExists('/licence');
 const hasPricing = pageExists('/pricing');
+const licenceNote = `${licenceFrom ? 'from ' : ''}${formatCadShort(licenceMinCents)} each`;
 ---
 
 <Layout
   title="Templates — Zouwop"
-  description="Website templates I build and sell: nine complete sites for trades, restaurants, clinics, studios, musicians and photographers. Licence $500 each."
+  description={`Website templates I build and sell: ${templates.length} complete sites for trades, restaurants, clinics, studios, musicians and photographers. Licence ${licenceNote}.`}
 >
   <main id="main" tabindex="-1" class="page">
     <div class="container">
@@ -36,7 +39,8 @@ const hasPricing = pageExists('/pricing');
       </div>
 
       <p class="outro">
-        Want something built or changed for you? The full build is $2,000 —
+        Want something built or changed for you? The full build is{' '}
+        {formatCadShort(fullBuild.priceCents)} — <a href="/pricing">see pricing</a> or{' '}
         <a href="/#contact">get in touch</a>.
       </p>
     </div>

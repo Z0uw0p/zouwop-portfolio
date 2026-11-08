@@ -110,26 +110,25 @@ const faqs = [
         </section>
 
         <section aria-labelledby="hosting-heading">
-          <h2 id="hosting-heading">Hosting</h2>
+          <h2 id="hosting-heading">Hosting + maintenance</h2>
           {
             entry.hostedMonthlyCents != null ? (
               <p>
-                I can host and maintain it for you for{' '}
-                <PriceTag
-                  amountCents={entry.hostedMonthlyCents}
-                  currency={entry.currency}
-                  suffix="/mo"
-                />.{' '}
-                <a href={`mailto:${site.contact.billing}`}>Email about hosting</a>.
+                I host and maintain it for{' '}
+                <PriceTag amountCents={entry.hostedMonthlyCents} suffix="/mo" />,
+                including updates, backups and small changes.{' '}
+                <a href="/pricing#hosted">What hosting covers</a>.
               </p>
             ) : (
               <p>
-                Prefer not to run it yourself? I host and maintain sites on a
-                server you control. Hosting is arranged separately —{' '}
-                <a href={`mailto:${site.contact.billing}?subject=${encodeURIComponent(`Hosting — ${entry.name}`)}`}>
-                  email {site.contact.billing}
-                </a>{' '}
-                to talk it through.
+                I can host and maintain it on zouwop-server, including updates,
+                backups and small changes. It is a monthly membership —{' '}
+                <a href="/pricing#hosted">see hosting</a> or{' '}
+                <a
+                  href={`mailto:${site.contact.billing}?subject=${encodeURIComponent(`Hosting — ${entry.name}`)}`}
+                >
+                  email about hosting
+                </a>.
               </p>
             )
           }
