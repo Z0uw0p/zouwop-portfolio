@@ -1,5 +1,116 @@
 [
   {
+    "slug": "atelier-studio",
+    "name": "Atelier Studio",
+    "niche": "design studio",
+    "audience": "design studios and independent designers",
+    "stack": [
+      "Astro 5",
+      "static"
+    ],
+    "version": "1.0.0",
+    "blurb": "Swiss-editorial studio portfolio with a work index whose thumbnails follow the cursor.",
+    "tags": [
+      "portfolio",
+      "studio",
+      "editorial",
+      "case-studies"
+    ],
+    "previews": {
+      "desktop": "preview/desktop-1440.webp",
+      "mobile": "preview/mobile-390.webp"
+    },
+    "priceCents": 50000,
+    "zip": "atelier-studio-1.0.0.zip",
+    "bytes": 202372,
+    "sha256": "3d3601acdd08438f149071bcc4d807facb4346af7d392a1fbed3bae3f1223207",
+    "packagedAt": "2026-11-08T06:00:03.370Z"
+  },
+  {
+    "slug": "fade-barbershop",
+    "name": "Fade Barbershop",
+    "niche": "barbershop",
+    "audience": "independent barbershops",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "version": "1.0.0",
+    "blurb": "Vintage-industrial barbershop site with a chalkboard price board, the chairs, house rules and booking.",
+    "tags": [
+      "barbershop",
+      "services",
+      "price-board",
+      "static"
+    ],
+    "previews": {
+      "desktop": "preview/desktop-1440.webp",
+      "mobile": "preview/mobile-390.webp"
+    },
+    "priceCents": 50000,
+    "zip": "fade-barbershop-1.0.0.zip",
+    "bytes": 392458,
+    "sha256": "ef046d3ebeecdbb6baed322f99db2fa691aec25fbd2b7b7b40b562c1702c6e3c",
+    "packagedAt": "2026-11-08T06:00:03.370Z"
+  },
+  {
+    "slug": "forge-trades",
+    "name": "Forge Trades",
+    "niche": "trades",
+    "audience": "independent tradespeople",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "version": "1.0.0",
+    "blurb": "Industrial one-page site for a local trade contractor: services, service area, reviews, quote form and FAQ.",
+    "tags": [
+      "one-page",
+      "trades",
+      "services",
+      "static"
+    ],
+    "previews": {
+      "desktop": "preview/desktop-1440.webp",
+      "mobile": "preview/mobile-390.webp"
+    },
+    "priceCents": 50000,
+    "zip": "forge-trades-1.0.0.zip",
+    "bytes": 390317,
+    "sha256": "81d65627a9dab490a4c5b01d443e433b39139b98c70d7b5ee92682326b01eb96",
+    "packagedAt": "2026-11-08T06:00:03.370Z"
+  },
+  {
+    "slug": "meridian-clinic",
+    "name": "Meridian Clinic",
+    "niche": "health",
+    "audience": "independent clinics",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "version": "1.0.0",
+    "blurb": "A calm, strictly accessible clinic site (dental, physio, chiropractic) with an appointment request form.",
+    "tags": [
+      "clinic",
+      "health",
+      "accessible",
+      "static"
+    ],
+    "previews": {
+      "desktop": "preview/desktop-1440.webp",
+      "mobile": "preview/mobile-390.webp"
+    },
+    "priceCents": 50000,
+    "zip": "meridian-clinic-1.0.0.zip",
+    "bytes": 872502,
+    "sha256": "ea55d0cdae7006d7a775b3ec5a70bc95dbb108bcbb7f4b70ba6d08f28d867f48",
+    "packagedAt": "2026-11-08T06:00:03.370Z"
+  },
+  {
     "slug": "photo-portfolio",
     "name": "Photo portfolio",
     "niche": "photography",
@@ -22,11 +133,94 @@
       "desktop": "preview/desktop-1440.webp",
       "mobile": "preview/mobile-390.webp"
     },
-    "priceCents": 0,
+    "priceCents": 50000,
     "zip": "photo-portfolio-1.0.0.zip",
-    "bytes": 1494523,
-    "sha256": "85632da894028bc0821ce83334a4f35e666bb3531aaeea29c0d0515fb01bec7d",
-    "packagedAt": "2026-11-08T01:14:24.600Z"
+    "bytes": 1524242,
+    "sha256": "acdde9342e25d3f97332c0c8cbbda101d1bae88a0d656d1dd2dd1faa67aa1193",
+    "packagedAt": "2026-11-08T06:00:03.370Z"
+  },
+  {
+    "slug": "rivage-coiffeur",
+    "name": "Rivage Coiffeur",
+    "niche": "salon de coiffure",
+    "audience": "salons de coiffure au Québec",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "version": "1.0.0",
+    "blurb": "Site de salon de coiffure en français (fr-CA) : services et tarifs en dollars, équipe, cartes cadeaux et prise de rendez-vous.",
+    "tags": [
+      "salon",
+      "coiffure",
+      "français",
+      "quatre pages"
+    ],
+    "previews": {
+      "desktop": "preview/desktop-1440.webp",
+      "mobile": "preview/mobile-390.webp"
+    },
+    "priceCents": 50000,
+    "zip": "rivage-coiffeur-1.0.0.zip",
+    "bytes": 402562,
+    "sha256": "732ac0768f0ebb6c3536369fb9841062f7564932776def06cc6d845768ba9cab",
+    "packagedAt": "2026-11-08T06:00:03.370Z"
+  },
+  {
+    "slug": "taverna-restaurant",
+    "name": "Taverna restaurant",
+    "niche": "restaurant",
+    "audience": "independent restaurants and cafés",
+    "stack": [
+      "Astro 5",
+      "static"
+    ],
+    "version": "1.0.0",
+    "blurb": "A moody restaurant site whose menu updates in one file: sections, dishes, prices, dietary tags.",
+    "tags": [
+      "restaurant",
+      "menu",
+      "astro",
+      "multi-page"
+    ],
+    "previews": {
+      "desktop": "preview/desktop-1440.webp",
+      "mobile": "preview/mobile-390.webp"
+    },
+    "priceCents": 50000,
+    "zip": "taverna-restaurant-1.0.0.zip",
+    "bytes": 303067,
+    "sha256": "64e2a6dcb62c8f6c4cd848422a98a290e3766ff705ca0ce0ef2f91cbd780f665",
+    "packagedAt": "2026-11-08T06:00:03.370Z"
+  },
+  {
+    "slug": "wavelength-musician",
+    "name": "Wavelength Musician",
+    "niche": "musician",
+    "audience": "musicians, bands and DJs",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "version": "1.0.0",
+    "blurb": "Neon-on-black electronic press kit: releases, tour dates, press quotes, bios and downloadable press assets.",
+    "tags": [
+      "one-page",
+      "epk",
+      "music",
+      "static"
+    ],
+    "previews": {
+      "desktop": "preview/desktop-1440.webp",
+      "mobile": "preview/mobile-390.webp"
+    },
+    "priceCents": 50000,
+    "zip": "wavelength-musician-1.0.0.zip",
+    "bytes": 239266,
+    "sha256": "8c5f77a19a8fffb0f578249caaaa6451c48e7505935e4c61345ae5217eed52ab",
+    "packagedAt": "2026-11-08T06:00:03.370Z"
   },
   {
     "slug": "website",
@@ -49,10 +243,10 @@
       "desktop": "preview/desktop-1440.webp",
       "mobile": "preview/mobile-390.webp"
     },
-    "priceCents": 0,
+    "priceCents": 50000,
     "zip": "website-0.1.0.zip",
-    "bytes": 95203,
-    "sha256": "f29be2c759d2663d6085d507b3de333c74c02b606e520a81378ee9138d0f3ccc",
-    "packagedAt": "2026-11-08T01:14:24.600Z"
+    "bytes": 271219,
+    "sha256": "2f966fe5da08c7a3282fd800b2716d3f6145d2aeff59c1004f6672499bc6affa",
+    "packagedAt": "2026-11-08T06:00:03.370Z"
   }
 ]

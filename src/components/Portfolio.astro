@@ -7,9 +7,6 @@ interface Props {
 
 const { entries } = Astro.props;
 
-const mailto = (email: string, subject: string) =>
-  `mailto:${email}?subject=${encodeURIComponent(subject)}`;
-
 const shots = (entry: PortfolioEntry, kind: 'desktop' | 'mobile') =>
   entry.screenshots.filter((shot) => shot.kind === kind);
 
@@ -51,11 +48,11 @@ const host = (url: string) => {
         </figure>
       )}
 
-      <section class="template" aria-labelledby={`template-${entry.id}`}>
-        <h3 id={`template-${entry.id}`}>The template</h3>
-        <p class="template-note">
-          The same pages with placeholder photos and placeholder text — that is what
-          you get, ready for your own images.
+      <section class="screens" aria-labelledby={`screens-${entry.id}`}>
+        <h3 id={`screens-${entry.id}`}>The site</h3>
+        <p class="screens-note">
+          Every page, on desktop and on a phone. Select any image to see it full
+          size.
         </p>
 
         <div class="shots-desktop">
@@ -100,31 +97,19 @@ const host = (url: string) => {
           ))}
         </div>
 
-        <div class="pricing">
-          {entry.pricing.map((option) => (
-            <div class="price">
-              <p class="price-label mono">{option.label}</p>
-              <p class="price-value">{option.price}</p>
-              <a
-                class="btn btn-primary cta"
-                href={mailto(entry.buyEmail, option.subject)}
-                aria-label={`${option.label}, ${option.price}: email ${entry.buyEmail}`}
-              >
-                {option.cta}
-              </a>
-            </div>
-          ))}
-        </div>
-
-        <p class="fineprint">
-          Email {entry.buyEmail} — the subject line is prefilled. Payment and handover by reply.
-        </p>
+        {entry.templateSlug && (
+          <p class="template-link">
+            I built this one for a client. The{' '}
+            <a href={`/templates/${entry.templateSlug}/`}>photo portfolio template</a>{' '}
+            is the same layout with placeholder photos.
+          </p>
+        )}
       </section>
     </article>
   ))
 }
 
-<dialog class="shot-lightbox" id="portfolio-lightbox" aria-label="Template screenshots">
+<dialog class="shot-lightbox" id="portfolio-lightbox" aria-label="Project screenshots">
   <div class="lb-head">
     <span class="lb-counter mono" data-counter></span>
     <button class="lb-close" type="button" data-close aria-label="Close screenshots">✕</button>
@@ -184,7 +169,7 @@ const host = (url: string) => {
       link.addEventListener('click', (event) => {
         const entry = link.closest('.entry');
         if (!entry) return;
-        const links = Array.from(entry.querySelectorAll<HTMLAnchorElement>('.template .shot'));
+        const links = Array.from(entry.querySelectorAll<HTMLAnchorElement>('.screens .shot'));
         const list: Shot[] = links.map((el) => ({
           src: el.getAttribute('href') || '',
           label: el.dataset.label || '',
@@ -297,17 +282,17 @@ const host = (url: string) => {
   .embed figcaption a:hover {
     text-decoration: underline;
   }
-  .template {
+  .screens {
     margin-top: 32px;
     padding-top: 24px;
     border-top: 1px solid var(--border);
   }
-  .template h3 {
+  .screens h3 {
     font-size: 1.2rem;
     font-weight: 800;
     letter-spacing: -0.01em;
   }
-  .template-note {
+  .screens-note {
     color: var(--text-dim);
     margin-top: 6px;
     max-width: 62ch;
@@ -346,41 +331,15 @@ const host = (url: string) => {
     object-fit: cover;
     object-position: top;
   }
-  .pricing {
-    display: grid;
-    gap: 12px;
-    margin-top: 28px;
-  }
-  .price {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 20px;
-  }
-  .price-label {
-    color: var(--purple);
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-  .price-value {
-    font-size: 1.6rem;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-  }
-  .cta {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 48px;
-    margin-top: 8px;
-    font-size: 1rem;
-  }
-  .fineprint {
+  .template-link {
     color: var(--text-dim);
-    font-size: 0.8rem;
-    margin-top: 16px;
+    margin-top: 20px;
+    max-width: 62ch;
+    font-size: 0.95rem;
+  }
+  .template-link a {
+    color: var(--orange);
+    font-weight: 600;
   }
 
   /* screenshot carousel */
@@ -492,10 +451,6 @@ const host = (url: string) => {
   @media (min-width: 640px) {
     .entry {
       padding: 28px;
-    }
-    .pricing {
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
     }
   }
   @media (min-width: 720px) {

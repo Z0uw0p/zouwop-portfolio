@@ -6,29 +6,22 @@ export interface PortfolioScreenshot {
   kind: 'desktop' | 'mobile';
 }
 
-export interface PortfolioPricing {
-  label: string;
-  price: string;
-  subject: string;
-  cta: string;
-}
-
 export interface PortfolioEntry {
   id: string;
   name: string;
   liveUrl: string;
-  /** Live site shown in a small iframe above the template screenshots. */
+  /** Live site shown in a small iframe above the screenshots. */
   embedUrl?: string;
   description: string;
-  buyEmail: string;
-  pricing: PortfolioPricing[];
+  /** Slug of the matching entry in the template shop, when one exists. */
+  templateSlug?: string;
   screenshots: PortfolioScreenshot[];
 }
 
 /**
- * Sites built for clients, sold as templates. Each entry is self-contained:
- * adding a second project means adding one object here and dropping its
- * screenshots into public/portfolio/<id>/.
+ * Client work and case studies. Each entry is self-contained: adding a second
+ * project means adding one object here and dropping its screenshots into
+ * public/portfolio/<id>/.
  */
 export const portfolio: PortfolioEntry[] = [
   {
@@ -38,21 +31,7 @@ export const portfolio: PortfolioEntry[] = [
     embedUrl: 'https://beatricedaudelin.com/',
     description:
       'A photographer portfolio — masonry gallery, project and exposition pages, agency inquiry flow.',
-    buyEmail: 'billing@zouwop.com',
-    pricing: [
-      {
-        label: 'Buy the template',
-        price: '$1,000',
-        subject: 'Template purchase — Photographer portfolio',
-        cta: 'Email to buy',
-      },
-      {
-        label: 'Hosted + maintained',
-        price: '$50/month',
-        subject: 'Hosting + maintenance — Photographer portfolio',
-        cta: 'Email about hosting',
-      },
-    ],
+    templateSlug: 'photo-portfolio',
     screenshots: [
       {
         label: 'Home — desktop',
