@@ -8,6 +8,13 @@
 
 **Tech Stack:** Astro 5 (static), TypeScript, plain CSS, Node 22. No new dependencies.
 
+> **Implementation note (2026-11-08):** the offer CTAs shipped in a `.cta-row`
+> directly below the table instead of `<tfoot>`. The Astro compiler mis-renders
+> repeated `<a>` elements inside a table: the last anchor is left open and the
+> next section's anchor is duplicated and foster-parented. Moving the CTAs out of
+> the table fixes it and keeps the table purely tabular. The design spec reflects
+> this.
+
 ## Global Constraints
 
 - `output: 'static'`; no client JS for the table; no new dependencies.

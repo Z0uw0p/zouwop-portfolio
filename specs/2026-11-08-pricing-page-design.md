@@ -60,11 +60,14 @@ Route: `src/pages/pricing.astro`, `path="/pricing"`.
    - visible `<caption>`: "What each offer includes";
    - `<th scope="col">` per offer, with price under the name;
    - `<th scope="row">` per feature;
-   - `<tfoot>` with one CTA per offer;
+   - one CTA per offer in a row directly below the table, aligned to the same
+     column grid (not inside `<tfoot>`, because the Astro compiler mis-renders
+     repeated `<a>` elements inside a table and duplicates them into the next
+     section);
    - desktop: real table; below `720px`: each `<tr>` becomes a card, the `thead`
      is visually hidden but kept in the accessibility tree, and each `<td>` shows
-     its column name through `data-label` + `::before`. No horizontal scroll, no
-     client JS.
+     its column name through `data-label` + `::before`. The CTA row stacks into
+     full-width buttons. No horizontal scroll, no client JS.
 3. `#hosted` section: what hosting covers (hosting on zouwop-server, updates,
    backups, small changes), monthly price on request or `$X/mo` once set, one CTA.
 4. Closing paragraph: what the full build buys, and — honestly — "if you expect to
