@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07",
+  "updated": "2026-11-08",
   "rule": "One purchase covers one end product.",
   "summary": [
     {
@@ -70,7 +70,7 @@
         },
         {
           "title": "No claiming authorship",
-          "body": "You may not present the template as your own original work for sale as a template."
+          "body": "You may not claim you wrote the template or present it as your own original work for sale as a template."
         },
         {
           "title": "One end product per purchase",

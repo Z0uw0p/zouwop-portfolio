@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
 import { licence, LICENCE_RULE, licenceSections } from '../data/licence';
+import { BILLING_EMAIL, SUPPORT_DAYS, UPDATES_MONTHS } from '../data/fulfilment';
 
 const date = new Intl.DateTimeFormat('en-CA', {
   dateStyle: 'long',
@@ -10,7 +11,7 @@ const date = new Intl.DateTimeFormat('en-CA', {
 ---
 <Layout
   title="Licence — Zouwop"
-  description={`What you can and cannot do with a Zouwop template: ${LICENCE_RULE}`}
+  description={`${LICENCE_RULE} Edits, ${UPDATES_MONTHS} months of updates, ${SUPPORT_DAYS} days of bug support.`}
 >
   <main id="main" tabindex="-1" class="legal">
     <div class="container narrow">
@@ -54,7 +55,7 @@ const date = new Intl.DateTimeFormat('en-CA', {
       </section>
 
       <p class="updated">
-        Questions? Email <a href="mailto:billing@zouwop.com">billing@zouwop.com</a>.
+        Questions? Email <a href={`mailto:${BILLING_EMAIL}`}>{BILLING_EMAIL}</a>.
       </p>
     </div>
   </main>

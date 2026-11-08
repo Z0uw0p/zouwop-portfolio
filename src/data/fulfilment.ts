@@ -1,7 +1,7 @@
 import { site } from './site';
 
 /** Matches the wording in /licence, the buy CTA, and docs/fulfilment.md. */
-export const LICENCE_RULE = 'One purchase covers one end product.';
+export { LICENCE_RULE } from './licence';
 
 export const BILLING_EMAIL = site.contact.billing;
 
