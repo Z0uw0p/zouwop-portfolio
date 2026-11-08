@@ -1,0 +1,64 @@
+---
+import type { TemplateEntry } from '../data/templates';
+import { formatCad } from '../lib/money';
+import BuyButton from './BuyButton.astro';
+
+interface Props {
+  entry: TemplateEntry;
+}
+
+const { entry } = Astro.props;
+---
+<aside class="sticky-buy" aria-label={`Buy ${entry.name}`}>
+  <div class="sticky-buy-inner">
+    <div class="meta">
+      <span class="name">{entry.name}</span>
+      {entry.priceCents > 0 && (
+        <span class="price mono">{formatCad(entry.priceCents)}</span>
+      )}
+    </div>
+    <BuyButton entry={entry} compact />
+  </div>
+</aside>
+
+<style>
+  .sticky-buy {
+    display: none;
+  }
+  @media (max-width: 719px) {
+    .sticky-buy {
+      display: block;
+      position: sticky;
+      bottom: 0;
+      z-index: 40;
+      padding-bottom: env(safe-area-inset-bottom);
+      background: rgba(13, 13, 18, 0.95);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border);
+    }
+    .sticky-buy-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 24px;
+    }
+    .meta {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+    .name {
+      font-weight: 600;
+      font-size: 0.95rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .price {
+      color: var(--orange);
+      font-size: 0.85rem;
+    }
+  }
+</style>
