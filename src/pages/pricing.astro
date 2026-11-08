@@ -15,7 +15,7 @@ import {
 const licencePrice = `${licenceFrom ? 'from ' : ''}${formatCadShort(licenceMinCents)}`;
 const hostedPrice =
   hosted.priceCents == null
-    ? 'Monthly, price on request'
+    ? 'Price on request'
     : `${formatCadShort(hosted.priceCents)}/mo`;
 
 const description = `Three ways to buy: a template licence for ${licencePrice}, a full build for ${formatCadShort(fullBuild.priceCents)}, or hosting and maintenance. Prices in CAD.`;
@@ -51,7 +51,7 @@ const description = `Three ways to buy: a template licence for ${licencePrice}, 
               <th scope="col">
                 <span class="offer-name">{hosted.name}</span>
                 <span class="offer-price mono">{hostedPrice}</span>
-                <span class="offer-note">monthly</span>
+                <span class="offer-note">billed monthly</span>
               </th>
             </tr>
           </thead>
@@ -83,6 +83,7 @@ const description = `Three ways to buy: a template licence for ${licencePrice}, 
       <section id="hosted" class="hosted" aria-labelledby="hosted-heading">
         <h2 id="hosted-heading">{hosted.name}</h2>
         <p class="hosted-price mono">{hostedPrice}</p>
+        <p class="hosted-note">Billed monthly.</p>
         <p>{hosted.summary}</p>
         <ul class="check-list">
           {hosted.includes.map((item) => <li>{item}</li>)}
@@ -206,6 +207,11 @@ const description = `Three ways to buy: a template licence for ${licencePrice}, 
   .hosted-price {
     color: var(--orange);
     font-size: 1.1rem;
+    margin-bottom: 4px;
+  }
+  .hosted-note {
+    color: var(--text-dim);
+    font-size: 0.85rem;
     margin-bottom: 8px;
   }
   .check-list {
