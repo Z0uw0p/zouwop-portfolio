@@ -5,6 +5,8 @@ import Footer from '../../components/Footer.astro';
 import TemplateCard from '../../components/TemplateCard.astro';
 import TemplateFigure from '../../components/TemplateFigure.astro';
 import PriceTag from '../../components/PriceTag.astro';
+import BuyButton from '../../components/BuyButton.astro';
+import StickyBuyBar from '../../components/StickyBuyBar.astro';
 import { templates } from '../../data/templates';
 import { site } from '../../data/site';
 import { pageExists } from '../../lib/pages';
@@ -45,12 +47,6 @@ const requirements = isAstro
         'Any static host will serve it',
       ];
 
-const purchaseSubject = `Template purchase — ${entry.name}`;
-const buyHref =
-  entry.buyUrl ??
-  `mailto:${site.contact.billing}?subject=${encodeURIComponent(purchaseSubject)}`;
-const buyLabel = entry.buyUrl ? 'Buy this template' : 'Email to buy';
-
 const faqs = [
   {
     question: 'What do I get for the licence price?',
@@ -84,18 +80,7 @@ const faqs = [
           <h1>{entry.name}</h1>
           <p class="blurb">{entry.blurb}</p>
           <div class="buy-row">
-            {
-              entry.status === 'available' ? (
-                <>
-                  <span class="price mono">
-                    licence <PriceTag amountCents={entry.priceCents} currency={entry.currency} />
-                  </span>
-                  <a class="btn btn-primary buy" href={buyHref}>{buyLabel}</a>
-                </>
-              ) : (
-                <span class="soon mono">Coming soon</span>
-              )
-            }
+            <BuyButton entry={entry} />
           </div>
           <p class="description">{entry.description}</p>
         </header>
@@ -162,11 +147,14 @@ const faqs = [
           </div>
         </section>
 
+        <section class="buy-end" aria-labelledby="buy-end-heading">
+          <h2 id="buy-end-heading">Get {entry.name}</h2>
+          <BuyButton entry={entry} />
+        </section>
+
         <p class="licence-line">
+          Files delivered by email within one business day.
           {hasLicence && <a href="/licence">Read the End-Product Licence</a>}
-          {hasLicence && ' · '}
-          One purchase, one end product. Files delivered by email within one
-          business day.
         </p>
       </article>
 
@@ -178,6 +166,7 @@ const faqs = [
         <p class="all-link"><a href="/templates/">See all templates →</a></p>
       </section>
     </div>
+    <StickyBuyBar entry={entry} />
   </main>
   <Footer />
 </Layout>
@@ -228,24 +217,8 @@ const faqs = [
     gap: 16px;
     margin-top: 20px;
   }
-  .price {
-    color: var(--text);
-    font-size: 1.1rem;
-  }
-  .buy {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 48px;
-  }
-  .soon {
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
-    padding: 0 16px;
-    border: 1px solid var(--border-strong);
-    border-radius: 999px;
-    color: var(--text-dim);
+  .buy-end {
+    padding-top: 8px;
   }
   .description {
     color: var(--text-dim);
