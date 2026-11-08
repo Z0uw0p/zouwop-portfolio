@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import { faqGroups } from '../data/faq';
+---
+<Layout
+  title="FAQ — Zouwop"
+  description="Answers about buying, using, and getting help with a Zouwop template."
+>
+  <main id="main" tabindex="-1" class="faq">
+    <div class="container narrow">
+      <h1>Questions</h1>
+      <p class="intro">
+        Short answers to what buyers ask most. Anything missing:
+        <a href="mailto:support@zouwop.com">support@zouwop.com</a>.
+      </p>
+
+      {faqGroups.map((group) => (
+        <section id={group.id} class="group">
+          <h2>{group.title}</h2>
+          {group.items.map((item) => (
+            <Fragment>
+              <h3>{item.q}</h3>
+              <p>{item.a}</p>
+              {item.link && <p><a href={item.link.href}>{item.link.label}</a></p>}
+            </Fragment>
+          ))}
+        </section>
+      ))}
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .faq { padding: 48px 0 64px; }
+  .narrow { max-width: 760px; margin: 0 auto; }
+  h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .intro { color: var(--text-dim); margin-bottom: 24px; }
+  .group { padding: 32px 0; border-top: 1px solid var(--border); }
+  .group h2 { font-size: 1.5rem; margin-bottom: 20px; }
+  .group h3 { font-size: 1.05rem; margin: 24px 0 4px; }
+  .group p { color: var(--text-dim); }
+  a { color: var(--orange); }
+  a:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+</style>
