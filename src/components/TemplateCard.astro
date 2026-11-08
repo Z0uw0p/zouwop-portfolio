@@ -15,10 +15,10 @@ const href = `/templates/${entry.slug}/`;
   <header class="tpl-card-head">
     <h2><a href={href}>{entry.name}</a></h2>
     <p class="meta mono">
-      {entry.niche} · licence <PriceTag amountCents={entry.priceCents} currency={entry.currency} />
+      {entry.niche} · licence <PriceTag amountCents={entry.priceCents} />
       {
         entry.hostedMonthlyCents != null && (
-          <> · hosting <PriceTag amountCents={entry.hostedMonthlyCents} currency={entry.currency} suffix="/mo" /></>
+          <> · hosting <PriceTag amountCents={entry.hostedMonthlyCents} suffix="/mo" /></>
         )
       }
     </p>

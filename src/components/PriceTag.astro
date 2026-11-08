@@ -1,22 +1,16 @@
 ---
+import { formatCadShort } from '../lib/format-price';
+
 interface Props {
   amountCents: number;
-  currency?: 'CAD';
   /** Optional trailing unit, e.g. '/mo'. */
   suffix?: string;
 }
 
-const { amountCents, currency = 'CAD', suffix } = Astro.props;
-
-const symbol = currency === 'CAD' ? '$' : currency;
-const amount = (amountCents / 100).toLocaleString('en-CA', {
-  maximumFractionDigits: 0,
-});
+const { amountCents, suffix } = Astro.props;
 ---
 
-<span class="price-tag">
-  {symbol}{amount}{suffix && <span class="suffix">{suffix}</span>}
-</span>
+<span class="price-tag">{formatCadShort(amountCents)}{suffix && <span class="suffix">{suffix}</span>}</span>
 
 <style>
   .price-tag {

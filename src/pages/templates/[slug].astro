@@ -115,11 +115,7 @@ const faqs = [
             entry.hostedMonthlyCents != null ? (
               <p>
                 I can host and maintain it for you for{' '}
-                <PriceTag
-                  amountCents={entry.hostedMonthlyCents}
-                  currency={entry.currency}
-                  suffix="/mo"
-                />.{' '}
+                <PriceTag amountCents={entry.hostedMonthlyCents} suffix="/mo" />.{' '}
                 <a href={`mailto:${site.contact.billing}`}>Email about hosting</a>.
               </p>
             ) : (
