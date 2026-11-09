@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Press kit — Your Business</title>
+  <meta name="description" content="Press kit for Your Business: short and long bio, downloadable press photos, logo lockup and technical rider.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="index.html"><span>YB</span>&nbsp;Your Business</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="press.html" aria-current="page">Press</a>
+      <a href="index.html#tour">Tour</a>
+      <a href="index.html#contact">Booking</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="kicker">Press kit</p>
+        <h1>Your Business</h1>
+        <p class="tagline">High-res photos, bios and the technical rider — everything a booker or editor needs.</p>
+      </div>
+    </section>
+
+    <section id="bios">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Bio</h2>
+          <span class="count">Long form</span>
+        </div>
+        <div class="about-grid">
+          <div>
+            <p class="kicker" style="margin-bottom:0.5rem">Short</p>
+            <div class="bio" data-render="bio-short"></div>
+          </div>
+          <div class="bio" data-render="bio-long"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="photos">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Press photos</h2>
+          <span class="count">Download</span>
+        </div>
+        <div class="press-photos" data-render="press-photos"></div>
+      </div>
+    </section>
+
+    <section id="assets">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Logo lockup</h2>
+          <span class="count">Branding</span>
+        </div>
+        <div class="lockup">
+          <div class="mark" aria-hidden="true">YB</div>
+          <div>
+            <div class="lockup-name" data-site="name">Your Business</div>
+            <div class="lockup-sub" data-site="tagline">Neon soul. Floor-ready from the first bar.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rider">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Technical rider</h2>
+          <span class="count">Stage</span>
+        </div>
+        <div class="bio">
+          <p data-render="rider"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Contact</h2>
+          <span class="count">Booking</span>
+        </div>
+        <div class="about-grid">
+          <div class="bio">
+            <p>All press and booking requests go through the same desk. Include the outlet or room and the date you are thinking of, and we will get straight back.</p>
+          </div>
+          <div>
+            <ul class="contact-list">
+              <li><span class="label">Email</span><a data-site-href="email" href="#"><span data-site="email">hello@example.com</span></a></li>
+              <li><span class="label">Phone</span><a data-site-href="phone" href="#"><span data-site="phone">(555) 010-0100</span></a></li>
+              <li><span class="label">Based in</span><span data-site="city">Riverside</span></li>
+              <li><span class="label">Booking</span><a data-site-href="booking" href="#"><span data-site="booking">https://cal.com/example</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap" style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;width:100%">
+      <span>&copy; <span data-site="name">Your Business</span></span>
+      <span data-site="address">123 Example Street</span>
+      <a data-site-href="url" href="#">https://example.com</a>
+    </div>
+  </footer>
+
+  <div class="listen-bar" id="listen">
+    <span class="listen-name" data-render="listen-name"></span>
+    <div class="listen-actions">
+      <button class="btn btn-copy" type="button" data-copy="url">Copy link</button>
+      <a class="btn btn-solid" data-site-href="listenUrl" href="#listen">Listen</a>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

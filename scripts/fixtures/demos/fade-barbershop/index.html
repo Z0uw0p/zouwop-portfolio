@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Business — Vintage-industrial barbershop</title>
+  <meta name="description" content="Your Business is a walk-in barbershop for hair, beards and hot-towel shaves. Call (555) 010-0100 or book online.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="bar">
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span><span data-site="name">Your Business</span></a>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="book.html">Book</a></li>
+        </ul>
+      </nav>
+      <a class="header-call" data-site-href="phone" href="tel:+15550100100">
+        <svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        <span data-site="phone">(555) 010-0100</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Walk-ins welcome</p>
+          <h1>Sharp cuts, cold drinks, <em>no appointments</em>.</h1>
+          <p class="lede">A vintage-industrial barbershop for hair and beards. Prices are on the board before you sit, so you always know where you stand.</p>
+          <div class="hero-actions">
+            <a class="btn btn-brass" data-site-href="booking" href="https://cal.com/example">Book a chair</a>
+            <a class="btn btn-ghost" data-site-href="phone" href="tel:+15550100100">
+              <svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              Call <span data-site="phone">(555) 010-0100</span>
+            </a>
+          </div>
+        </div>
+        <div>
+          <img class="shop-plate" src="assets/placeholder/shop.svg" alt="The shop front" width="900" height="600">
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="board-heading">
+      <div class="container">
+        <p class="eyebrow">Services</p>
+        <h2 id="board-heading">The price board</h2>
+        <p class="lede mt-1">Every price, printed where everyone can see it. What you see on the board is what you pay — no surprises at the till.</p>
+        <div class="board-wrap">
+          <span class="stamp" aria-hidden="true">Walk-ins welcome</span>
+          <div class="price-board" data-render="price-board"></div>
+        </div>
+        <p class="mt-2"><a href="services.html">See every service in detail</a></p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="chairs-heading">
+      <div class="container">
+        <p class="eyebrow">The chairs</p>
+        <h2 id="chairs-heading">Three chairs, three barbers</h2>
+        <p class="lede mt-1">Book your barber by chair. Every chair takes the same booking link, so pick the hands you trust.</p>
+        <ul class="grid-chairs mt-2" data-render="barbers"></ul>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="gallery-heading">
+      <div class="container">
+        <p class="eyebrow">Gallery</p>
+        <h2 id="gallery-heading">Inside the shop</h2>
+        <ul class="gallery mt-2" data-render="gallery"></ul>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="rules-heading">
+      <div class="container">
+        <p class="eyebrow">House rules</p>
+        <h2 id="rules-heading">How we run</h2>
+        <ul class="notes mt-2" data-render="notes"></ul>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="reviews-heading">
+      <div class="container">
+        <p class="eyebrow">Reviews</p>
+        <h2 id="reviews-heading">What the regulars say</h2>
+        <div class="reviews mt-2" data-render="reviews"></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="find-heading">
+      <div class="container">
+        <p class="eyebrow">Find us</p>
+        <h2 id="find-heading">Come by the shop</h2>
+        <div class="find-grid mt-2">
+          <div>
+            <p class="lede">We are at <span data-site="address">123 Example Street</span>.</p>
+            <p class="parking-note mt-1">Free parking out front after 6pm, and a rack for bikes by the door.</p>
+            <p class="mt-1"><a data-site-href="booking" href="https://cal.com/example">Book a chair</a> or just walk in.</p>
+          </div>
+          <div>
+            <h3>Hours</h3>
+            <table class="hours-table mt-1">
+              <thead>
+                <tr>
+                  <th scope="col">Day</th>
+                  <th scope="col">Open</th>
+                </tr>
+              </thead>
+              <tbody data-render="hours"></tbody>
+            </table>
+            <p class="open-state" data-open-state>Checking hours…</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2>Hours</h2>
+          <table>
+            <tbody data-render="hours"></tbody>
+          </table>
+        </div>
+        <div>
+          <h2>Contact</h2>
+          <p data-site="address">123 Example Street</p>
+          <p><a data-site-href="phone" href="tel:+15550100100"><span data-site="phone">(555) 010-0100</span></a></p>
+          <p><a data-site-href="email" href="mailto:hello@example.com"><span data-site="email">hello@example.com</span></a></p>
+          <ul class="socials" data-render="socials"></ul>
+        </div>
+        <div>
+          <h2>Book</h2>
+          <p><a data-site-href="booking" href="https://cal.com/example">Book a chair</a></p>
+          <p class="parking-note mt-1">Walk-ins always welcome.</p>
+        </div>
+      </div>
+      <p class="footer-note">&copy; <span id="year">2026</span> <span data-site="name">Your Business</span> — <a data-site-href="url" href="https://example.com">https://example.com</a></p>
+    </div>
+  </footer>
+
+  <div class="call-bar">
+    <a data-site-href="phone" href="tel:+15550100100"><svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> Call <span data-site="phone">(555) 010-0100</span></a>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

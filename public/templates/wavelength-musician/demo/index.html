@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Business — Neon soul, floor-ready from the first bar</title>
+  <meta name="description" content="Your Business is a neon-rough live act. Releases, tour dates, press quotes and booking for the band that turns a room into a drum machine.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="index.html"><span>YB</span>&nbsp;Your Business</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="press.html">Press</a>
+      <a href="#tour">Tour</a>
+      <a href="#contact">Booking</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="kicker magenta">Now touring — 2027</p>
+        <h1>Your Business</h1>
+        <p class="tagline" data-site="tagline">Neon soul. Floor-ready from the first bar.</p>
+        <div class="hero-cta">
+          <a class="btn btn-solid" href="#listen">Listen now</a>
+          <a class="btn" href="#tour">Tour dates</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <img src="assets/placeholder/cover-1.svg" alt="Cover art for the latest release, Afterglow" width="600" height="600">
+      </div>
+    </section>
+
+    <section id="releases">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Releases</h2>
+          <span class="count">Discography</span>
+        </div>
+        <div class="latest" data-render="latest"></div>
+        <div class="release-grid" data-render="releases" style="margin-top:3rem"></div>
+      </div>
+    </section>
+
+    <section id="tour">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Tour</h2>
+          <span class="count">Live dates</span>
+        </div>
+        <div data-render="tour"></div>
+      </div>
+    </section>
+
+    <section id="press">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Press</h2>
+          <span class="count">Quotes</span>
+        </div>
+        <div class="quote-grid" data-render="quotes"></div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>About</h2>
+          <span class="count">Bio</span>
+        </div>
+        <div class="about-grid">
+          <div class="bio" data-render="bio-short"></div>
+          <div>
+            <ul class="contact-list">
+              <li><span class="label">Email</span><a data-site-href="email" href="#"><span data-site="email">hello@example.com</span></a></li>
+              <li><span class="label">Phone</span><a data-site-href="phone" href="#"><span data-site="phone">(555) 010-0100</span></a></li>
+              <li><span class="label">Based in</span><span data-site="city">Riverside</span></li>
+              <li><span class="label">Booking</span><a data-site-href="booking" href="#"><span data-site="booking">https://cal.com/example</span></a></li>
+            </ul>
+            <ul class="socials" data-render="socials"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Booking</h2>
+          <span class="count">Contact</span>
+        </div>
+        <div class="about-grid">
+          <div class="bio">
+            <p>Booking enquiries land here. Tell us the room, the city and the date, and management will come back within a couple of days. For last-minute dates, call <a data-site-href="phone" href="#"><span data-site="phone">(555) 010-0100</span></a>.</p>
+          </div>
+          <div>
+            <form class="form" id="contact-form" action="#" novalidate>
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" required autocomplete="name">
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required autocomplete="email">
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+              </div>
+              <button class="btn btn-solid" type="submit">Send</button>
+              <p class="form-success" id="form-success" role="status">Message sent — we will be in touch.</p>
+            </form>
+            <p style="margin-top:1rem;font-size:0.85rem">Prefer email? Write to <a data-site-href="email" href="#"><span data-site="email">hello@example.com</span></a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap" style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;width:100%">
+      <span>&copy; <span data-site="name">Your Business</span></span>
+      <span data-site="address">123 Example Street</span>
+      <a data-site-href="url" href="#">https://example.com</a>
+    </div>
+  </footer>
+
+  <div class="listen-bar" id="listen">
+    <span class="listen-name" data-render="listen-name"></span>
+    <div class="listen-actions">
+      <button class="btn btn-copy" type="button" data-copy="url">Copy link</button>
+      <a class="btn btn-solid" data-site-href="listenUrl" href="#listen">Listen</a>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

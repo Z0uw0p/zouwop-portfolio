@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prestations et tarifs — Votre salon</title>
+  <meta name="description" content="Toutes nos prestations de coiffure et leurs tarifs : coupe, couleur, balayage, mèches et soins.">
+  <link rel="canonical" href="https://example.com/services">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="theme-color" content="#f7f4ef">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Votre salon">
+  <meta property="og:locale" content="fr_CA">
+  <meta property="og:title" content="Prestations et tarifs — Votre salon">
+  <meta property="og:description" content="Toutes nos prestations de coiffure et leurs tarifs : coupe, couleur, balayage, mèches et soins.">
+  <meta property="og:url" content="https://example.com/services">
+  <meta property="og:image" content="https://example.com/assets/placeholder/hero.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="sauter" href="#contenu">Aller au contenu</a>
+
+  <header class="en-tete">
+    <div class="conteneur en-tete-inner">
+      <div class="marque"><a href="index.html">Votre salon</a></div>
+      <nav class="nav" aria-label="Navigation principale">
+        <button class="nav-ouvrir" type="button" data-nav-ouvrir aria-expanded="false" aria-controls="nav-liens">
+          <span></span><span></span><span></span>
+          <span class="visuellement-masque">Ouvrir le menu</span>
+        </button>
+        <ul class="nav-liens" id="nav-liens" data-nav-liens>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="services.html" aria-current="page">Prestations</a></li>
+          <li><a href="rendez-vous.html">Rendez-vous</a></li>
+        </ul>
+        <a class="btn btn-primaire nav-bouton" href="rendez-vous.html">Prendre rendez-vous</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <section class="section">
+      <div class="conteneur">
+        <p class="hero-surtitre">Nos prestations</p>
+        <h1 class="titre-section">Prestations et tarifs</h1>
+        <p class="intro-section">Chaque service inclut une consultation. Les prix sont en dollars canadiens (CAD) et s'affichent « à partir de » : ils varient selon la longueur et l'épaisseur des cheveux. Les taxes et le pourboire ne sont pas inclus.</p>
+        <div id="services-complets"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="conteneur">
+        <div class="carte-bloc">
+          <h2>Prêt·e à réserver ?</h2>
+          <p>Réservez votre place en ligne, ou écrivez-nous pour toute question.</p>
+          <p style="margin-top: 1.25rem;"><a class="btn btn-primaire" href="rendez-vous.html">Prendre rendez-vous</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pied">
+    <div class="conteneur">
+      <div class="pied-inner">
+        <div>
+          <p class="pied-marque">Votre salon</p>
+        </div>
+        <nav class="pied-lignes" aria-label="Liens de pied de page">
+          <a href="index.html">Accueil</a>
+          <a href="services.html">Prestations</a>
+          <a href="rendez-vous.html">Rendez-vous</a>
+          <a href="https://www.instagram.com/yourhandle">Instagram</a>
+        </nav>
+      </div>
+      <p class="pied-bas">© Votre salon. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <div class="barre-rdv">
+    <a class="btn btn-primaire" href="rendez-vous.html">Prendre rendez-vous</a>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

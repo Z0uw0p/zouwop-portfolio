@@ -1,0 +1,129 @@
+[
+  {
+    "slug": "archived-01",
+    "title": "Archived series 01",
+    "collection": "projects",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/archive/archived-01/01.webp",
+    "images": [
+      {
+        "src": "assets/images/archive/archived-01/01.webp",
+        "alt": "Archived series 01 — 1"
+      },
+      {
+        "src": "assets/images/archive/archived-01/02.webp",
+        "alt": "Archived series 01 — 2"
+      },
+      {
+        "src": "assets/images/archive/archived-01/03.webp",
+        "alt": "Archived series 01 — 3"
+      },
+      {
+        "src": "assets/images/archive/archived-01/04.webp",
+        "alt": "Archived series 01 — 4"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "archived-02",
+    "title": "Archived series 02",
+    "collection": "projects",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/archive/archived-02/01.webp",
+    "images": [
+      {
+        "src": "assets/images/archive/archived-02/01.webp",
+        "alt": "Archived series 02 — 1"
+      },
+      {
+        "src": "assets/images/archive/archived-02/02.webp",
+        "alt": "Archived series 02 — 2"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "archived-03",
+    "title": "Archived series 03",
+    "collection": "projects",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/archive/archived-03/01.webp",
+    "images": [
+      {
+        "src": "assets/images/archive/archived-03/01.webp",
+        "alt": "Archived series 03 — 1"
+      },
+      {
+        "src": "assets/images/archive/archived-03/02.webp",
+        "alt": "Archived series 03 — 2"
+      },
+      {
+        "src": "assets/images/archive/archived-03/03.webp",
+        "alt": "Archived series 03 — 3"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "archived-04",
+    "title": "Archived series 04",
+    "collection": "projects",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/archive/archived-04/01.webp",
+    "images": [
+      {
+        "src": "assets/images/archive/archived-04/01.webp",
+        "alt": "Archived series 04 — 1"
+      },
+      {
+        "src": "assets/images/archive/archived-04/02.webp",
+        "alt": "Archived series 04 — 2"
+      },
+      {
+        "src": "assets/images/archive/archived-04/03.webp",
+        "alt": "Archived series 04 — 3"
+      },
+      {
+        "src": "assets/images/archive/archived-04/04.webp",
+        "alt": "Archived series 04 — 4"
+      },
+      {
+        "src": "assets/images/archive/archived-04/05.webp",
+        "alt": "Archived series 04 — 5"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "archived-05",
+    "title": "Archived series 05",
+    "collection": "projects",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/archive/archived-05/01.webp",
+    "images": [
+      {
+        "src": "assets/images/archive/archived-05/01.webp",
+        "alt": "Archived series 05 — 1"
+      },
+      {
+        "src": "assets/images/archive/archived-05/02.webp",
+        "alt": "Archived series 05 — 2"
+      },
+      {
+        "src": "assets/images/archive/archived-05/03.webp",
+        "alt": "Archived series 05 — 3"
+      },
+      {
+        "src": "assets/images/archive/archived-05/04.webp",
+        "alt": "Archived series 05 — 4"
+      }
+    ],
+    "videos": []
+  }
+]

@@ -49,7 +49,8 @@ template built with root-absolute asset URLs (`/_astro/…`, `/css/style.css`,
 `https://zouwop.com/_astro/…` and gets a 404.
 
 `sync-demos.mjs` scans every copied HTML and CSS file for root-absolute asset
-URLs and refuses to copy that demo, naming the file and the URL:
+URLs and refuses any URL that does not carry that demo's own base path. A demo
+must use relative URLs or exactly `/templates/<slug>/demo/…`:
 
 ```
 forge-trades/index.html: root-absolute asset URL "/css/style.css" — build this
@@ -60,6 +61,12 @@ The fix belongs upstream in the templates repo: build the demo with the base
 path `/templates/<slug>/demo/`, or use relative URLs. Do not patch the copied
 artifact here — the next sync would overwrite it, and the store would silently
 ship a broken demo.
+
+The templates repo's `scripts/build-demos.mjs` produces those demos for all
+nine templates, and its `--verify` mode serves each one under the correct base
+and requests every referenced page asset. All nine slugs in
+`src/data/demos.json` are `available`; a missing demo still falls back to the
+saved capture in the preview shell.
 
 To prove a demo really works, run the site and request the CSS file it
 references. A `200` for the stylesheet is the evidence; the HTML alone is not.
@@ -75,7 +82,8 @@ references. A `200` for the stylesheet is the evidence; the HTML alone is not.
 When a new template becomes previewable, set its slug to `"available"` in
 `src/data/demos.json`. Until its demo lands, leave it `"coming-soon"`: the
 preview page still builds, explains that the live demo is coming, and links
-back to the product page.
+back to the product page. Every template in the current catalog is
+`"available"`.
 
 ## What the preview shell guarantees, and what it does not
 

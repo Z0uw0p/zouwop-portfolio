@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book a chair — Your Business</title>
+  <meta name="description" content="Book a chair at Your Business. Walk-ins welcome, or reserve a chair online. Call (555) 010-0100 if booking is playing up.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="bar">
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span><span data-site="name">Your Business</span></a>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="book.html">Book</a></li>
+        </ul>
+      </nav>
+      <a class="header-call" data-site-href="phone" href="tel:+15550100100">
+        <svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        <span data-site="phone">(555) 010-0100</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section" aria-labelledby="book-heading">
+      <div class="container">
+        <p class="eyebrow">Book</p>
+        <h1 id="book-heading">Book a chair</h1>
+        <p class="lede mt-1">Reserve a chair online, or just walk in. Booking takes a minute, and we hold your chair for ten minutes past your time.</p>
+
+        <div class="book-cta mt-2">
+          <p class="book-big">Reserve your chair online</p>
+          <p class="book-sub">Pick a time that suits you. Walk-ins are always welcome too.</p>
+          <a class="btn btn-brass btn-block" data-site-href="booking" href="https://cal.com/example">Open booking</a>
+        </div>
+
+        <div class="find-grid mt-2">
+          <div>
+            <h2>Prefer the phone?</h2>
+            <p class="mt-1">If booking is playing up, or you want to talk to a barber first:</p>
+            <p class="mt-1"><a class="btn btn-ghost" data-site-href="phone" href="tel:+15550100100">
+              <svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              Call <span data-site="phone">(555) 010-0100</span>
+            </a></p>
+            <p class="mt-1">Or email <a data-site-href="email" href="mailto:hello@example.com"><span data-site="email">hello@example.com</span></a>.</p>
+          </div>
+          <div>
+            <h2>Hours</h2>
+            <table class="hours-table mt-1">
+              <thead>
+                <tr>
+                  <th scope="col">Day</th>
+                  <th scope="col">Open</th>
+                </tr>
+              </thead>
+              <tbody data-render="hours"></tbody>
+            </table>
+            <p class="open-state" data-open-state>Checking hours…</p>
+          </div>
+        </div>
+
+        <section class="mt-2" aria-labelledby="expect-heading">
+          <h2 id="expect-heading">What to expect</h2>
+          <ol class="expect-list mt-1">
+            <li>Come in and grab a chair. A barber will be with you in order of arrival.</li>
+            <li>Tell us what you want — hair, beard, or the works.</li>
+            <li>Prices are on the board before you sit, so there are no surprises.</li>
+            <li>We run late sometimes; if we do, we will say so and offer you a rebook.</li>
+          </ol>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2>Hours</h2>
+          <table>
+            <tbody data-render="hours"></tbody>
+          </table>
+        </div>
+        <div>
+          <h2>Contact</h2>
+          <p data-site="address">123 Example Street</p>
+          <p><a data-site-href="phone" href="tel:+15550100100"><span data-site="phone">(555) 010-0100</span></a></p>
+          <p><a data-site-href="email" href="mailto:hello@example.com"><span data-site="email">hello@example.com</span></a></p>
+        </div>
+        <div>
+          <h2>Book</h2>
+          <p><a data-site-href="booking" href="https://cal.com/example">Book a chair</a></p>
+        </div>
+      </div>
+      <p class="footer-note">&copy; <span id="year">2026</span> <span data-site="name">Your Business</span> — <a data-site-href="url" href="https://example.com">https://example.com</a></p>
+    </div>
+  </footer>
+
+  <div class="call-bar">
+    <a data-site-href="phone" href="tel:+15550100100"><svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> Call <span data-site="phone">(555) 010-0100</span></a>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

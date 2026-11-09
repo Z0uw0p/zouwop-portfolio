@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prendre rendez-vous — Votre salon</title>
+  <meta name="description" content="Prenez rendez-vous en ligne ou par téléphone. Politique d'annulation et informations pratiques.">
+  <link rel="canonical" href="https://example.com/rendez-vous">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="theme-color" content="#f7f4ef">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Votre salon">
+  <meta property="og:locale" content="fr_CA">
+  <meta property="og:title" content="Prendre rendez-vous — Votre salon">
+  <meta property="og:description" content="Prenez rendez-vous en ligne ou par téléphone. Politique d'annulation et informations pratiques.">
+  <meta property="og:url" content="https://example.com/rendez-vous">
+  <meta property="og:image" content="https://example.com/assets/placeholder/hero.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="sauter" href="#contenu">Aller au contenu</a>
+
+  <header class="en-tete">
+    <div class="conteneur en-tete-inner">
+      <div class="marque"><a href="index.html">Votre salon</a></div>
+      <nav class="nav" aria-label="Navigation principale">
+        <button class="nav-ouvrir" type="button" data-nav-ouvrir aria-expanded="false" aria-controls="nav-liens">
+          <span></span><span></span><span></span>
+          <span class="visuellement-masque">Ouvrir le menu</span>
+        </button>
+        <ul class="nav-liens" id="nav-liens" data-nav-liens>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="services.html">Prestations</a></li>
+          <li><a href="rendez-vous.html" aria-current="page">Rendez-vous</a></li>
+        </ul>
+        <a class="btn btn-primaire nav-bouton" href="rendez-vous.html">Prendre rendez-vous</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <section class="section">
+      <div class="conteneur">
+        <p class="hero-surtitre">Réservation</p>
+        <h1 class="titre-section">Prendre rendez-vous</h1>
+        <p class="intro-section">Réservez en ligne en quelques clics, ou joignez-nous par téléphone au <a class="lien-important" href="tel:+15550100100">(555) 010-0100</a>.</p>
+
+        <div class="rdv-grille">
+          <div>
+            <div class="carte-bloc" style="margin-bottom: 1.25rem;">
+              <h2>Réservation en ligne</h2>
+              <p>Choisissez votre service, la date et l'heure qui vous conviennent.</p>
+              <p style="margin-top: 1.25rem;"><a class="btn btn-primaire" href="https://cal.com/example">Réserver en ligne</a></p>
+            </div>
+
+            <div class="carte-bloc" style="margin-bottom: 1.25rem;">
+              <h2>Politique d'annulation</h2>
+              <p id="politique-annulation"></p>
+            </div>
+
+            <div class="carte-bloc" style="margin-bottom: 1.25rem;">
+              <h2>Retard</h2>
+              <p id="politique-retard"></p>
+            </div>
+
+            <div class="carte-bloc">
+              <h2>Sans rendez-vous</h2>
+              <p id="sans-rendez-vous"></p>
+            </div>
+          </div>
+
+          <div class="carte-bloc">
+            <h2>Demande d'information</h2>
+            <p style="margin-bottom: 1.25rem;">Vous ne trouvez pas de plage qui vous convient ? Écrivez-nous pour convenir d'un moment.</p>
+            <form id="formulaire-demande" class="formulaire" action="#" novalidate>
+              <div class="champ">
+                <label for="champ-nom">Nom</label>
+                <input id="champ-nom" name="nom" type="text" autocomplete="name" required>
+              </div>
+              <div class="champ">
+                <label for="champ-courriel">Courriel</label>
+                <input id="champ-courriel" name="courriel" type="email" autocomplete="email" required>
+              </div>
+              <div class="champ">
+                <label for="champ-telephone">Téléphone (facultatif)</label>
+                <input id="champ-telephone" name="telephone" type="tel" autocomplete="tel">
+              </div>
+              <div class="champ">
+                <label for="champ-service">Service</label>
+                <select id="champ-service" name="service">
+                  <option value="">Choisir un service</option>
+                  <option>Coupe</option>
+                  <option>Couleur</option>
+                  <option>Soins</option>
+                  <option>Homme</option>
+                  <option>Autre</option>
+                </select>
+              </div>
+              <div class="champ">
+                <label for="champ-message">Message</label>
+                <textarea id="champ-message" name="message" required></textarea>
+              </div>
+              <p class="formulaire-statut" id="formulaire-statut" aria-live="polite"></p>
+              <button class="btn btn-primaire" type="submit">Envoyer ma demande</button>
+            </form>
+            <p style="margin-top: 1.25rem;">Ou écrivez-nous directement à <a class="lien-important" href="mailto:hello@example.com">hello@example.com</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pied">
+    <div class="conteneur">
+      <div class="pied-inner">
+        <div>
+          <p class="pied-marque">Votre salon</p>
+        </div>
+        <nav class="pied-lignes" aria-label="Liens de pied de page">
+          <a href="index.html">Accueil</a>
+          <a href="services.html">Prestations</a>
+          <a href="rendez-vous.html">Rendez-vous</a>
+          <a href="https://www.instagram.com/yourhandle">Instagram</a>
+        </nav>
+      </div>
+      <p class="pied-bas">© Votre salon. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <div class="barre-rdv">
+    <a class="btn btn-primaire" href="rendez-vous.html">Prendre rendez-vous</a>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
