@@ -1,0 +1,924 @@
+/* ==========================================================================
+   Rivage coiffeur — feuille de style principale
+   Palette : ivoire, noir, bordeaux, gris.
+   ========================================================================== */
+
+/* --- Jetons de design ---------------------------------------------------- */
+
+:root {
+  --ivoire: #f7f4ef;
+  --noir: #16161a;
+  --bordeaux: #6d2334;
+  --gris: #6f6a66;
+  --gris-fonce: #55514d;
+  --trait: rgba(111, 106, 102, 0.2);
+  --blanc: #ffffff;
+
+  --font-affichage: "Outfit", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-corps: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --nav-hauteur: 68px;
+  --max-largeur: 1200px;
+  --rayon-pilule: 999px;
+  --rayon-carte: 0px;
+
+  --espace-section: clamp(4rem, 8vw, 7.5rem);
+}
+
+/* --- Remise à zéro -------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--ivoire);
+  color: var(--noir);
+  font-family: var(--font-corps);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  background: #eae5dc;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-affichage);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+/* --- Liens d'évitement et focus ------------------------------------------- */
+
+.visuellement-masque {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.sauter {
+  position: absolute;
+  left: 0;
+  top: -4rem;
+  z-index: 200;
+  padding: 0.75rem 1.25rem;
+  background: var(--noir);
+  color: var(--ivoire);
+  font-weight: 600;
+  transition: top 0.15s ease;
+}
+
+.sauter:focus {
+  top: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--bordeaux);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* --- Structure ------------------------------------------------------------- */
+
+.conteneur {
+  max-width: var(--max-largeur);
+  margin: 0 auto;
+  padding-left: clamp(1.25rem, 4vw, 2.5rem);
+  padding-right: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+.section {
+  padding-top: var(--espace-section);
+}
+
+.section-bandeau {
+  padding-top: var(--espace-section);
+  padding-bottom: var(--espace-section);
+}
+
+/* --- Boutons pilule -------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.7rem 1.6rem;
+  border-radius: var(--rayon-pilule);
+  font-family: var(--font-affichage);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+
+.btn-primaire {
+  background: var(--bordeaux);
+  color: var(--ivoire);
+}
+
+.btn-primaire:hover {
+  background: #5a1c2a;
+}
+
+.btn-secondaire {
+  background: transparent;
+  color: var(--noir);
+  border-color: var(--noir);
+}
+
+.btn-secondaire:hover {
+  background: var(--noir);
+  color: var(--ivoire);
+}
+
+.btn-lien {
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+}
+
+/* --- En-tête / navigation --------------------------------------------------- */
+
+.en-tete {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(247, 244, 239, 0.94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--trait);
+}
+
+.en-tete-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  height: var(--nav-hauteur);
+}
+
+.marque {
+  font-family: var(--font-affichage);
+  font-weight: 600;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.marque a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.nav-liens {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.nav-liens a {
+  position: relative;
+  padding: 0.5rem 0.1rem;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  color: var(--gris-fonce);
+  border-bottom: 2px solid transparent;
+}
+
+.nav-liens a:hover {
+  color: var(--noir);
+}
+
+.nav-liens a[aria-current="page"] {
+  color: var(--noir);
+  border-bottom-color: var(--bordeaux);
+}
+
+.nav-bouton {
+  flex-shrink: 0;
+}
+
+.nav-ouvrir {
+  display: none;
+  width: 44px;
+  height: 44px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.nav-ouvrir span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-ouvrir[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-ouvrir[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-ouvrir[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* --- Héros ------------------------------------------------------------------ */
+
+.hero {
+  padding-top: clamp(2.5rem, 6vw, 5rem);
+  padding-bottom: var(--espace-section);
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+
+.hero-surtitre {
+  font-family: var(--font-affichage);
+  font-size: 0.85rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--bordeaux);
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.hero-titre {
+  font-size: clamp(2.5rem, 7vw, 4.75rem);
+  margin-bottom: 1.5rem;
+}
+
+.hero-texte {
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  color: var(--gris-fonce);
+  max-width: 34ch;
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.hero-visuel img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border: 1px solid var(--trait);
+}
+
+/* --- Sections génériques ----------------------------------------------------- */
+
+.titre-section {
+  font-size: clamp(1.9rem, 4vw, 2.75rem);
+  margin-bottom: 0.75rem;
+}
+
+.intro-section {
+  color: var(--gris-fonce);
+  max-width: 52ch;
+  margin-bottom: 2.5rem;
+}
+
+.entete-section {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+/* --- Approche ----------------------------------------------------------------- */
+
+.approche-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+
+.approche-visuel img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 1px solid var(--trait);
+}
+
+.approche-texte {
+  color: var(--gris-fonce);
+  font-size: 1.05rem;
+}
+
+.approche-texte p + p {
+  margin-top: 1.25rem;
+}
+
+/* --- Services (résumé, page d'accueil) --------------------------------------- */
+
+.services-resume {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+}
+
+.groupe-service-titre {
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--trait);
+}
+
+.liste-service {
+  border-top: 1px solid var(--trait);
+}
+
+.ligne-service {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--trait);
+}
+
+.ligne-service-nom {
+  font-weight: 600;
+}
+
+.ligne-service-duree {
+  margin-left: auto;
+  color: var(--gris);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.ligne-service-prix {
+  font-weight: 600;
+  white-space: nowrap;
+  min-width: 4ch;
+  text-align: right;
+}
+
+/* --- Services (page complète) -------------------------------------------------- */
+
+.service-groupe {
+  margin-bottom: 3.5rem;
+}
+
+.service-groupe-titre {
+  font-size: 1.4rem;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--trait);
+}
+
+.service-liste {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.service-carte {
+  border: 1px solid var(--trait);
+  padding: 1.5rem;
+}
+
+.service-carte-nom {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.service-carte-desc {
+  color: var(--gris-fonce);
+  margin-bottom: 1rem;
+}
+
+.service-carte-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  font-size: 0.95rem;
+  color: var(--gris-fonce);
+  border-top: 1px solid var(--trait);
+  padding-top: 0.9rem;
+}
+
+.service-carte-prix {
+  font-weight: 600;
+  color: var(--bordeaux);
+}
+
+.note-cheveux-longs {
+  margin-top: 2rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--trait);
+  color: var(--gris-fonce);
+  max-width: 60ch;
+}
+
+/* --- Équipe ---------------------------------------------------------------------- */
+
+.equipe-grille {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.membre-photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 1px solid var(--trait);
+  margin-bottom: 1rem;
+}
+
+.membre-nom {
+  font-size: 1.2rem;
+}
+
+.membre-role {
+  color: var(--bordeaux);
+  font-weight: 500;
+}
+
+.membre-specialite {
+  color: var(--gris-fonce);
+  font-size: 0.95rem;
+}
+
+/* --- Galerie ---------------------------------------------------------------------- */
+
+.galerie-grille {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.galerie-item img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 1px solid var(--trait);
+}
+
+/* --- Témoignages ------------------------------------------------------------------- */
+
+.temoignages-grille {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.temoignage {
+  border-top: 1px solid var(--noir);
+  padding-top: 1.25rem;
+}
+
+.temoignage-texte {
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.temoignage-auteur {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--gris);
+  font-style: normal;
+}
+
+/* --- Cartes cadeaux ------------------------------------------------------------------ */
+
+.cartes-grille {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.carte-cadeau {
+  background: var(--noir);
+  color: var(--ivoire);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.carte-cadeau-montant {
+  font-family: var(--font-affichage);
+  font-weight: 600;
+  font-size: 2.25rem;
+  letter-spacing: -0.02em;
+}
+
+.carte-cadeau-desc {
+  color: rgba(247, 244, 239, 0.8);
+  font-size: 0.95rem;
+}
+
+/* --- Coordonnées / heures ---------------------------------------------------------------- */
+
+.coordonnees-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+}
+
+.heures-liste {
+  border-top: 1px solid var(--trait);
+}
+
+.heures-ligne {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--trait);
+}
+
+.heures-jour {
+  font-weight: 600;
+}
+
+.heures-valeur {
+  color: var(--gris-fonce);
+}
+
+.coordonnees-adresse {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1rem;
+  color: var(--gris-fonce);
+}
+
+.coordonnees-adresse a {
+  color: var(--noir);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.coordonnees-adresse a:hover {
+  color: var(--bordeaux);
+}
+
+.ligne-coordonnee {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.coordonnee-etiquette {
+  font-family: var(--font-affichage);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  color: var(--noir);
+}
+
+.icone {
+  width: 1.25em;
+  height: 1.25em;
+  flex-shrink: 0;
+  margin-top: 0.15em;
+  color: var(--bordeaux);
+  stroke: currentColor;
+}
+
+/* --- Pied de page -------------------------------------------------------------------------- */
+
+.pied {
+  margin-top: var(--espace-section);
+  border-top: 1px solid var(--trait);
+  padding: 3rem 0 4rem;
+}
+
+.pied-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.pied-marque {
+  font-family: var(--font-affichage);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.pied-lignes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  color: var(--gris-fonce);
+}
+
+.pied-lignes a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.pied-lignes a:hover {
+  color: var(--bordeaux);
+}
+
+.pied-bas {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--trait);
+  color: var(--gris);
+  font-size: 0.9rem;
+}
+
+/* --- Barre « Prendre rendez-vous » (mobile) --------------------------------------------------- */
+
+.barre-rdv {
+  display: none;
+}
+
+/* --- Page rendez-vous ------------------------------------------------------------------------- */
+
+.rdv-grille {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.carte-bloc {
+  border: 1px solid var(--trait);
+  padding: 1.75rem;
+}
+
+.carte-bloc h2 {
+  font-size: 1.35rem;
+  margin-bottom: 1rem;
+}
+
+.carte-bloc p {
+  color: var(--gris-fonce);
+}
+
+.carte-bloc p + p {
+  margin-top: 0.9rem;
+}
+
+.lien-important {
+  color: var(--noir);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.lien-important:hover {
+  color: var(--bordeaux);
+}
+
+/* --- Formulaire -------------------------------------------------------------------------------- */
+
+.formulaire {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.champ {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.champ label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.champ input,
+.champ select,
+.champ textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  background: var(--blanc);
+  border: 1px solid var(--gris);
+  border-radius: 0;
+  min-height: 44px;
+}
+
+.champ textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.formulaire-statut {
+  min-height: 1.5rem;
+  color: var(--bordeaux);
+  font-weight: 500;
+}
+
+/* --- Page 404 ------------------------------------------------------------------------------------ */
+
+.p404 {
+  min-height: 60vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding-top: var(--espace-section);
+  padding-bottom: var(--espace-section);
+}
+
+.p404-code {
+  font-family: var(--font-affichage);
+  font-size: clamp(4rem, 12vw, 8rem);
+  font-weight: 600;
+  color: var(--bordeaux);
+  line-height: 1;
+}
+
+.p404-texte {
+  margin: 1.25rem 0 2rem;
+  color: var(--gris-fonce);
+}
+
+/* --- Responsive ------------------------------------------------------------------------------------ */
+
+@media (max-width: 900px) {
+  .hero-inner,
+  .approche-inner,
+  .coordonnees-inner,
+  .rdv-grille {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visuel {
+    order: -1;
+  }
+
+  .galerie-grille {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .equipe-grille,
+  .temoignages-grille,
+  .cartes-grille {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav {
+    gap: 0.5rem;
+  }
+
+  .nav-ouvrir {
+    display: flex;
+  }
+
+  .nav-liens {
+    position: absolute;
+    top: var(--nav-hauteur);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--ivoire);
+    border-bottom: 1px solid var(--trait);
+    padding: 0.5rem 1.25rem 1rem;
+    display: none;
+  }
+
+  .menu-ouvert .nav-liens {
+    display: flex;
+  }
+
+  .nav-liens a {
+    min-height: 48px;
+    padding: 0.75rem 0.1rem;
+    border-bottom: 1px solid var(--trait);
+  }
+
+  .services-resume,
+  .service-liste {
+    grid-template-columns: 1fr;
+  }
+
+  .galerie-grille {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .entete-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Barre fixe en bas sur mobile */
+  body {
+    padding-bottom: 5.5rem;
+  }
+
+  .barre-rdv {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 90;
+    background: rgba(247, 244, 239, 0.97);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid var(--trait);
+    padding: 0.6rem 1rem;
+    justify-content: center;
+  }
+
+  .barre-rdv .btn {
+    width: 100%;
+    max-width: 420px;
+  }
+}
+
+/* --- Mouvement réduit ----------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

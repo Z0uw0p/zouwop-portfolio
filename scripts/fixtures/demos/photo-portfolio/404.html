@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Not found — Your Name</title>
+  <meta name="robots" content="noindex">
+  <meta name="description" content="That page could not be found on this photography portfolio.">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=2">
+</head>
+<body>
+  <header id="site-nav"></header>
+  <main class="container notfound">
+    <p class="notfound-kicker">404</p>
+    <h1 class="page-title">Page not found</h1>
+    <p class="notfound-text">That page may have moved, or the link could be out of date.</p>
+    <nav class="notfound-links" aria-label="Where to go next">
+      <a href="index.html">Home</a>
+      <a href="collection.html?collection=agency">Agency work</a>
+      <a href="collection.html?collection=projects">Projects</a>
+      <a href="collection.html?collection=expositions">Expositions</a>
+    </nav>
+  </main>
+  <footer id="site-footer"></footer>
+  <script src="js/strings.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const site = await loadJSON(PATHS.site);
+        renderNav(site, null);
+        renderFooter(site);
+      } catch (e) { /* static fallback remains usable */ }
+    });
+  </script>
+</body>
+</html>

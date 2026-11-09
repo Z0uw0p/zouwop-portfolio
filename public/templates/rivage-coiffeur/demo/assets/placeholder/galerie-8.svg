@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000">
+  <rect width="800" height="1000" fill="#e6e2da"/>
+  <rect x="0.5" y="0.5" width="799" height="999" fill="none" stroke="#c9c3ba" stroke-width="1"/>
+  <text x="400" y="507" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="25" letter-spacing="2" fill="#8a847c" text-anchor="middle">VOTRE PHOTO — 4:5</text>
+</svg>

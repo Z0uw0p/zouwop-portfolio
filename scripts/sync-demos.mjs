@@ -197,7 +197,7 @@ async function readCatalogSlugs() {
 // Validation: no root-absolute asset URLs
 // ---------------------------------------------------------------------------
 
-function rootAbsoluteUrls(html) {
+function absoluteUrls(html) {
   const found = [];
   for (const match of html.matchAll(ATTR_RE)) {
     const value = (match[2] ?? match[3] ?? '').trim();
@@ -207,7 +207,7 @@ function rootAbsoluteUrls(html) {
   return found;
 }
 
-function rootAbsoluteCssUrls(css) {
+function absoluteCssUrls(css) {
   const found = [];
   for (const match of css.matchAll(CSS_URL_RE)) {
     const value = match[1];
@@ -218,31 +218,33 @@ function rootAbsoluteCssUrls(css) {
 }
 
 /**
- * A base-path-aware build references its assets relatively, so the demo works
- * under /templates/<slug>/demo/ as well as at the site root. Anything that
- * starts with "/" (except "/" itself and "//") will resolve against the site
- * origin and load unstyled — refuse it here instead of shipping it.
+ * A demo is served from /templates/<slug>/demo/. Its URLs may be relative or
+ * carry exactly that base path; any other root-absolute URL resolves against
+ * the site root, 404s, and loads the demo unstyled — refuse it here instead of
+ * shipping it.
  */
 async function validateDemo(slug, dir) {
   const errors = [];
   const files = await listFiles(dir);
+  const base = `/templates/${slug}/demo/`;
+  const stray = (url) => !url.startsWith(base);
 
   for (const file of files) {
     const relative = path.relative(dir, file).split(path.sep).join('/');
     if (file.endsWith('.html')) {
       const html = await readFile(file, 'utf8');
-      for (const url of rootAbsoluteUrls(html)) {
+      for (const url of absoluteUrls(html).filter(stray)) {
         errors.push(
           `${slug}/${relative}: root-absolute asset URL "${url}" — build this template with ` +
-            `base /templates/${slug}/demo/ (or relative paths)`,
+            `base ${base} (or relative paths)`,
         );
       }
     } else if (file.endsWith('.css')) {
       const css = await readFile(file, 'utf8');
-      for (const url of rootAbsoluteCssUrls(css)) {
+      for (const url of absoluteCssUrls(css).filter(stray)) {
         errors.push(
           `${slug}/${relative}: root-absolute asset URL "${url}" — build this template with ` +
-            `base /templates/${slug}/demo/ (or relative paths)`,
+            `base ${base} (or relative paths)`,
         );
       }
     }

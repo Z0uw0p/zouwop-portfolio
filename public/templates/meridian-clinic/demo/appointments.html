@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Request an appointment — Your Business</title>
+  <meta name="description" content="Request an appointment at Your Business. Fill in the form and we will confirm a day and time within one business day.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="bar">
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span><span data-site="name">Your Business</span></a>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="appointments.html" aria-current="page">Appointments</a></li>
+        </ul>
+      </nav>
+      <a class="header-cta" data-site-href="phone" href="tel:+15550100100"><svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> <span data-site="phone">(555) 010-0100</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Appointments</p>
+        <h1>Request an appointment</h1>
+        <p class="lede">Tell us what you need and a day and time that suits you. We will confirm your appointment within one business day.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="form-heading">
+      <div class="container">
+        <h2 id="form-heading" class="visually-hidden">Appointment request form</h2>
+
+        <form class="form" id="appointment-form" action="#" method="post" novalidate>
+          <div class="field">
+            <label for="ap-name">Full name <span class="required-flag">(required)</span></label>
+            <input id="ap-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="ap-email">Email <span class="required-flag">(required)</span></label>
+            <input id="ap-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="ap-phone">Phone <span class="required-flag">(required)</span></label>
+            <input id="ap-phone" name="phone" type="tel" autocomplete="tel" required>
+          </div>
+          <div class="field">
+            <label for="ap-service">Service <span class="required-flag">(required)</span></label>
+            <select id="ap-service" name="service" required>
+              <option value="">Choose a service&hellip;</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="ap-day">Preferred day <span class="required-flag">(required)</span></label>
+            <select id="ap-day" name="day" required>
+              <option value="">Choose a day&hellip;</option>
+              <option value="monday">Monday</option>
+              <option value="tuesday">Tuesday</option>
+              <option value="wednesday">Wednesday</option>
+              <option value="thursday">Thursday</option>
+              <option value="friday">Friday</option>
+              <option value="saturday">Saturday</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="ap-time">Preferred time <span class="required-flag">(required)</span></label>
+            <select id="ap-time" name="time" required>
+              <option value="">Choose a time&hellip;</option>
+              <option value="morning">Morning</option>
+              <option value="afternoon">Afternoon</option>
+              <option value="evening">Evening</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="ap-notes">Anything we should know? <span class="required-flag">(optional)</span></label>
+            <textarea id="ap-notes" name="notes" rows="4"></textarea>
+          </div>
+          <div class="field">
+            <div class="checkbox-row">
+              <input type="checkbox" id="ap-consent" name="consent" required>
+              <label for="ap-consent">I agree to be contacted about this appointment request. <span class="required-flag">(required)</span></label>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn" type="submit">Send request</button>
+          </div>
+          <p class="mt-1">Prefer to talk? Call <a data-site-href="phone" href="tel:+15550100100"><span data-site="phone">(555) 010-0100</span></a> or write to <a data-site-href="email" href="mailto:hello@example.com"><span data-site="email">hello@example.com</span></a>.</p>
+        </form>
+
+        <div class="form-success mt-2" id="appointment-success" role="status" tabindex="-1" hidden>
+          <h3>Thanks — we will be in touch</h3>
+          <p>Your request is in. We will confirm a day and time within one business day. Prefer to talk in the meantime? Call <a data-site-href="phone" href="tel:+15550100100"><span data-site="phone">(555) 010-0100</span></a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="next-heading">
+      <div class="container">
+        <p class="eyebrow">Next steps</p>
+        <h2 id="next-heading">What happens next</h2>
+        <ol class="steps mt-2">
+          <li class="step">
+            <h3>We confirm your slot</h3>
+            <p>Within one business day we reply with a day and time, or a couple of alternatives if your first choice is taken.</p>
+          </li>
+          <li class="step">
+            <h3>We send a reminder</h3>
+            <p>Ahead of your visit we remind you by email or phone, with a short note on anything to bring along.</p>
+          </li>
+          <li class="step">
+            <h3>You come in for a conversation</h3>
+            <p>Your first visit is an assessment and a conversation — never a rush. You leave with a written plan and costs.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2>Contact</h2>
+          <p><span data-site="address">123 Example Street</span></p>
+          <p><a data-site-href="phone" href="tel:+15550100100"><span data-site="phone">(555) 010-0100</span></a></p>
+          <p><a data-site-href="email" href="mailto:hello@example.com"><span data-site="email">hello@example.com</span></a></p>
+        </div>
+        <div>
+          <h2>Book online</h2>
+          <p><a data-site-href="booking" href="https://cal.com/example">Book an appointment online</a></p>
+          <p><a href="index.html">Back to home</a></p>
+        </div>
+        <div>
+          <h2>Social</h2>
+          <p><a data-site-href="url" href="https://example.com"><span data-site="url">https://example.com</span></a></p>
+          <p><span data-site="social">@yourhandle</span></p>
+        </div>
+      </div>
+      <p class="footer-note">&copy; <span id="year">2026</span> <span data-site="name">Your Business</span>.</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

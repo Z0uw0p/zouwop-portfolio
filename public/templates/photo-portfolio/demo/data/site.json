@@ -1,0 +1,256 @@
+{
+  "name": "Your Name",
+  "handle": "@yourhandle",
+  "tagline": "Photographer",
+  "heroImage": "assets/images/hero/hero.webp",
+  "aboutImage": "assets/images/about/about.webp",
+  "homeGallery": [
+    {
+      "src": "assets/images/home/01.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/02.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/03.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/04.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/05.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/06.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/07.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/08.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/09.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/10.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/11.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/12.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/13.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/14.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/15.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/16.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/17.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/18.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/19.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/20.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/21.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/22.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/23.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/24.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/25.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/26.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/27.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/28.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/29.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/30.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/31.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/32.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/33.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/34.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/35.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/36.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/37.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/38.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/39.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/40.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/41.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/42.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/43.webp",
+      "project": null,
+      "alt": ""
+    },
+    {
+      "src": "assets/images/home/44.webp",
+      "project": null,
+      "alt": ""
+    }
+  ],
+  "about": "I am a photographer working across fashion, portraiture and editorial. I care about texture and contrast, and about the moment someone stops performing for the camera.\n\nMost of what I shoot is commissioned — agency tests, campaigns and editorial assignments — and the rest is personal work made with people I want to photograph. Both live here.",
+  "contact": {
+    "email": "you@example.com",
+    "instagram": "https://www.instagram.com/yourhandle",
+    "linkedin": "https://www.linkedin.com/in/your-name"
+  },
+  "collections": [
+    {
+      "id": "agency",
+      "label": "Agency",
+      "description": "Commissioned work",
+      "layout": "grid"
+    },
+    {
+      "id": "projects",
+      "label": "Projects",
+      "description": "Personal projects",
+      "layout": "grid"
+    },
+    {
+      "id": "expositions",
+      "label": "Expositions",
+      "description": "Publications and exhibitions",
+      "layout": "carousel"
+    }
+  ],
+  "heroImageMobile": "assets/images/hero/hero-mobile.webp"
+}

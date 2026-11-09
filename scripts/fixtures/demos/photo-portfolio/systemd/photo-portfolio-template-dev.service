@@ -1,0 +1,15 @@
+[Unit]
+Description=Photo portfolio template dev server (port 8123)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/self-hosted/photo-portfolio-template
+ExecStart=/usr/bin/node %h/self-hosted/photo-portfolio-template/scripts/serve.mjs
+Environment=PORT=8123
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=default.target

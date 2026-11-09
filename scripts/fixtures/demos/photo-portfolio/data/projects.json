@@ -1,0 +1,1396 @@
+[
+  {
+    "slug": "portrait-01",
+    "title": "Portrait 01",
+    "collection": "agency",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/agency/portrait-01/01.webp",
+    "images": [
+      {
+        "src": "assets/images/agency/portrait-01/01.webp",
+        "alt": "Portrait 01 — 1"
+      },
+      {
+        "src": "assets/images/agency/portrait-01/02.webp",
+        "alt": "Portrait 01 — 2"
+      },
+      {
+        "src": "assets/images/agency/portrait-01/03.webp",
+        "alt": "Portrait 01 — 3"
+      },
+      {
+        "src": "assets/images/agency/portrait-01/04.webp",
+        "alt": "Portrait 01 — 4"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "portrait-02",
+    "title": "Portrait 02",
+    "collection": "agency",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/agency/portrait-02/01.webp",
+    "images": [
+      {
+        "src": "assets/images/agency/portrait-02/01.webp",
+        "alt": "Portrait 02 — 1"
+      },
+      {
+        "src": "assets/images/agency/portrait-02/02.webp",
+        "alt": "Portrait 02 — 2"
+      },
+      {
+        "src": "assets/images/agency/portrait-02/03.webp",
+        "alt": "Portrait 02 — 3"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "portrait-03",
+    "title": "Portrait 03",
+    "collection": "agency",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/agency/portrait-03/01.webp",
+    "images": [
+      {
+        "src": "assets/images/agency/portrait-03/01.webp",
+        "alt": "Portrait 03 — 1"
+      },
+      {
+        "src": "assets/images/agency/portrait-03/02.webp",
+        "alt": "Portrait 03 — 2"
+      },
+      {
+        "src": "assets/images/agency/portrait-03/03.webp",
+        "alt": "Portrait 03 — 3"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "portrait-04",
+    "title": "Portrait 04",
+    "collection": "agency",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/agency/portrait-04/01.webp",
+    "images": [
+      {
+        "src": "assets/images/agency/portrait-04/01.webp",
+        "alt": "Portrait 04 — 1"
+      },
+      {
+        "src": "assets/images/agency/portrait-04/02.webp",
+        "alt": "Portrait 04 — 2"
+      },
+      {
+        "src": "assets/images/agency/portrait-04/03.webp",
+        "alt": "Portrait 04 — 3"
+      },
+      {
+        "src": "assets/images/agency/portrait-04/04.webp",
+        "alt": "Portrait 04 — 4"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "portrait-05",
+    "title": "Portrait 05",
+    "collection": "agency",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/agency/portrait-05/01.webp",
+    "images": [
+      {
+        "src": "assets/images/agency/portrait-05/01.webp",
+        "alt": "Portrait 05 — 1"
+      },
+      {
+        "src": "assets/images/agency/portrait-05/02.webp",
+        "alt": "Portrait 05 — 2"
+      },
+      {
+        "src": "assets/images/agency/portrait-05/03.webp",
+        "alt": "Portrait 05 — 3"
+      },
+      {
+        "src": "assets/images/agency/portrait-05/04.webp",
+        "alt": "Portrait 05 — 4"
+      },
+      {
+        "src": "assets/images/agency/portrait-05/05.webp",
+        "alt": "Portrait 05 — 5"
+      },
+      {
+        "src": "assets/images/agency/portrait-05/06.webp",
+        "alt": "Portrait 05 — 6"
+      },
+      {
+        "src": "assets/images/agency/portrait-05/07.webp",
+        "alt": "Portrait 05 — 7"
+      },
+      {
+        "src": "assets/images/agency/portrait-05/08.webp",
+        "alt": "Portrait 05 — 8"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "portrait-06",
+    "title": "Portrait 06",
+    "collection": "agency",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/agency/portrait-06/01.webp",
+    "images": [
+      {
+        "src": "assets/images/agency/portrait-06/01.webp",
+        "alt": "Portrait 06 — 1"
+      },
+      {
+        "src": "assets/images/agency/portrait-06/02.webp",
+        "alt": "Portrait 06 — 2"
+      },
+      {
+        "src": "assets/images/agency/portrait-06/03.webp",
+        "alt": "Portrait 06 — 3"
+      },
+      {
+        "src": "assets/images/agency/portrait-06/04.webp",
+        "alt": "Portrait 06 — 4"
+      },
+      {
+        "src": "assets/images/agency/portrait-06/05.webp",
+        "alt": "Portrait 06 — 5"
+      },
+      {
+        "src": "assets/images/agency/portrait-06/06.webp",
+        "alt": "Portrait 06 — 6"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "portrait-07",
+    "title": "Portrait 07",
+    "collection": "agency",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/agency/portrait-07/01.webp",
+    "images": [
+      {
+        "src": "assets/images/agency/portrait-07/01.webp",
+        "alt": "Portrait 07 — 1"
+      },
+      {
+        "src": "assets/images/agency/portrait-07/02.webp",
+        "alt": "Portrait 07 — 2"
+      },
+      {
+        "src": "assets/images/agency/portrait-07/03.webp",
+        "alt": "Portrait 07 — 3"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "portrait-08",
+    "title": "Portrait 08",
+    "collection": "agency",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/agency/portrait-08/01.webp",
+    "images": [
+      {
+        "src": "assets/images/agency/portrait-08/01.webp",
+        "alt": "Portrait 08 — 1"
+      },
+      {
+        "src": "assets/images/agency/portrait-08/02.webp",
+        "alt": "Portrait 08 — 2"
+      },
+      {
+        "src": "assets/images/agency/portrait-08/03.webp",
+        "alt": "Portrait 08 — 3"
+      },
+      {
+        "src": "assets/images/agency/portrait-08/04.webp",
+        "alt": "Portrait 08 — 4"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "portrait-09",
+    "title": "Portrait 09",
+    "collection": "agency",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/agency/portrait-09/01.webp",
+    "images": [
+      {
+        "src": "assets/images/agency/portrait-09/01.webp",
+        "alt": "Portrait 09 — 1"
+      },
+      {
+        "src": "assets/images/agency/portrait-09/02.webp",
+        "alt": "Portrait 09 — 2"
+      },
+      {
+        "src": "assets/images/agency/portrait-09/03.webp",
+        "alt": "Portrait 09 — 3"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "portrait-10",
+    "title": "Portrait 10",
+    "collection": "agency",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/agency/portrait-10/01.webp",
+    "images": [
+      {
+        "src": "assets/images/agency/portrait-10/01.webp",
+        "alt": "Portrait 10 — 1"
+      },
+      {
+        "src": "assets/images/agency/portrait-10/02.webp",
+        "alt": "Portrait 10 — 2"
+      },
+      {
+        "src": "assets/images/agency/portrait-10/03.webp",
+        "alt": "Portrait 10 — 3"
+      },
+      {
+        "src": "assets/images/agency/portrait-10/04.webp",
+        "alt": "Portrait 10 — 4"
+      },
+      {
+        "src": "assets/images/agency/portrait-10/05.webp",
+        "alt": "Portrait 10 — 5"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "portrait-11",
+    "title": "Portrait 11",
+    "collection": "agency",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/agency/portrait-11/01.webp",
+    "images": [
+      {
+        "src": "assets/images/agency/portrait-11/01.webp",
+        "alt": "Portrait 11 — 1"
+      },
+      {
+        "src": "assets/images/agency/portrait-11/02.webp",
+        "alt": "Portrait 11 — 2"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "portrait-12",
+    "title": "Portrait 12",
+    "collection": "agency",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/agency/portrait-12/01.webp",
+    "images": [
+      {
+        "src": "assets/images/agency/portrait-12/01.webp",
+        "alt": "Portrait 12 — 1"
+      },
+      {
+        "src": "assets/images/agency/portrait-12/02.webp",
+        "alt": "Portrait 12 — 2"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "portrait-13",
+    "title": "Portrait 13",
+    "collection": "agency",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/agency/portrait-13/01.webp",
+    "images": [
+      {
+        "src": "assets/images/agency/portrait-13/01.webp",
+        "alt": "Portrait 13 — 1"
+      },
+      {
+        "src": "assets/images/agency/portrait-13/02.webp",
+        "alt": "Portrait 13 — 2"
+      },
+      {
+        "src": "assets/images/agency/portrait-13/03.webp",
+        "alt": "Portrait 13 — 3"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "portrait-14",
+    "title": "Portrait 14",
+    "collection": "agency",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/agency/portrait-14/01.webp",
+    "images": [
+      {
+        "src": "assets/images/agency/portrait-14/01.webp",
+        "alt": "Portrait 14 — 1"
+      },
+      {
+        "src": "assets/images/agency/portrait-14/02.webp",
+        "alt": "Portrait 14 — 2"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "portrait-15",
+    "title": "Portrait 15",
+    "collection": "agency",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/agency/portrait-15/01.webp",
+    "images": [
+      {
+        "src": "assets/images/agency/portrait-15/01.webp",
+        "alt": "Portrait 15 — 1"
+      },
+      {
+        "src": "assets/images/agency/portrait-15/02.webp",
+        "alt": "Portrait 15 — 2"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "portrait-16",
+    "title": "Portrait 16",
+    "collection": "agency",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/agency/portrait-16/01.webp",
+    "images": [
+      {
+        "src": "assets/images/agency/portrait-16/01.webp",
+        "alt": "Portrait 16 — 1"
+      },
+      {
+        "src": "assets/images/agency/portrait-16/02.webp",
+        "alt": "Portrait 16 — 2"
+      },
+      {
+        "src": "assets/images/agency/portrait-16/03.webp",
+        "alt": "Portrait 16 — 3"
+      },
+      {
+        "src": "assets/images/agency/portrait-16/04.webp",
+        "alt": "Portrait 16 — 4"
+      },
+      {
+        "src": "assets/images/agency/portrait-16/05.webp",
+        "alt": "Portrait 16 — 5"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "portrait-17",
+    "title": "Portrait 17",
+    "collection": "agency",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/agency/portrait-17/01.webp",
+    "images": [
+      {
+        "src": "assets/images/agency/portrait-17/01.webp",
+        "alt": "Portrait 17 — 1"
+      },
+      {
+        "src": "assets/images/agency/portrait-17/02.webp",
+        "alt": "Portrait 17 — 2"
+      },
+      {
+        "src": "assets/images/agency/portrait-17/03.webp",
+        "alt": "Portrait 17 — 3"
+      },
+      {
+        "src": "assets/images/agency/portrait-17/04.webp",
+        "alt": "Portrait 17 — 4"
+      },
+      {
+        "src": "assets/images/agency/portrait-17/05.webp",
+        "alt": "Portrait 17 — 5"
+      },
+      {
+        "src": "assets/images/agency/portrait-17/06.webp",
+        "alt": "Portrait 17 — 6"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "series-01",
+    "title": "Series 01",
+    "collection": "projects",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/projects/series-01/01.webp",
+    "images": [
+      {
+        "src": "assets/images/projects/series-01/01.webp",
+        "alt": "Series 01 — 1"
+      },
+      {
+        "src": "assets/images/projects/series-01/02.webp",
+        "alt": "Series 01 — 2"
+      },
+      {
+        "src": "assets/images/projects/series-01/03.webp",
+        "alt": "Series 01 — 3"
+      },
+      {
+        "src": "assets/images/projects/series-01/04.webp",
+        "alt": "Series 01 — 4"
+      },
+      {
+        "src": "assets/images/projects/series-01/05.webp",
+        "alt": "Series 01 — 5"
+      },
+      {
+        "src": "assets/images/projects/series-01/06.webp",
+        "alt": "Series 01 — 6"
+      },
+      {
+        "src": "assets/images/projects/series-01/07.webp",
+        "alt": "Series 01 — 7"
+      },
+      {
+        "src": "assets/images/projects/series-01/08.webp",
+        "alt": "Series 01 — 8"
+      },
+      {
+        "src": "assets/images/projects/series-01/09.webp",
+        "alt": "Series 01 — 9"
+      },
+      {
+        "src": "assets/images/projects/series-01/10.webp",
+        "alt": "Series 01 — 10"
+      },
+      {
+        "src": "assets/images/projects/series-01/11.webp",
+        "alt": "Series 01 — 11"
+      },
+      {
+        "src": "assets/images/projects/series-01/12.webp",
+        "alt": "Series 01 — 12"
+      },
+      {
+        "src": "assets/images/projects/series-01/13.webp",
+        "alt": "Series 01 — 13"
+      },
+      {
+        "src": "assets/images/projects/series-01/14.webp",
+        "alt": "Series 01 — 14"
+      }
+    ],
+    "videos": [
+      {
+        "src": "assets/videos/projects/series-01/video-01.mp4",
+        "poster": "assets/images/projects/series-01/01.webp",
+        "alt": "Series 01 — video 1"
+      }
+    ]
+  },
+  {
+    "slug": "series-02",
+    "title": "Series 02",
+    "collection": "projects",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/projects/series-02/01.webp",
+    "images": [
+      {
+        "src": "assets/images/projects/series-02/01.webp",
+        "alt": "Series 02 — 1"
+      },
+      {
+        "src": "assets/images/projects/series-02/02.webp",
+        "alt": "Series 02 — 2"
+      },
+      {
+        "src": "assets/images/projects/series-02/03.webp",
+        "alt": "Series 02 — 3"
+      },
+      {
+        "src": "assets/images/projects/series-02/04.webp",
+        "alt": "Series 02 — 4"
+      },
+      {
+        "src": "assets/images/projects/series-02/05.webp",
+        "alt": "Series 02 — 5"
+      },
+      {
+        "src": "assets/images/projects/series-02/06.webp",
+        "alt": "Series 02 — 6"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "series-03",
+    "title": "Series 03",
+    "collection": "projects",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/projects/series-03/01.webp",
+    "images": [
+      {
+        "src": "assets/images/projects/series-03/01.webp",
+        "alt": "Series 03 — 1"
+      },
+      {
+        "src": "assets/images/projects/series-03/02.webp",
+        "alt": "Series 03 — 2"
+      },
+      {
+        "src": "assets/images/projects/series-03/03.webp",
+        "alt": "Series 03 — 3"
+      },
+      {
+        "src": "assets/images/projects/series-03/04.webp",
+        "alt": "Series 03 — 4"
+      },
+      {
+        "src": "assets/images/projects/series-03/05.webp",
+        "alt": "Series 03 — 5"
+      },
+      {
+        "src": "assets/images/projects/series-03/06.webp",
+        "alt": "Series 03 — 6"
+      },
+      {
+        "src": "assets/images/projects/series-03/07.webp",
+        "alt": "Series 03 — 7"
+      },
+      {
+        "src": "assets/images/projects/series-03/08.webp",
+        "alt": "Series 03 — 8"
+      },
+      {
+        "src": "assets/images/projects/series-03/09.webp",
+        "alt": "Series 03 — 9"
+      },
+      {
+        "src": "assets/images/projects/series-03/10.webp",
+        "alt": "Series 03 — 10"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "series-04",
+    "title": "Series 04",
+    "collection": "projects",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/projects/series-04/01.webp",
+    "images": [
+      {
+        "src": "assets/images/projects/series-04/01.webp",
+        "alt": "Series 04 — 1"
+      },
+      {
+        "src": "assets/images/projects/series-04/02.webp",
+        "alt": "Series 04 — 2"
+      },
+      {
+        "src": "assets/images/projects/series-04/03.webp",
+        "alt": "Series 04 — 3"
+      },
+      {
+        "src": "assets/images/projects/series-04/04.webp",
+        "alt": "Series 04 — 4"
+      },
+      {
+        "src": "assets/images/projects/series-04/05.webp",
+        "alt": "Series 04 — 5"
+      },
+      {
+        "src": "assets/images/projects/series-04/06.webp",
+        "alt": "Series 04 — 6"
+      },
+      {
+        "src": "assets/images/projects/series-04/07.webp",
+        "alt": "Series 04 — 7"
+      },
+      {
+        "src": "assets/images/projects/series-04/08.webp",
+        "alt": "Series 04 — 8"
+      },
+      {
+        "src": "assets/images/projects/series-04/09.webp",
+        "alt": "Series 04 — 9"
+      },
+      {
+        "src": "assets/images/projects/series-04/10.webp",
+        "alt": "Series 04 — 10"
+      },
+      {
+        "src": "assets/images/projects/series-04/11.webp",
+        "alt": "Series 04 — 11"
+      },
+      {
+        "src": "assets/images/projects/series-04/12.webp",
+        "alt": "Series 04 — 12"
+      },
+      {
+        "src": "assets/images/projects/series-04/13.webp",
+        "alt": "Series 04 — 13"
+      }
+    ],
+    "videos": [
+      {
+        "src": "assets/videos/projects/series-04/video-01.mp4",
+        "poster": "assets/images/projects/series-04/01.webp",
+        "alt": "Series 04 — video 1"
+      }
+    ]
+  },
+  {
+    "slug": "series-05",
+    "title": "Series 05",
+    "collection": "projects",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/projects/series-05/01.webp",
+    "images": [
+      {
+        "src": "assets/images/projects/series-05/01.webp",
+        "alt": "Series 05 — 1"
+      },
+      {
+        "src": "assets/images/projects/series-05/02.webp",
+        "alt": "Series 05 — 2"
+      },
+      {
+        "src": "assets/images/projects/series-05/03.webp",
+        "alt": "Series 05 — 3"
+      },
+      {
+        "src": "assets/images/projects/series-05/04.webp",
+        "alt": "Series 05 — 4"
+      },
+      {
+        "src": "assets/images/projects/series-05/05.webp",
+        "alt": "Series 05 — 5"
+      },
+      {
+        "src": "assets/images/projects/series-05/06.webp",
+        "alt": "Series 05 — 6"
+      },
+      {
+        "src": "assets/images/projects/series-05/07.webp",
+        "alt": "Series 05 — 7"
+      },
+      {
+        "src": "assets/images/projects/series-05/08.webp",
+        "alt": "Series 05 — 8"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "series-06",
+    "title": "Series 06",
+    "collection": "projects",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/projects/series-06/01.webp",
+    "images": [
+      {
+        "src": "assets/images/projects/series-06/01.webp",
+        "alt": "Series 06 — 1"
+      },
+      {
+        "src": "assets/images/projects/series-06/02.webp",
+        "alt": "Series 06 — 2"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "series-07",
+    "title": "Series 07",
+    "collection": "projects",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/projects/series-07/01.webp",
+    "images": [
+      {
+        "src": "assets/images/projects/series-07/01.webp",
+        "alt": "Series 07 — 1"
+      },
+      {
+        "src": "assets/images/projects/series-07/02.webp",
+        "alt": "Series 07 — 2"
+      }
+    ],
+    "videos": [
+      {
+        "src": "assets/videos/projects/series-07/video-01.mp4",
+        "poster": "assets/images/projects/series-07/01.webp",
+        "alt": "Series 07 — video 1"
+      }
+    ]
+  },
+  {
+    "slug": "series-08",
+    "title": "Series 08",
+    "collection": "projects",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/projects/series-08/01.webp",
+    "images": [
+      {
+        "src": "assets/images/projects/series-08/01.webp",
+        "alt": "Series 08 — 1"
+      },
+      {
+        "src": "assets/images/projects/series-08/02.webp",
+        "alt": "Series 08 — 2"
+      },
+      {
+        "src": "assets/images/projects/series-08/03.webp",
+        "alt": "Series 08 — 3"
+      },
+      {
+        "src": "assets/images/projects/series-08/04.webp",
+        "alt": "Series 08 — 4"
+      },
+      {
+        "src": "assets/images/projects/series-08/05.webp",
+        "alt": "Series 08 — 5"
+      },
+      {
+        "src": "assets/images/projects/series-08/06.webp",
+        "alt": "Series 08 — 6"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "series-09",
+    "title": "Series 09",
+    "collection": "projects",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/projects/series-09/01.webp",
+    "images": [
+      {
+        "src": "assets/images/projects/series-09/01.webp",
+        "alt": "Series 09 — 1"
+      },
+      {
+        "src": "assets/images/projects/series-09/02.webp",
+        "alt": "Series 09 — 2"
+      },
+      {
+        "src": "assets/images/projects/series-09/03.webp",
+        "alt": "Series 09 — 3"
+      },
+      {
+        "src": "assets/images/projects/series-09/04.webp",
+        "alt": "Series 09 — 4"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "series-10",
+    "title": "Series 10",
+    "collection": "projects",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/projects/series-10/01.webp",
+    "images": [
+      {
+        "src": "assets/images/projects/series-10/01.webp",
+        "alt": "Series 10 — 1"
+      },
+      {
+        "src": "assets/images/projects/series-10/02.webp",
+        "alt": "Series 10 — 2"
+      },
+      {
+        "src": "assets/images/projects/series-10/03.webp",
+        "alt": "Series 10 — 3"
+      },
+      {
+        "src": "assets/images/projects/series-10/04.webp",
+        "alt": "Series 10 — 4"
+      },
+      {
+        "src": "assets/images/projects/series-10/05.webp",
+        "alt": "Series 10 — 5"
+      },
+      {
+        "src": "assets/images/projects/series-10/06.webp",
+        "alt": "Series 10 — 6"
+      }
+    ],
+    "videos": [
+      {
+        "src": "assets/videos/projects/series-10/video-01.mp4",
+        "poster": "assets/images/projects/series-10/01.webp",
+        "alt": "Series 10 — video 1"
+      }
+    ]
+  },
+  {
+    "slug": "series-11",
+    "title": "Series 11",
+    "collection": "projects",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/projects/series-11/01.webp",
+    "images": [
+      {
+        "src": "assets/images/projects/series-11/01.webp",
+        "alt": "Series 11 — 1"
+      },
+      {
+        "src": "assets/images/projects/series-11/02.webp",
+        "alt": "Series 11 — 2"
+      },
+      {
+        "src": "assets/images/projects/series-11/03.webp",
+        "alt": "Series 11 — 3"
+      },
+      {
+        "src": "assets/images/projects/series-11/04.webp",
+        "alt": "Series 11 — 4"
+      },
+      {
+        "src": "assets/images/projects/series-11/05.webp",
+        "alt": "Series 11 — 5"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "series-12",
+    "title": "Series 12",
+    "collection": "projects",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/projects/series-12/01.webp",
+    "images": [
+      {
+        "src": "assets/images/projects/series-12/01.webp",
+        "alt": "Series 12 — 1"
+      },
+      {
+        "src": "assets/images/projects/series-12/02.webp",
+        "alt": "Series 12 — 2"
+      },
+      {
+        "src": "assets/images/projects/series-12/03.webp",
+        "alt": "Series 12 — 3"
+      },
+      {
+        "src": "assets/images/projects/series-12/04.webp",
+        "alt": "Series 12 — 4"
+      },
+      {
+        "src": "assets/images/projects/series-12/05.webp",
+        "alt": "Series 12 — 5"
+      },
+      {
+        "src": "assets/images/projects/series-12/06.webp",
+        "alt": "Series 12 — 6"
+      },
+      {
+        "src": "assets/images/projects/series-12/07.webp",
+        "alt": "Series 12 — 7"
+      },
+      {
+        "src": "assets/images/projects/series-12/08.webp",
+        "alt": "Series 12 — 8"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "series-13",
+    "title": "Series 13",
+    "collection": "projects",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/projects/series-13/01.webp",
+    "images": [
+      {
+        "src": "assets/images/projects/series-13/01.webp",
+        "alt": "Series 13 — 1"
+      },
+      {
+        "src": "assets/images/projects/series-13/02.webp",
+        "alt": "Series 13 — 2"
+      },
+      {
+        "src": "assets/images/projects/series-13/03.webp",
+        "alt": "Series 13 — 3"
+      },
+      {
+        "src": "assets/images/projects/series-13/04.webp",
+        "alt": "Series 13 — 4"
+      },
+      {
+        "src": "assets/images/projects/series-13/05.webp",
+        "alt": "Series 13 — 5"
+      },
+      {
+        "src": "assets/images/projects/series-13/06.webp",
+        "alt": "Series 13 — 6"
+      },
+      {
+        "src": "assets/images/projects/series-13/07.webp",
+        "alt": "Series 13 — 7"
+      },
+      {
+        "src": "assets/images/projects/series-13/08.webp",
+        "alt": "Series 13 — 8"
+      },
+      {
+        "src": "assets/images/projects/series-13/09.webp",
+        "alt": "Series 13 — 9"
+      },
+      {
+        "src": "assets/images/projects/series-13/10.webp",
+        "alt": "Series 13 — 10"
+      },
+      {
+        "src": "assets/images/projects/series-13/11.webp",
+        "alt": "Series 13 — 11"
+      },
+      {
+        "src": "assets/images/projects/series-13/12.webp",
+        "alt": "Series 13 — 12"
+      },
+      {
+        "src": "assets/images/projects/series-13/13.webp",
+        "alt": "Series 13 — 13"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "series-14",
+    "title": "Series 14",
+    "collection": "projects",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/projects/series-14/01.webp",
+    "images": [
+      {
+        "src": "assets/images/projects/series-14/01.webp",
+        "alt": "Series 14 — 1"
+      }
+    ],
+    "videos": [
+      {
+        "src": "assets/videos/projects/series-14/video-01.mp4",
+        "poster": "assets/images/projects/series-14/01.webp",
+        "alt": "Series 14 — video 1"
+      },
+      {
+        "src": "assets/videos/projects/series-14/video-02.mp4",
+        "poster": "assets/images/projects/series-14/01.webp",
+        "alt": "Series 14 — video 2"
+      }
+    ]
+  },
+  {
+    "slug": "series-15",
+    "title": "Series 15",
+    "collection": "projects",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/projects/series-15/01.webp",
+    "images": [
+      {
+        "src": "assets/images/projects/series-15/01.webp",
+        "alt": "Series 15 — 1"
+      },
+      {
+        "src": "assets/images/projects/series-15/02.webp",
+        "alt": "Series 15 — 2"
+      },
+      {
+        "src": "assets/images/projects/series-15/03.webp",
+        "alt": "Series 15 — 3"
+      },
+      {
+        "src": "assets/images/projects/series-15/04.webp",
+        "alt": "Series 15 — 4"
+      },
+      {
+        "src": "assets/images/projects/series-15/05.webp",
+        "alt": "Series 15 — 5"
+      },
+      {
+        "src": "assets/images/projects/series-15/06.webp",
+        "alt": "Series 15 — 6"
+      },
+      {
+        "src": "assets/images/projects/series-15/07.webp",
+        "alt": "Series 15 — 7"
+      },
+      {
+        "src": "assets/images/projects/series-15/08.webp",
+        "alt": "Series 15 — 8"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "series-16",
+    "title": "Series 16",
+    "collection": "projects",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/projects/series-16/01.webp",
+    "images": [
+      {
+        "src": "assets/images/projects/series-16/01.webp",
+        "alt": "Series 16 — 1"
+      },
+      {
+        "src": "assets/images/projects/series-16/02.webp",
+        "alt": "Series 16 — 2"
+      },
+      {
+        "src": "assets/images/projects/series-16/03.webp",
+        "alt": "Series 16 — 3"
+      },
+      {
+        "src": "assets/images/projects/series-16/04.webp",
+        "alt": "Series 16 — 4"
+      },
+      {
+        "src": "assets/images/projects/series-16/05.webp",
+        "alt": "Series 16 — 5"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "series-17",
+    "title": "Series 17",
+    "collection": "projects",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/projects/series-17/01.webp",
+    "images": [
+      {
+        "src": "assets/images/projects/series-17/01.webp",
+        "alt": "Series 17 — 1"
+      },
+      {
+        "src": "assets/images/projects/series-17/02.webp",
+        "alt": "Series 17 — 2"
+      },
+      {
+        "src": "assets/images/projects/series-17/03.webp",
+        "alt": "Series 17 — 3"
+      },
+      {
+        "src": "assets/images/projects/series-17/04.webp",
+        "alt": "Series 17 — 4"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "series-18",
+    "title": "Series 18",
+    "collection": "projects",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/projects/series-18/01.webp",
+    "images": [
+      {
+        "src": "assets/images/projects/series-18/01.webp",
+        "alt": "Series 18 — 1"
+      },
+      {
+        "src": "assets/images/projects/series-18/02.webp",
+        "alt": "Series 18 — 2"
+      },
+      {
+        "src": "assets/images/projects/series-18/03.webp",
+        "alt": "Series 18 — 3"
+      },
+      {
+        "src": "assets/images/projects/series-18/04.webp",
+        "alt": "Series 18 — 4"
+      },
+      {
+        "src": "assets/images/projects/series-18/05.webp",
+        "alt": "Series 18 — 5"
+      },
+      {
+        "src": "assets/images/projects/series-18/06.webp",
+        "alt": "Series 18 — 6"
+      },
+      {
+        "src": "assets/images/projects/series-18/07.webp",
+        "alt": "Series 18 — 7"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "series-19",
+    "title": "Series 19",
+    "collection": "projects",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/projects/series-19/01.webp",
+    "images": [
+      {
+        "src": "assets/images/projects/series-19/01.webp",
+        "alt": "Series 19 — 1"
+      },
+      {
+        "src": "assets/images/projects/series-19/02.webp",
+        "alt": "Series 19 — 2"
+      },
+      {
+        "src": "assets/images/projects/series-19/03.webp",
+        "alt": "Series 19 — 3"
+      },
+      {
+        "src": "assets/images/projects/series-19/04.webp",
+        "alt": "Series 19 — 4"
+      },
+      {
+        "src": "assets/images/projects/series-19/05.webp",
+        "alt": "Series 19 — 5"
+      },
+      {
+        "src": "assets/images/projects/series-19/06.webp",
+        "alt": "Series 19 — 6"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "series-20",
+    "title": "Series 20",
+    "collection": "projects",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/projects/series-20/01.webp",
+    "images": [
+      {
+        "src": "assets/images/projects/series-20/01.webp",
+        "alt": "Series 20 — 1"
+      },
+      {
+        "src": "assets/images/projects/series-20/02.webp",
+        "alt": "Series 20 — 2"
+      },
+      {
+        "src": "assets/images/projects/series-20/03.webp",
+        "alt": "Series 20 — 3"
+      },
+      {
+        "src": "assets/images/projects/series-20/04.webp",
+        "alt": "Series 20 — 4"
+      },
+      {
+        "src": "assets/images/projects/series-20/05.webp",
+        "alt": "Series 20 — 5"
+      },
+      {
+        "src": "assets/images/projects/series-20/06.webp",
+        "alt": "Series 20 — 6"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "series-21",
+    "title": "Series 21",
+    "collection": "projects",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/projects/series-21/01.webp",
+    "images": [
+      {
+        "src": "assets/images/projects/series-21/01.webp",
+        "alt": "Series 21 — 1"
+      },
+      {
+        "src": "assets/images/projects/series-21/02.webp",
+        "alt": "Series 21 — 2"
+      },
+      {
+        "src": "assets/images/projects/series-21/03.webp",
+        "alt": "Series 21 — 3"
+      },
+      {
+        "src": "assets/images/projects/series-21/04.webp",
+        "alt": "Series 21 — 4"
+      },
+      {
+        "src": "assets/images/projects/series-21/05.webp",
+        "alt": "Series 21 — 5"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "exposition-01",
+    "title": "Exposition 01",
+    "collection": "expositions",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/expositions/exposition-01/01.webp",
+    "images": [
+      {
+        "src": "assets/images/expositions/exposition-01/01.webp",
+        "alt": "Exposition 01 — 1"
+      },
+      {
+        "src": "assets/images/expositions/exposition-01/02.webp",
+        "alt": "Exposition 01 — 2"
+      },
+      {
+        "src": "assets/images/expositions/exposition-01/03.webp",
+        "alt": "Exposition 01 — 3"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "exposition-02",
+    "title": "Exposition 02",
+    "collection": "expositions",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/expositions/exposition-02/01.webp",
+    "images": [
+      {
+        "src": "assets/images/expositions/exposition-02/01.webp",
+        "alt": "Exposition 02 — 1"
+      },
+      {
+        "src": "assets/images/expositions/exposition-02/02.webp",
+        "alt": "Exposition 02 — 2"
+      },
+      {
+        "src": "assets/images/expositions/exposition-02/03.webp",
+        "alt": "Exposition 02 — 3"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "exposition-03",
+    "title": "Exposition 03",
+    "collection": "expositions",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/expositions/exposition-03/01.webp",
+    "images": [
+      {
+        "src": "assets/images/expositions/exposition-03/01.webp",
+        "alt": "Exposition 03 — 1"
+      },
+      {
+        "src": "assets/images/expositions/exposition-03/02.webp",
+        "alt": "Exposition 03 — 2"
+      },
+      {
+        "src": "assets/images/expositions/exposition-03/03.webp",
+        "alt": "Exposition 03 — 3"
+      },
+      {
+        "src": "assets/images/expositions/exposition-03/04.webp",
+        "alt": "Exposition 03 — 4"
+      },
+      {
+        "src": "assets/images/expositions/exposition-03/05.webp",
+        "alt": "Exposition 03 — 5"
+      }
+    ],
+    "videos": [
+      {
+        "src": "assets/videos/expositions/exposition-03/video-01.mp4",
+        "poster": "assets/images/expositions/exposition-03/01.webp",
+        "alt": "Exposition 03 — video 1"
+      }
+    ]
+  },
+  {
+    "slug": "exposition-04",
+    "title": "Exposition 04",
+    "collection": "expositions",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/expositions/exposition-04/01.webp",
+    "images": [
+      {
+        "src": "assets/images/expositions/exposition-04/01.webp",
+        "alt": "Exposition 04 — 1"
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "exposition-05",
+    "title": "Exposition 05",
+    "collection": "expositions",
+    "description": "",
+    "year": "",
+    "cover": "assets/images/expositions/exposition-05/01.webp",
+    "images": [
+      {
+        "src": "assets/images/expositions/exposition-05/01.webp",
+        "alt": "Exposition 05 — 1"
+      },
+      {
+        "src": "assets/images/expositions/exposition-05/02.webp",
+        "alt": "Exposition 05 — 2"
+      },
+      {
+        "src": "assets/images/expositions/exposition-05/03.webp",
+        "alt": "Exposition 05 — 3"
+      },
+      {
+        "src": "assets/images/expositions/exposition-05/04.webp",
+        "alt": "Exposition 05 — 4"
+      }
+    ],
+    "videos": []
+  }
+]
