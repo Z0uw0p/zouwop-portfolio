@@ -22,3 +22,8 @@ npm run build   # outputs to dist/
 Template sales use Stripe Payment Links and are delivered by email by hand.
 The setup, per-sale checklist, refund path, and delivery SLA are in
 [`docs/fulfilment.md`](docs/fulfilment.md).
+
+## Analytics and discovery
+Cookieless Cloudflare Web Analytics, the `/go/<slug>` buy-click redirects, the
+sitemap, and what those numbers can and cannot tell you are in
+[`docs/analytics.md`](docs/analytics.md).

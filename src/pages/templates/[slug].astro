@@ -11,6 +11,13 @@ import { templates } from '../../data/templates';
 import { hasDemo } from '../../data/demos';
 import { site } from '../../data/site';
 import { pageExists } from '../../lib/pages';
+import {
+  breadcrumbJsonLd,
+  productDescription,
+  productJsonLd,
+  productTitle,
+  seoImagePath,
+} from '../../lib/seo';
 
 interface Props {
   entry: TemplateEntry;
@@ -24,6 +31,7 @@ export function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
+const baseUrl = Astro.site ?? new URL('https://zouwop.com');
 
 const demoReady = hasDemo(entry.slug);
 const previewHref = `/templates/${entry.slug}/preview/`;
@@ -71,8 +79,12 @@ const faqs = [
 ---
 
 <Layout
-  title={`${entry.name} template — Zouwop`}
-  description={entry.blurb}
+  title={productTitle(entry)}
+  description={productDescription(entry)}
+  path={`/templates/${entry.slug}/`}
+  image={seoImagePath(entry)}
+  imageAlt={`${entry.name} template preview`}
+  jsonLd={[productJsonLd(entry, baseUrl), breadcrumbJsonLd(entry, baseUrl)]}
 >
   <main id="main" tabindex="-1" class="page">
     <div class="container">

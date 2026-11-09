@@ -25,20 +25,23 @@ templates repo's `release/` directory.
      is the catalog slug (e.g. `https://zouwop.com/thank-you?template=forge-trades`).
    - Do not enable automatic delivery, file uploads, or a Stripe-hosted
      download.
-3. **Copy the link** into `src/data/templates.overrides.ts` for that slug:
+3. **Copy the link** into `src/data/stripe-links.json` for that slug:
 
-   ```ts
-   'forge-trades': {
-     status: 'available',
-     buyUrl: 'https://buy.stripe.com/...',
-   },
+   ```json
+   {
+     "forge-trades": "https://buy.stripe.com/..."
+   }
    ```
 
-   An empty `buyUrl` or `status: 'coming-soon'` renders "Available soon — email
-   me" and no anchor. Never commit a dead or placeholder URL.
+   Then run `npm run sync:redirects` to regenerate `public/_redirects`; the
+   product CTA points at `/go/<slug>` so the click is counted (see
+   [`docs/analytics.md`](analytics.md)). A missing link, or a template still
+   marked coming-soon, renders "Available soon — email me" and no anchor. Never
+   commit a dead or placeholder URL; the build rejects both.
 4. Test in Stripe test mode first: open the link, pay with test card
    `4242 4242 4242 4242`, confirm you land on `/thank-you?template=<slug>`, and
-   confirm the template name appears. Then switch the override to the live link.
+   confirm the template name appears. Then switch the JSON entry to the live
+   link and run `npm run sync:redirects` again.
 
 Test-mode purchases are still real records in test mode; do not email files for
 them.

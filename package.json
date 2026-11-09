@@ -4,13 +4,16 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "astro dev",
-    "prebuild": "node scripts/sync-templates.mjs --check && node scripts/sync-demos.mjs --check",
-    "build": "astro build",
+    "prebuild": "node scripts/sync-templates.mjs --check && node scripts/sync-demos.mjs --check && node scripts/sync-redirects.mjs --check",
+    "build": "astro build && node scripts/build-sitemap.mjs && node scripts/check-seo.mjs",
     "preview": "astro preview",
     "check": "astro check",
     "check:links": "node scripts/check-links.mjs",
+    "check:seo": "node scripts/check-seo.mjs",
     "sync:templates": "node scripts/sync-templates.mjs",
     "sync:demos": "node scripts/sync-demos.mjs",
+    "sync:redirects": "node scripts/sync-redirects.mjs",
+    "og:images": "node scripts/make-og-images.mjs",
     "check:licence": "node scripts/check-licence.mjs",
     "licence:render": "node scripts/check-licence.mjs --write"
   },

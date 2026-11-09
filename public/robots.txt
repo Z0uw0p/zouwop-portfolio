@@ -2,3 +2,7 @@ User-agent: *
 Allow: /
 Disallow: /thank-you
 Disallow: /templates/*/demo/
+Disallow: /templates/*/preview/
+Disallow: /go/
+
+Sitemap: https://zouwop.com/sitemap.xml

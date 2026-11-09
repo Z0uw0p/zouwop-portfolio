@@ -7,16 +7,35 @@ interface Props {
   description?: string;
   path?: string;
   noindex?: boolean;
+  image?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  imageAlt?: string;
+  locale?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 const {
   title,
   description = 'Self-hosted infrastructure setup, tech support calls, web development, and managed hosting on a server you control.',
   path,
   noindex = false,
+  image,
+  imageWidth = 1200,
+  imageHeight = 630,
+  imageAlt,
+  locale = 'en_CA',
+  jsonLd,
 } = Astro.props;
 
 const site = Astro.site ?? new URL('https://zouwop.com');
 const canonical = new URL(path ?? Astro.url.pathname, site);
+const imageUrl = image ? new URL(image, site).href : undefined;
+const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+const analyticsToken = import.meta.env.PUBLIC_CF_ANALYTICS_TOKEN ?? '';
+const analyticsEnabled =
+  import.meta.env.PROD &&
+  import.meta.env.PUBLIC_ANALYTICS !== 'off' &&
+  analyticsToken !== '';
 
 const impactVerification = {
   name: 'impact-site-verification',
@@ -37,7 +56,19 @@ const impactVerification = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical.href} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:locale" content={locale} />
+    {
+      imageUrl && (
+        <>
+          <meta property="og:image" content={imageUrl} />
+          <meta property="og:image:width" content={String(imageWidth)} />
+          <meta property="og:image:height" content={String(imageHeight)} />
+          <meta property="og:image:alt" content={imageAlt ?? title} />
+        </>
+      )
+    }
+    <meta name="twitter:card" content={imageUrl ? 'summary_large_image' : 'summary'} />
+    {imageUrl && <meta name="twitter:image" content={imageUrl} />}
     <meta name="theme-color" content="#0d0d12" />
     <meta {...impactVerification} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -45,6 +76,22 @@ const impactVerification = {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
     <script is:inline>document.documentElement.classList.add('js');</script>
+    {jsonLdBlocks.map((block) => (
+      <script
+        type="application/ld+json"
+        set:html={JSON.stringify(block).replace(/</g, '\\u003c')}
+      />
+    ))}
+    {
+      analyticsEnabled && (
+        <script
+          is:inline
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon={JSON.stringify({ token: analyticsToken })}
+        />
+      )
+    }
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>

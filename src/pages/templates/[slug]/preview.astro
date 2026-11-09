@@ -315,7 +315,7 @@ const hasPreview = demoReady || hasCapture;
         <div class="bar-actions">
           {
             canBuy ? (
-              <a class="bar-buy" href={buyUrl}>{price} — buy</a>
+              <a class="bar-buy" href={`/go/${slug}`}>{price} — buy</a>
             ) : entry.status === 'available' ? (
               <a class="bar-buy" href={enquiryMailto(entry.name)}>{price} — email to buy</a>
             ) : (
