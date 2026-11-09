@@ -9,8 +9,11 @@ import {
   fullBuild,
   hosted,
   licenceFrom,
+  licenceMaxCents,
   licenceMinCents,
+  licenceOfferCount,
 } from '../data/pricing';
+import { pricingJsonLd } from '../lib/seo';
 
 const licencePrice = `${licenceFrom ? 'from ' : ''}${formatCadShort(licenceMinCents)}`;
 const hostedPrice =
@@ -19,9 +22,21 @@ const hostedPrice =
     : `${formatCadShort(hosted.priceCents)}/mo`;
 
 const description = `Three ways to buy: a template licence for ${licencePrice}, a full build for ${formatCadShort(fullBuild.priceCents)}, or hosting and maintenance. Prices in CAD.`;
+
+const baseUrl = Astro.site ?? new URL('https://zouwop.com');
+const jsonLd = pricingJsonLd({
+  site: baseUrl,
+  licenceMinCents,
+  licenceMaxCents,
+  licenceOfferCount,
+  fullBuildName: fullBuild.name,
+  fullBuildCents: fullBuild.priceCents,
+  hostedName: hosted.name,
+  hostedSummary: hosted.summary,
+});
 ---
 
-<Layout title="Pricing — Zouwop" description={description} path="/pricing">
+<Layout title="Pricing — Zouwop" description={description} path="/pricing" jsonLd={jsonLd}>
   <main id="main" tabindex="-1" class="page">
     <div class="container">
       <a class="back" href="/">← zouwop.com</a>

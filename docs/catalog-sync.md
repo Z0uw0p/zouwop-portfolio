@@ -48,12 +48,16 @@ Review the diff, then commit `src/data/templates.generated.ts`,
 ## Store-owned overrides
 
 `src/data/templates.overrides.ts` holds copy and commerce that the templates repo
-has no business owning: `description`, `features`, `includes`, `buyUrl`,
-`priceCents`, `hostedMonthlyCents`, `status`, and so on.
+has no business owning: `description`, `features`, `includes`,
+`priceCents`, `hostedMonthlyCents`, `status`, and so on. Stripe Payment Links
+live in `src/data/stripe-links.json` instead, because
+`scripts/sync-redirects.mjs` reads that file to generate `public/_redirects`.
+An override may still set `buyUrl`; it wins over the JSON map.
 
-`src/data/templates.ts` merges generated data first and overrides second, so an
-override always wins. Defaults are `currency: 'CAD'`, `status: 'coming-soon'`,
-`description` = the generated blurb, and empty `features`/`includes`.
+`src/data/templates.ts` merges generated data, then the Stripe link map, then
+overrides, so an override always wins. Defaults are `currency: 'CAD'`,
+`status: 'coming-soon'`, `description` = the generated blurb, and empty
+`features`/`includes`.
 
 An override for a slug that is no longer in the generated catalog is an error:
 the import throws, and `npm run build` also fails because its `prebuild` step

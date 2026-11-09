@@ -29,3 +29,9 @@ export function formatCadShort(cents: number): string {
 export function formatCad(cents: number): string {
   return `${formatCadShort(cents)} CAD`;
 }
+
+/** `500.00` — the machine-readable decimal used by JSON-LD offers. */
+export function formatCadAmount(cents: number): string {
+  assertCents(cents);
+  return (cents / 100).toFixed(2);
+}

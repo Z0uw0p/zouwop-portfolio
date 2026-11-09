@@ -1,5 +1,6 @@
 import { generatedTemplates } from './templates.generated';
 import { overrides } from './templates.overrides';
+import stripeLinksJson from './stripe-links.json';
 
 export type TemplateStatus = 'available' | 'coming-soon';
 
@@ -55,6 +56,21 @@ for (const slug of Object.keys(overrides)) {
   }
 }
 
+const stripeLinks = stripeLinksJson as Record<string, string>;
+for (const [slug, url] of Object.entries(stripeLinks)) {
+  if (!generatedSlugs.has(slug)) {
+    throw new Error(
+      `stripe-links.json: "${slug}" is not in the generated catalog. ` +
+        'Remove it or run npm run sync:templates.',
+    );
+  }
+  if (!/^https:\/\//.test(url) || url.includes('...') || url.trim() !== url) {
+    throw new Error(
+      `stripe-links.json: "${slug}" must be a real https URL, not a placeholder.`,
+    );
+  }
+}
+
 export const templates: TemplateEntry[] = generatedTemplates.map((generated) => ({
   ...generated,
   description: generated.blurb,
@@ -62,6 +78,7 @@ export const templates: TemplateEntry[] = generatedTemplates.map((generated) => 
   includes: [],
   currency: 'CAD',
   status: 'coming-soon',
+  ...(stripeLinks[generated.slug] ? { buyUrl: stripeLinks[generated.slug] } : {}),
   ...(overrides[generated.slug] ?? {}),
 }));
 

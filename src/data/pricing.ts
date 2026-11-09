@@ -16,6 +16,12 @@ export const licenceMinCents = Math.min(...licencePrices);
 /** True when the catalog does not share one price, so the page can say "from". */
 export const licenceFrom = licencePrices.some((cents) => cents !== licenceMinCents);
 
+/** Highest licence price; with `licenceMinCents`, the range JSON-LD may claim. */
+export const licenceMaxCents = Math.max(...licencePrices);
+
+/** How many licence offers exist; the AggregateOffer's offerCount. */
+export const licenceOfferCount = available.length;
+
 export interface Offer {
   id: string;
   name: string;

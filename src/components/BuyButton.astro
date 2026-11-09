@@ -11,7 +11,10 @@ interface Props {
 const { entry, compact = false } = Astro.props;
 const buyUrl = entry.buyUrl?.trim();
 const canBuy = entry.status === 'available' && Boolean(buyUrl);
-const href = canBuy ? (buyUrl as string) : '';
+// The CTA points at the tracked redirect, not the Stripe link directly, so a
+// pageview on /go/<slug> is the click count. public/_redirects is generated
+// from src/data/stripe-links.json by scripts/sync-redirects.mjs.
+const href = canBuy ? `/go/${entry.slug}` : '';
 const price = formatCad(entry.priceCents);
 ---
 <div class:list={['buy', { 'buy--compact': compact, 'buy--soon': !canBuy }]}>
