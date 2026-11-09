@@ -85,12 +85,13 @@ const licenceNote = `${licenceFrom ? 'from ' : ''}${formatCadShort(licenceMinCen
   }
   .catalog {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 32px;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 20px;
   }
-  @media (min-width: 640px) {
+  @media (max-width: 520px) {
     .catalog {
-      grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
     }
   }
   .outro {

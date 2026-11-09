@@ -27,6 +27,10 @@ const price = formatCadShort(entry.priceCents);
 const site = Astro.site ?? new URL('https://zouwop.com');
 const canonical = new URL(productUrl, site).href;
 const title = `${entry.name} — live preview`;
+const desktopCapture = entry.previews.find((preview) => preview.kind === 'desktop');
+const mobileCapture = entry.previews.find((preview) => preview.kind === 'mobile');
+const hasCapture = Boolean(desktopCapture || mobileCapture);
+const hasPreview = demoReady || hasCapture;
 ---
 
 <!doctype html>
@@ -244,6 +248,23 @@ const title = `${entry.name} — live preview`;
         border-radius: 8px;
       }
 
+      .frame--capture {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: #fff;
+      }
+      .frame--capture .capture {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+      }
+      html[data-device='desktop'] .frame--capture .capture--phone { display: none; }
+      html[data-device='phone'] .frame--capture .capture--desktop { display: none; }
+
       .unavailable {
         align-self: center;
         width: 100%;
@@ -311,21 +332,27 @@ const title = `${entry.name} — live preview`;
       </div>
     </header>
 
-    {demoReady && (
+    {hasPreview && (
       <div class="toolbar">
         <div class="device-toggle" role="group" aria-label="Preview device">
           <button type="button" data-device="desktop" aria-pressed="true">Desktop</button>
           <button type="button" data-device="phone" aria-pressed="false">Phone</button>
         </div>
-        <a class="fallback mono" href={demoUrl} aria-describedby="demo-note">
-          Open the demo on its own <span aria-hidden="true">↗</span>
-        </a>
+        {demoReady && (
+          <a class="fallback mono" href={demoUrl} aria-describedby="demo-note">
+            Open the demo on its own <span aria-hidden="true">↗</span>
+          </a>
+        )}
       </div>
     )}
 
-    {demoReady && (
+    {hasPreview && (
       <p id="demo-note" class="note">
-        This is the {entry.name} template running with placeholder content. Nothing you type is saved.
+        {
+          demoReady
+            ? `This is the ${entry.name} template running with placeholder content. Nothing you type is saved.`
+            : `Live demo coming soon — this is the saved ${entry.name} capture.`
+        }
       </p>
     )}
 
@@ -338,6 +365,31 @@ const title = `${entry.name} — live preview`;
               title={`${entry.name} template — live preview`}
               loading="lazy"
             />
+          </div>
+        ) : hasCapture ? (
+          <div class="frame frame--capture">
+            {desktopCapture && (
+              <img
+                class="capture capture--desktop"
+                src={desktopCapture.src}
+                alt={desktopCapture.alt}
+                width={desktopCapture.width}
+                height={desktopCapture.height}
+                loading="lazy"
+                decoding="async"
+              />
+            )}
+            {mobileCapture && (
+              <img
+                class="capture capture--phone"
+                src={mobileCapture.src}
+                alt={mobileCapture.alt}
+                width={mobileCapture.width}
+                height={mobileCapture.height}
+                loading="lazy"
+                decoding="async"
+              />
+            )}
           </div>
         ) : (
           <div class="unavailable">

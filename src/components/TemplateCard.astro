@@ -1,7 +1,6 @@
 ---
 import type { TemplateEntry } from '../data/templates';
 import { hasDemo } from '../data/demos';
-import TemplateFigure from './TemplateFigure.astro';
 import PriceTag from './PriceTag.astro';
 
 interface Props {
@@ -12,55 +11,90 @@ const { entry } = Astro.props;
 const href = `/templates/${entry.slug}/`;
 const previewHref = `/templates/${entry.slug}/preview/`;
 const demoHref = `/templates/${entry.slug}/demo/`;
+const desktop = entry.previews.find((preview) => preview.kind === 'desktop');
 ---
 
 <article class="card tpl-card" id={`template-${entry.slug}`}>
-  <header class="tpl-card-head">
-    <h2><a href={href}>{entry.name}</a></h2>
-    <p class="meta mono">
-      {entry.niche} · licence <PriceTag amountCents={entry.priceCents} />
-      {
-        entry.hostedMonthlyCents != null && (
-          <> · hosting <PriceTag amountCents={entry.hostedMonthlyCents} suffix="/mo" /></>
-        )
-      }
-    </p>
-    <p class="blurb">{entry.blurb}</p>
-  </header>
+  <a class="thumb" href={href} tabindex="-1" aria-hidden="true">
+    {
+      desktop ? (
+        <img
+          src={desktop.src}
+          alt=""
+          width={desktop.width}
+          height={desktop.height}
+          loading="lazy"
+          decoding="async"
+        />
+      ) : (
+        <span class="thumb-empty" />
+      )
+    }
+  </a>
 
-  <TemplateFigure previews={entry.previews} name={entry.name} />
-
-  <footer class="tpl-card-foot">
-    <div class="card-links">
-      <a class="detail-link" href={href}>
-        What&rsquo;s included <span aria-hidden="true">→</span>
-      </a>
-      <a class="detail-link" href={previewHref}>Preview</a>
-      {hasDemo(entry.slug) && (
-        <a class="full-link mono" href={demoHref}>
-          Full screen <span aria-hidden="true">↗</span>
-        </a>
-      )}
+  <div class="body">
+    <div class="row">
+      <h2><a href={href}>{entry.name}</a></h2>
+      <span class="price"><PriceTag amountCents={entry.priceCents} /></span>
     </div>
-    <p class="stack mono">{entry.stack.join(' · ')}</p>
-  </footer>
+    <p class="niche mono">{entry.niche}</p>
+
+    <div class="card-links">
+      <a class="details" href={href}>Details</a>
+      <a class="preview" href={previewHref}>Preview</a>
+      {hasDemo(entry.slug) && <a class="full" href={demoHref}>Full screen</a>}
+    </div>
+  </div>
 </article>
 
 <style>
   .tpl-card {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 24px;
+    gap: 10px;
+    padding: 10px;
   }
   .tpl-card:hover {
     border-color: var(--border-hover);
     transform: none;
   }
+  .thumb {
+    display: block;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--bg);
+  }
+  .thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
+  .thumb-empty {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--bg);
+  }
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+  }
   h2 {
-    font-size: clamp(1.4rem, 3.5vw, 1.9rem);
-    font-weight: 800;
-    letter-spacing: -0.02em;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
     margin: 0;
   }
   h2 a {
@@ -70,61 +104,43 @@ const demoHref = `/templates/${entry.slug}/demo/`;
   h2 a:hover {
     color: var(--orange);
   }
-  .meta {
-    margin-top: 6px;
+  .price {
+    flex-shrink: 0;
     color: var(--orange);
+    font-size: 0.8rem;
+  }
+  .niche {
+    color: var(--text-dim);
+    font-size: 0.68rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    font-size: 12px;
-  }
-  .blurb {
-    margin-top: 10px;
-    color: var(--text-dim);
-    max-width: 62ch;
-  }
-  .tpl-card-foot {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 8px 16px;
   }
   .card-links {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 4px 18px;
+    gap: 2px 14px;
+    margin-top: 2px;
   }
-  .detail-link {
+  .card-links a {
     display: inline-flex;
     align-items: center;
-    min-height: 44px;
-    color: var(--orange);
-    font-weight: 600;
+    min-height: 36px;
+    color: var(--text-dim);
+    font-size: 0.78rem;
     text-decoration: none;
   }
-  .detail-link:hover {
+  .card-links a:hover {
+    color: var(--orange);
     text-decoration: underline;
   }
-  .full-link {
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
-    color: var(--text-dim);
-    font-size: 0.75rem;
-    text-decoration: none;
-  }
-  .full-link:hover {
-    color: var(--text);
-  }
-  .stack {
-    color: var(--text-dim);
-    font-size: 0.75rem;
-    letter-spacing: 0.03em;
+  .card-links .preview {
+    color: var(--orange);
+    font-weight: 600;
   }
   h2 a:focus-visible,
-  .detail-link:focus-visible,
-  .full-link:focus-visible {
+  .card-links a:focus-visible,
+  .thumb:focus-visible {
     outline: 2px solid var(--focus);
     outline-offset: 2px;
   }
