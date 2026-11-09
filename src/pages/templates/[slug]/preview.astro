@@ -67,9 +67,9 @@ const title = `${entry.name} — live preview`;
         --sans: 'Inter', system-ui, -apple-system, sans-serif;
       }
       * { box-sizing: border-box; }
-      html, body { margin: 0; }
+      html, body { margin: 0; height: 100%; overflow: hidden; }
       body {
-        min-height: 100vh;
+        height: 100dvh;
         display: flex;
         flex-direction: column;
         background: var(--bg);
@@ -89,8 +89,8 @@ const title = `${entry.name} — live preview`;
       }
 
       .bar {
-        position: sticky;
-        top: 0;
+        flex-shrink: 0;
+        position: relative;
         z-index: 20;
         background: var(--bg-soft);
         border-bottom: 1px solid var(--border);
@@ -149,6 +149,7 @@ const title = `${entry.name} — live preview`;
       }
 
       .toolbar {
+        flex-shrink: 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -194,6 +195,7 @@ const title = `${entry.name} — live preview`;
       .fallback:hover { text-decoration: underline; }
 
       .note {
+        flex-shrink: 0;
         max-width: 1440px;
         width: 100%;
         margin: 0 auto;
@@ -204,40 +206,46 @@ const title = `${entry.name} — live preview`;
 
       .stage {
         flex: 1;
+        min-height: 0;
         width: 100%;
         max-width: 1440px;
         margin: 0 auto;
-        padding: 16px 20px 32px;
+        padding: 12px 20px 16px;
         display: flex;
-        align-items: flex-start;
+        align-items: stretch;
         justify-content: center;
       }
       .frame {
+        display: flex;
         width: 100%;
+        height: 100%;
         transition: width 0.18s ease;
       }
       .frame iframe {
         display: block;
+        flex: 1;
         width: 100%;
-        height: auto;
-        aspect-ratio: 16 / 10;
+        height: 100%;
         border: 1px solid var(--border);
         border-radius: 8px;
         background: #fff;
       }
       html[data-device='phone'] .frame {
-        width: min(390px, 100%);
+        width: auto;
+        height: 100%;
+        aspect-ratio: 390 / 844;
+        max-width: 100%;
         padding: 10px;
         border: 1px solid var(--border-strong);
         border-radius: 14px;
         background: var(--bg-soft);
       }
       html[data-device='phone'] .frame iframe {
-        aspect-ratio: 390 / 844;
         border-radius: 8px;
       }
 
       .unavailable {
+        align-self: center;
         width: 100%;
         max-width: 560px;
         padding: 32px;
