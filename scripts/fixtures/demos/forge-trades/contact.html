@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Your Business</title>
+  <meta name="description" content="Contact Your Business for a free quote. Call (555) 010-0100 or send the form and we'll call you back within one business day.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="bar">
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span><span data-site="name">Your Business</span></a>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="header-call" data-site-href="phone" href="tel:+15550100100"><span data-site="phone">(555) 010-0100</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Contact</p>
+        <h1>Get a quote</h1>
+        <p class="lede">Tell us about the job and we'll call you back within one business day. For urgent work, call us directly.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="form-heading">
+      <div class="container">
+        <h2 id="form-heading">Request a call back</h2>
+        <form class="form mt-2" id="quote-form" action="#" method="post" novalidate>
+          <div class="field">
+            <label for="q-name">Name</label>
+            <input id="q-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="q-phone">Phone</label>
+            <input id="q-phone" name="phone" type="tel" autocomplete="tel" required>
+          </div>
+          <div class="field">
+            <label for="q-email">Email <span class="hint">(optional)</span></label>
+            <input id="q-email" name="email" type="email" autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="q-postcode">Postcode <span class="hint">(optional)</span></label>
+            <input id="q-postcode" name="postcode" type="text" autocomplete="postal-code">
+          </div>
+          <div class="field">
+            <label for="q-job">Job type</label>
+            <select id="q-job" name="job" required>
+              <option value="">Choose a service…</option>
+              <option value="plumbing">Plumbing</option>
+              <option value="electrical">Electrical</option>
+              <option value="heating">Heating &amp; cooling</option>
+              <option value="roofing">Roofing</option>
+              <option value="bathrooms">Bathrooms</option>
+              <option value="emergency">Emergency call-out</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="q-desc">What needs doing?</label>
+            <textarea id="q-desc" name="description" rows="5" required></textarea>
+          </div>
+          <button class="btn btn-signal" type="submit">Send request</button>
+          <p class="hint mt-1">Prefer email? Write to <a data-site-href="email" href="mailto:hello@example.com"><span data-site="email">hello@example.com</span></a>. Or <a data-site-href="booking" href="https://cal.com/example">book a callback online</a>.</p>
+        </form>
+        <div class="form-success" id="quote-success" role="status" tabindex="-1">
+          <h3>Thanks — we'll call you back</h3>
+          <p class="mt-1">We'll be in touch within one business day. Prefer email? Write to <a data-site-href="email" href="mailto:hello@example.com"><span data-site="email">hello@example.com</span></a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="hours-heading">
+      <div class="container">
+        <h2 id="hours-heading">Opening hours</h2>
+        <table class="hours-table mt-2">
+          <thead>
+            <tr>
+              <th scope="col">Day</th>
+              <th scope="col">Hours</th>
+            </tr>
+          </thead>
+          <tbody data-render="hours"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="area-heading">
+      <div class="container">
+        <h2 id="area-heading">Service area</h2>
+        <p class="lede mt-1">Based at <span data-site="address">123 Example Street</span>. Not sure if we cover you? Call and ask.</p>
+        <ul class="towns" data-render="areas"></ul>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="emergency-heading">
+      <div class="container">
+        <div class="notice">
+          <h2 id="emergency-heading">Emergency?</h2>
+          <p class="mt-1">For a burst pipe, power loss or failed heating, call us now — we respond out of hours.</p>
+          <a class="btn btn-signal mt-2" data-site-href="phone" href="tel:+15550100100">Call <span data-site="phone">(555) 010-0100</span></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2>Hours</h2>
+          <table>
+            <tbody data-render="hours"></tbody>
+          </table>
+        </div>
+        <div>
+          <h2>Contact</h2>
+          <p data-site="address">123 Example Street</p>
+          <p><a data-site-href="phone" href="tel:+15550100100"><span data-site="phone">(555) 010-0100</span></a></p>
+          <p><a data-site-href="email" href="mailto:hello@example.com"><span data-site="email">hello@example.com</span></a></p>
+          <p data-site="social">@yourhandle</p>
+        </div>
+        <div>
+          <h2>Licence</h2>
+          <p data-site="licence">LICENCE #55-0100</p>
+          <p>Licensed and insured trade contractor.</p>
+        </div>
+      </div>
+      <p class="footer-note">&copy; <span id="year">2026</span> <span data-site="name">Your Business</span> — <a data-site-href="url" href="https://example.com">https://example.com</a></p>
+    </div>
+  </footer>
+
+  <div class="call-bar">
+    <a data-site-href="phone" href="tel:+15550100100"><svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> Call <span data-site="phone">(555) 010-0100</span></a>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

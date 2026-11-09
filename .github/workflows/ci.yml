@@ -29,6 +29,12 @@ jobs:
       - name: Verify template catalog is in sync
         run: npm run sync:templates -- --check
 
+      - name: Verify template demos are in sync
+        run: npm run sync:demos -- --check
+
+      - name: Prove the demo sync rejects a root-absolute asset URL
+        run: npm run sync:demos -- --self-test
+
       - name: Type check
         run: npm run check
 
