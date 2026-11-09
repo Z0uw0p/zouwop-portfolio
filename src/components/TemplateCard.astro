@@ -1,5 +1,6 @@
 ---
 import type { TemplateEntry } from '../data/templates';
+import { hasDemo } from '../data/demos';
 import TemplateFigure from './TemplateFigure.astro';
 import PriceTag from './PriceTag.astro';
 
@@ -9,6 +10,8 @@ interface Props {
 
 const { entry } = Astro.props;
 const href = `/templates/${entry.slug}/`;
+const previewHref = `/templates/${entry.slug}/preview/`;
+const demoHref = `/templates/${entry.slug}/demo/`;
 ---
 
 <article class="card tpl-card" id={`template-${entry.slug}`}>
@@ -28,9 +31,17 @@ const href = `/templates/${entry.slug}/`;
   <TemplateFigure previews={entry.previews} name={entry.name} />
 
   <footer class="tpl-card-foot">
-    <a class="detail-link" href={href}>
-      What&rsquo;s included <span aria-hidden="true">→</span>
-    </a>
+    <div class="card-links">
+      <a class="detail-link" href={href}>
+        What&rsquo;s included <span aria-hidden="true">→</span>
+      </a>
+      <a class="detail-link" href={previewHref}>Preview</a>
+      {hasDemo(entry.slug) && (
+        <a class="full-link mono" href={demoHref}>
+          Full screen <span aria-hidden="true">↗</span>
+        </a>
+      )}
+    </div>
     <p class="stack mono">{entry.stack.join(' · ')}</p>
   </footer>
 </article>
@@ -78,6 +89,12 @@ const href = `/templates/${entry.slug}/`;
     flex-wrap: wrap;
     gap: 8px 16px;
   }
+  .card-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px 18px;
+  }
   .detail-link {
     display: inline-flex;
     align-items: center;
@@ -89,13 +106,25 @@ const href = `/templates/${entry.slug}/`;
   .detail-link:hover {
     text-decoration: underline;
   }
+  .full-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--text-dim);
+    font-size: 0.75rem;
+    text-decoration: none;
+  }
+  .full-link:hover {
+    color: var(--text);
+  }
   .stack {
     color: var(--text-dim);
     font-size: 0.75rem;
     letter-spacing: 0.03em;
   }
   h2 a:focus-visible,
-  .detail-link:focus-visible {
+  .detail-link:focus-visible,
+  .full-link:focus-visible {
     outline: 2px solid var(--focus);
     outline-offset: 2px;
   }

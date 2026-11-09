@@ -1,0 +1,5 @@
+/templates/*/demo/*
+  X-Robots-Tag: noindex
+
+/templates/*/preview/*
+  X-Robots-Tag: noindex

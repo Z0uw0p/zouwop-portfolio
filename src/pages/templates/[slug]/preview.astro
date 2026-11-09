@@ -1,0 +1,380 @@
+---
+import type { TemplateEntry } from '../../../data/templates';
+import { templates } from '../../../data/templates';
+import { hasDemo } from '../../../data/demos';
+import { formatCadShort } from '../../../lib/format-price';
+import { enquiryMailto } from '../../../data/fulfilment';
+
+interface Props {
+  entry: TemplateEntry;
+}
+
+export function getStaticPaths() {
+  return templates.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const slug = entry.slug;
+const demoReady = hasDemo(slug);
+const demoUrl = `/templates/${slug}/demo/`;
+const productUrl = `/templates/${slug}/`;
+const buyUrl = entry.buyUrl?.trim();
+const canBuy = entry.status === 'available' && Boolean(buyUrl);
+const price = formatCadShort(entry.priceCents);
+const site = Astro.site ?? new URL('https://zouwop.com');
+const canonical = new URL(productUrl, site).href;
+const title = `${entry.name} — live preview`;
+---
+
+<!doctype html>
+<html lang="en" data-device="desktop">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} — Zouwop</title>
+    <meta name="description" content={`A live preview of the ${entry.name} template with placeholder content.`} />
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#0d0d12" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script is:inline>
+      (function () {
+        var device = new URLSearchParams(location.search).get('device') === 'phone' ? 'phone' : 'desktop';
+        document.documentElement.dataset.device = device;
+      })();
+    </script>
+    <style>
+      :root {
+        --bg: #0d0d12;
+        --bg-soft: #14141c;
+        --orange: #ff8c42;
+        --purple: #a78bfa;
+        --text: #e6e6eb;
+        --text-dim: #9a9aa8;
+        --border: #23232e;
+        --border-strong: #5f5f74;
+        --focus: var(--orange);
+        --mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+        --sans: 'Inter', system-ui, -apple-system, sans-serif;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; }
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--sans);
+        line-height: 1.6;
+      }
+      .mono {
+        font-family: var(--mono);
+        letter-spacing: 0.03em;
+      }
+      a { color: inherit; }
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid var(--focus);
+        outline-offset: 2px;
+      }
+
+      .bar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: var(--bg-soft);
+        border-bottom: 1px solid var(--border);
+      }
+      .bar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 4px 20px;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 6px 20px;
+      }
+      .bar-title {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 4px 10px;
+        font-size: 0.95rem;
+      }
+      .bar-title .label {
+        color: var(--text-dim);
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .bar-title strong { font-weight: 600; }
+      .bar-actions {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 4px 8px;
+      }
+      .bar-link,
+      .bar-buy,
+      .bar-soon {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        padding: 0 12px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 12px;
+      }
+      .bar-link { color: var(--text-dim); }
+      .bar-link:hover { color: var(--text); }
+      .bar-buy {
+        color: #0d0d12;
+        font-weight: 600;
+        background: linear-gradient(90deg, var(--orange), var(--purple));
+      }
+      .bar-soon {
+        color: var(--text-dim);
+        border: 1px dashed var(--border-strong);
+      }
+
+      .toolbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 8px 20px;
+        max-width: 1440px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 12px 20px 0;
+      }
+      .device-toggle {
+        display: inline-flex;
+        padding: 3px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: var(--bg-soft);
+      }
+      .device-toggle button {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 8px 18px;
+        border: 0;
+        border-radius: 999px;
+        background: transparent;
+        color: var(--text-dim);
+        font: inherit;
+        font-size: 0.85rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .device-toggle button[aria-pressed='true'] {
+        background: var(--text);
+        color: #0d0d12;
+      }
+      .fallback {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        color: var(--orange);
+        font-size: 12px;
+        text-decoration: none;
+      }
+      .fallback:hover { text-decoration: underline; }
+
+      .note {
+        max-width: 1440px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 4px 20px 0;
+        color: var(--text-dim);
+        font-size: 0.82rem;
+      }
+
+      .stage {
+        flex: 1;
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 16px 20px 32px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+      }
+      .frame {
+        width: 100%;
+        transition: width 0.18s ease;
+      }
+      .frame iframe {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 10;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: #fff;
+      }
+      html[data-device='phone'] .frame {
+        width: min(390px, 100%);
+        padding: 10px;
+        border: 1px solid var(--border-strong);
+        border-radius: 14px;
+        background: var(--bg-soft);
+      }
+      html[data-device='phone'] .frame iframe {
+        aspect-ratio: 390 / 844;
+        border-radius: 8px;
+      }
+
+      .unavailable {
+        width: 100%;
+        max-width: 560px;
+        padding: 32px;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: var(--bg-soft);
+        text-align: center;
+      }
+      .unavailable .eyebrow {
+        margin: 0 0 8px;
+        color: var(--orange);
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .unavailable p { color: var(--text-dim); }
+      .unavailable a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        margin-top: 12px;
+        color: var(--orange);
+      }
+
+      @media (max-width: 480px) {
+        .bar-inner { padding: 4px 16px; }
+        .toolbar,
+        .note,
+        .stage { padding-left: 16px; padding-right: 16px; }
+        .bar-actions { width: 100%; }
+        .bar-buy { flex: 1; justify-content: center; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .frame,
+        .device-toggle button { transition: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="bar">
+      <div class="bar-inner">
+        <p class="bar-title">
+          <span class="label mono">Live preview</span>
+          <strong>{entry.name}</strong>
+        </p>
+        <div class="bar-actions">
+          {
+            canBuy ? (
+              <a class="bar-buy" href={buyUrl}>{price} — buy</a>
+            ) : entry.status === 'available' ? (
+              <a class="bar-buy" href={enquiryMailto(entry.name)}>{price} — email to buy</a>
+            ) : (
+              <span class="bar-soon mono">Coming soon</span>
+            )
+          }
+          {demoReady && (
+            <a class="bar-link mono" href={demoUrl}>
+              Open full screen <span aria-hidden="true">↗</span>
+            </a>
+          )}
+          <a class="bar-link mono" href={productUrl}>Back to template</a>
+        </div>
+      </div>
+    </header>
+
+    {demoReady && (
+      <div class="toolbar">
+        <div class="device-toggle" role="group" aria-label="Preview device">
+          <button type="button" data-device="desktop" aria-pressed="true">Desktop</button>
+          <button type="button" data-device="phone" aria-pressed="false">Phone</button>
+        </div>
+        <a class="fallback mono" href={demoUrl} aria-describedby="demo-note">
+          Open the demo on its own <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    )}
+
+    {demoReady && (
+      <p id="demo-note" class="note">
+        This is the {entry.name} template running with placeholder content. Nothing you type is saved.
+      </p>
+    )}
+
+    <main class="stage" id="main">
+      {
+        demoReady ? (
+          <div class="frame">
+            <iframe
+              src={demoUrl}
+              title={`${entry.name} template — live preview`}
+              loading="lazy"
+            />
+          </div>
+        ) : (
+          <div class="unavailable">
+            <p class="eyebrow mono">Preview coming soon</p>
+            <p>
+              The {entry.name} live demo is still being built. The screenshots on the product page are
+              the current record.
+            </p>
+            <a href={productUrl}>Back to {entry.name}</a>
+          </div>
+        )
+      }
+      {demoReady && (
+        <noscript>
+          <p class="note">
+            JavaScript is off, so the device toggle is unavailable. <a href={demoUrl}>Open the demo directly</a>.
+          </p>
+        </noscript>
+      )}
+    </main>
+
+    <script is:inline>
+      (function () {
+        var root = document.documentElement;
+        var buttons = Array.prototype.slice.call(document.querySelectorAll('button[data-device]'));
+
+        function apply(device) {
+          root.dataset.device = device;
+          buttons.forEach(function (button) {
+            button.setAttribute('aria-pressed', String(button.dataset.device === device));
+          });
+          var url = new URL(location.href);
+          if (device === 'phone') url.searchParams.set('device', 'phone');
+          else url.searchParams.delete('device');
+          history.replaceState(null, '', url);
+        }
+
+        buttons.forEach(function (button) {
+          button.addEventListener('click', function () {
+            apply(button.dataset.device);
+          });
+        });
+
+        apply(root.dataset.device === 'phone' ? 'phone' : 'desktop');
+      })();
+    </script>
+  </body>
+</html>

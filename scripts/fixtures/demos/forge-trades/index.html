@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Business — Licensed trades, done right</title>
+  <meta name="description" content="Your Business is a licensed local trade contractor covering plumbing, electrical, heating, roofing and more. Call (555) 010-0100 for a free quote.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="bar">
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span><span data-site="name">Your Business</span></a>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="header-call" data-site-href="phone" href="tel:+15550100100"><span data-site="phone">(555) 010-0100</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Licensed trade contractor</p>
+        <h1>Licensed trades. Honest work. On time.</h1>
+        <p class="lede">Plumbing, electrical, heating, roofing and bathrooms — quoted upfront, finished right. One call and a real tradesperson turns up.</p>
+        <div class="hero-actions">
+          <a class="btn btn-signal" data-site-href="phone" href="tel:+15550100100">Call <span data-site="phone">(555) 010-0100</span></a>
+          <a class="btn" href="#quote">Get a free quote</a>
+        </div>
+        <ul class="trust">
+          <li><span class="big">Licensed &amp; insured</span><span class="small">Public liability</span></li>
+          <li><span class="big" data-stat="years">NN years</span><span class="small">In the trade</span></li>
+          <li><span class="big" data-stat="rating">X.Y / 5</span><span class="small" data-stat="reviews">N reviews</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="services-heading">
+      <div class="container">
+        <p class="eyebrow">What we do</p>
+        <h2 id="services-heading">Services</h2>
+        <p class="lede mt-1">Six trades under one roof, so one phone call covers the whole job.</p>
+        <div class="grid grid-services mt-2" data-render="services" role="list"></div>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="process-heading">
+      <div class="container">
+        <p class="eyebrow">How it works</p>
+        <h2 id="process-heading">How a job runs</h2>
+        <div class="steps mt-2">
+          <div class="step">
+            <h3>Call or book</h3>
+            <p>Tell us the problem. We confirm your postcode is in our service area and book a visit that fits your day.</p>
+          </div>
+          <div class="step">
+            <h3>Fixed quote</h3>
+            <p>We inspect on site and hand you a written, itemised quote before any work starts. No call-out surprises.</p>
+          </div>
+          <div class="step">
+            <h3>Job done, guaranteed</h3>
+            <p>We do the work, walk you through it, clean up, and stand behind it with a 12-month workmanship guarantee.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="area-heading">
+      <div class="container">
+        <p class="eyebrow">Service area</p>
+        <h2 id="area-heading">Where we work</h2>
+        <div class="area-wrap mt-2">
+          <div>
+            <p class="lede">Based at <span data-site="address">123 Example Street</span>, serving the towns below. Just outside the list? Call us — we often travel.</p>
+            <ul class="towns" data-render="areas"></ul>
+          </div>
+          <div>
+            <img class="map-plate" src="assets/placeholder/map.svg" alt="Map of the service area" width="800" height="400">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="reviews-heading">
+      <div class="container">
+        <p class="eyebrow">Reviews</p>
+        <h2 id="reviews-heading">What customers say</h2>
+        <div class="reviews mt-2" data-render="reviews"></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="quote-heading">
+      <div class="container">
+        <p class="eyebrow">Get started</p>
+        <h2 id="quote-heading">Get a free quote</h2>
+        <form class="form mt-2" id="quote-form" action="#" method="post" novalidate>
+          <div class="field">
+            <label for="q-name">Name</label>
+            <input id="q-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="q-phone">Phone</label>
+            <input id="q-phone" name="phone" type="tel" autocomplete="tel" required>
+          </div>
+          <div class="field">
+            <label for="q-job">Job type</label>
+            <select id="q-job" name="job" required>
+              <option value="">Choose a service…</option>
+              <option value="plumbing">Plumbing</option>
+              <option value="electrical">Electrical</option>
+              <option value="heating">Heating &amp; cooling</option>
+              <option value="roofing">Roofing</option>
+              <option value="bathrooms">Bathrooms</option>
+              <option value="emergency">Emergency call-out</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="q-desc">What needs doing?</label>
+            <textarea id="q-desc" name="description" rows="4" required></textarea>
+          </div>
+          <button class="btn btn-signal" type="submit">Request a call back</button>
+          <p class="hint mt-1">Prefer email? Write to <a data-site-href="email" href="mailto:hello@example.com"><span data-site="email">hello@example.com</span></a>.</p>
+        </form>
+        <div class="form-success" id="quote-success" role="status" tabindex="-1">
+          <h3>Thanks — we'll call you back</h3>
+          <p class="mt-1">We'll be in touch within one business day. Prefer email? Write to <a data-site-href="email" href="mailto:hello@example.com"><span data-site="email">hello@example.com</span></a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="faq-heading">
+      <div class="container">
+        <p class="eyebrow">Questions</p>
+        <h2 id="faq-heading">FAQ</h2>
+        <div class="accordion mt-2" data-render="faq"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2>Hours</h2>
+          <table>
+            <tbody data-render="hours"></tbody>
+          </table>
+        </div>
+        <div>
+          <h2>Contact</h2>
+          <p data-site="address">123 Example Street</p>
+          <p><a data-site-href="phone" href="tel:+15550100100"><span data-site="phone">(555) 010-0100</span></a></p>
+          <p><a data-site-href="email" href="mailto:hello@example.com"><span data-site="email">hello@example.com</span></a></p>
+          <p data-site="social">@yourhandle</p>
+        </div>
+        <div>
+          <h2>Licence</h2>
+          <p data-site="licence">LICENCE #55-0100</p>
+          <p>Licensed and insured trade contractor.</p>
+        </div>
+      </div>
+      <p class="footer-note">&copy; <span id="year">2026</span> <span data-site="name">Your Business</span> — <a data-site-href="url" href="https://example.com">https://example.com</a></p>
+    </div>
+  </footer>
+
+  <div class="call-bar">
+    <a data-site-href="phone" href="tel:+15550100100"><svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> Call <span data-site="phone">(555) 010-0100</span></a>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -6,6 +6,10 @@ import path from 'node:path';
 const DIST = path.resolve('dist');
 const ATTRIBUTE_RE = /\b(?:href|src)\s*=\s*(?:"([^"]*)"|'([^']*)')/gi;
 const SKIP_RE = /^(?:https?:|\/\/|mailto:|tel:|data:|blob:|javascript:|#?$)/i;
+// Demo builds are foreign artifacts: some links are placeholders that their
+// own JavaScript fills in at runtime (href="phone", href="#quote", ...). The
+// demo sync owns their integrity; the store's link check owns the store.
+const DEMO_ARTIFACT_RE = /^templates\/[^/]+\/demo\//;
 
 function decode(value) {
   try {
@@ -60,6 +64,8 @@ export async function scan(root) {
   let checked = 0;
 
   for (const file of files) {
+    const relative = path.relative(rootDir, file).split(path.sep).join('/');
+    if (DEMO_ARTIFACT_RE.test(relative)) continue;
     const html = await readFile(file, 'utf8');
     for (const match of html.matchAll(ATTRIBUTE_RE)) {
       const target = (match[1] ?? match[2] ?? '').trim();

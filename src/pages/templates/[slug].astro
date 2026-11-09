@@ -8,6 +8,7 @@ import PriceTag from '../../components/PriceTag.astro';
 import BuyButton from '../../components/BuyButton.astro';
 import StickyBuyBar from '../../components/StickyBuyBar.astro';
 import { templates } from '../../data/templates';
+import { hasDemo } from '../../data/demos';
 import { site } from '../../data/site';
 import { pageExists } from '../../lib/pages';
 
@@ -23,6 +24,9 @@ export function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
+
+const demoReady = hasDemo(entry.slug);
+const previewHref = `/templates/${entry.slug}/preview/`;
 
 const hasLicence = pageExists('/licence');
 const others = templates.filter((item) => item.slug !== entry.slug).slice(0, 3);
@@ -81,7 +85,13 @@ const faqs = [
           <p class="blurb">{entry.blurb}</p>
           <div class="buy-row">
             <BuyButton entry={entry} />
+            <a class="btn btn-secondary preview-cta" href={previewHref} aria-describedby="demo-note">
+              {demoReady ? 'Preview the live site' : 'Preview coming soon'}
+            </a>
           </div>
+          <p id="demo-note" class="demo-note">
+            The live preview is the template running with placeholder content — nothing you type is saved.
+          </p>
           <p class="description">{entry.description}</p>
         </header>
 
@@ -215,6 +225,18 @@ const faqs = [
     flex-wrap: wrap;
     gap: 16px;
     margin-top: 20px;
+  }
+  .preview-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+  }
+  .demo-note {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin-top: 12px;
+    max-width: 65ch;
   }
   .buy-end {
     padding-top: 8px;
