@@ -120,4 +120,22 @@ export const offers: Offer[] = [
     ctaLabel: 'Open Tangerine →',
     terms: "New clients only (never had an ING Direct or Tangerine account). Credit cards do not count as the eligible first account; mortgages and loans have no minimum deposit. Cannot be combined with other enrollment bonuses.",
   },
+  {
+    id: 'coinbase',
+    kind: 'referral',
+    name: 'Coinbase',
+    url: 'https://coinbase.com/join/KDK6G3F?src=ios-link',
+    code: 'KDK6G3F',
+    headline: 'Start buying crypto on Coinbase',
+    pitch: 'Buy, sell, and hold crypto in one app — straightforward for a first purchase, with identity verification handled in-app.',
+    reward: 'You get CA$30 in Bitcoin after a qualifying purchase of at least CA$30. I get a referral bonus once you qualify.',
+    steps: [
+      'Open my invite link — the code KDK6G3F is applied at signup.',
+      'Create your account and complete identity verification.',
+      'Make one qualifying purchase of at least CA$30 with a bank transfer, debit card, or credit card.',
+      'Your Bitcoin bonus is credited after the purchase qualifies.',
+    ],
+    ctaLabel: 'Join Coinbase →',
+    terms: 'New Coinbase accounts only. The bonus amount varies by country and campaign — Coinbase sets the exact terms. Purchases on Coinbase Advanced or Coinbase Prime do not count toward eligibility.',
+  },
 ];
